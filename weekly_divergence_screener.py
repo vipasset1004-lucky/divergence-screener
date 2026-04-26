@@ -1025,6 +1025,17 @@ def calculate_indicators(df):
     result["BB_lower"] = result["BB_mid"] - 2 * result["BB_std"]
     result["BB_width"] = (result["BB_upper"] - result["BB_lower"]) / result["BB_mid"] * 100
 
+    # Keltner Channel (TTM Squeeze용: BB가 KC 안에 있으면 진짜 스퀴즈)
+    result["EMA_20"] = result["Close"].ewm(span=20, adjust=False).mean()
+    _tr = pd.concat([
+        result["High"] - result["Low"],
+        (result["High"] - result["Close"].shift(1)).abs(),
+        (result["Low"]  - result["Close"].shift(1)).abs(),
+    ], axis=1).max(axis=1)
+    result["ATR_20"] = _tr.rolling(20).mean()
+    result["KC_upper"] = result["EMA_20"] + 1.5 * result["ATR_20"]
+    result["KC_lower"] = result["EMA_20"] - 1.5 * result["ATR_20"]
+
     # 핵심 지표(RSI, MACD 등)가 있는 행만 유지, SMA NaN은 허용
     core_cols = ["RSI", "MACD", "OBV", "Stoch_K"]
     existing = [c for c in core_cols if c in result.columns]
@@ -1170,13 +1181,41 @@ def score_100(df):
                     score += 12
                     signals.append("Pocket Pivot 매수")
 
-    # [2] 볼린저 스퀴즈 (12점) ← 최대수익 +82%
+    # [2] 볼린저 스퀴즈 (최대 12점) ← 최대수익 +82%
     if "BB_width" in df.columns and n >= 20:
         bb_width = last["BB_width"]
         bb_min = df["BB_width"].tail(52).min() if n >= 52 else df["BB_width"].min()
         if bb_width <= bb_min * 1.1:
-            score += 12
-            signals.append("볼린저 스퀴즈")
+            # ── TTM Squeeze: BB가 Keltner Channel 안에 완전히 들어있는지 확인
+            is_ttm = False
+            kc_cols = ["KC_upper", "KC_lower", "BB_upper", "BB_lower"]
+            if all(k in df.columns for k in kc_cols):
+                kc_u = last.get("KC_upper")
+                kc_l = last.get("KC_lower")
+                bb_u = last.get("BB_upper")
+                bb_l = last.get("BB_lower")
+                if all(pd.notna(v) for v in [kc_u, kc_l, bb_u, bb_l]):
+                    is_ttm = (bb_u < kc_u) and (bb_l > kc_l)
+
+            # ── 방향 확인: SMA20 기울기 + 가격 위치
+            sma20_now = last.get("SMA_20")
+            sma20_5ago = df["SMA_20"].iloc[-6] if (n >= 6 and "SMA_20" in df.columns
+                         and pd.notna(df["SMA_20"].iloc[-6])) else None
+            sma20_rising = (sma20_now > sma20_5ago) if (
+                sma20_now and sma20_5ago and pd.notna(sma20_now) and pd.notna(sma20_5ago)
+            ) else True
+            price_above = (last["Close"] > sma20_now) if (
+                sma20_now and pd.notna(sma20_now)
+            ) else True
+
+            if sma20_rising or price_above:
+                # 상승/눌림목 스퀴즈
+                pts = 12 if is_ttm else 8
+                score += pts
+                signals.append("볼린저 스퀴즈")
+            else:
+                # 하락 횡보 스퀴즈 → 점수 없이 태그만
+                signals.append("하락 스퀴즈")
 
     # [3] VCP 변동성 수축 (10점) ← 최대수익 +47%
     if n >= 20:
