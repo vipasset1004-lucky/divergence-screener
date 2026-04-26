@@ -23,6 +23,62 @@ from datetime import datetime
 from apscheduler.schedulers.background import BackgroundScheduler
 import pytz
 
+# ── Redis 캐시 (Upstash) ─────────────────────────────────────────────────────
+# 환경변수 UPSTASH_REDIS_REST_URL / UPSTASH_REDIS_REST_TOKEN 이 있으면 Redis 사용,
+# 없으면 로컬 파일 폴백 (개발 환경용)
+_redis = None
+try:
+    _url = os.environ.get("UPSTASH_REDIS_REST_URL")
+    _tok = os.environ.get("UPSTASH_REDIS_REST_TOKEN")
+    if _url and _tok:
+        from upstash_redis import Redis
+        _redis = Redis(url=_url, token=_tok)
+        print("[cache] Upstash Redis 연결됨")
+    else:
+        print("[cache] Redis 환경변수 없음 → 파일 폴백")
+except Exception as _e:
+    print(f"[cache] Redis 초기화 실패 → 파일 폴백: {_e}")
+
+CACHE_KEY      = "screener:cache"
+CACHE_PREV_KEY = "screener:cache_prev"
+CACHE_TTL      = 60 * 60 * 50   # 50시간 (다음 21시 스캔 전까지 충분히)
+CACHE_PATH      = "scan_results_cache.json"       # 파일 폴백용
+CACHE_PREV_PATH = "scan_results_cache_prev.json"  # 파일 폴백용
+
+
+def _cache_get(key):
+    """Redis 또는 파일에서 캐시 읽기"""
+    if _redis:
+        try:
+            val = _redis.get(key)
+            return json.loads(val) if val else None
+        except Exception as e:
+            print(f"[cache] get 오류: {e}")
+    # 파일 폴백
+    path = CACHE_PATH if key == CACHE_KEY else CACHE_PREV_PATH
+    if os.path.exists(path):
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return None
+
+
+def _cache_set(key, value):
+    """Redis 또는 파일에 캐시 저장"""
+    if _redis:
+        try:
+            _redis.set(key, json.dumps(value, ensure_ascii=False), ex=CACHE_TTL)
+            return
+        except Exception as e:
+            print(f"[cache] set 오류: {e}")
+    # 파일 폴백
+    path = CACHE_PATH if key == CACHE_KEY else CACHE_PREV_PATH
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(value, f, ensure_ascii=False)
+# ─────────────────────────────────────────────────────────────────────────────
+
 app = Flask(__name__)
 
 # 스캔 상태 관리
@@ -256,27 +312,17 @@ def scan_single():
         return jsonify({"error": str(e)})
 
 
-CACHE_PATH = "scan_results_cache.json"
-CACHE_PREV_PATH = "scan_results_cache_prev.json"
-
-
 @app.route("/api/cached-results")
 def cached_results():
     """자동 스캔으로 저장된 결과 반환"""
-    if not os.path.exists(CACHE_PATH):
-        return jsonify({"results": [], "scan_date": None, "total": 0})
     try:
-        with open(CACHE_PATH, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        # 어제 결과 티커 목록 추가 (연속 등장 표시용)
+        data = _cache_get(CACHE_KEY)
+        if not data or not data.get("results"):
+            return jsonify({"results": [], "scan_date": None, "total": 0})
         prev_tickers = set()
-        if os.path.exists(CACHE_PREV_PATH):
-            try:
-                with open(CACHE_PREV_PATH, "r", encoding="utf-8") as f2:
-                    prev = json.load(f2)
-                prev_tickers = {r["ticker"] for r in prev.get("results", [])}
-            except:
-                pass
+        prev = _cache_get(CACHE_PREV_KEY)
+        if prev:
+            prev_tickers = {r["ticker"] for r in prev.get("results", [])}
         data["prev_tickers"] = list(prev_tickers)
         return jsonify(data)
     except Exception as e:
@@ -284,18 +330,17 @@ def cached_results():
 
 
 def auto_scan_job():
-    """매일 21:00 자동 스캔 (527개 전체 + 신규상장) → 파일 저장"""
+    """매일 21:00 자동 스캔 (527개 전체 + 신규상장) → Redis/파일 저장"""
     # 이미 오늘 스캔됐으면 건너뜀 (worker 중복 방지)
-    if os.path.exists(CACHE_PATH):
-        try:
-            with open(CACHE_PATH, "r", encoding="utf-8") as f:
-                cached = json.load(f)
+    try:
+        cached = _cache_get(CACHE_KEY)
+        if cached:
             saved_date = cached.get("scan_date", "")[:10]
-            if saved_date == datetime.now().strftime("%Y-%m-%d"):
+            if saved_date == datetime.now(pytz.timezone("Asia/Seoul")).strftime("%Y-%m-%d"):
                 print("[auto_scan] 오늘 이미 스캔됨, 건너뜀")
                 return
-        except Exception:
-            pass
+    except Exception:
+        pass
 
     if scan_state["running"]:
         print("[auto_scan] 수동 스캔 중, 건너뜀")
@@ -413,13 +458,12 @@ def auto_scan_job():
         scan_state["last_results"] = results
         scan_state["last_scan_date"] = scan_date
 
-        # 오늘 캐시를 어제 파일로 보관 후 새 결과 저장
-        if os.path.exists(CACHE_PATH):
-            import shutil
-            shutil.copy2(CACHE_PATH, CACHE_PREV_PATH)
-        with open(CACHE_PATH, "w", encoding="utf-8") as f:
-            json.dump({"results": results, "scan_date": scan_date, "total": len(results)}, f, ensure_ascii=False)
-        print(f"[auto_scan] 완료: {len(results)}개 → {CACHE_PATH} 저장")
+        # 오늘 캐시를 어제 키로 보관 후 새 결과 저장
+        today_cache = _cache_get(CACHE_KEY)
+        if today_cache:
+            _cache_set(CACHE_PREV_KEY, today_cache)
+        _cache_set(CACHE_KEY, {"results": results, "scan_date": scan_date, "total": len(results)})
+        print(f"[auto_scan] 완료: {len(results)}개 → Redis 저장")
 
     except Exception as e:
         print(f"[auto_scan] 오류: {e}")
