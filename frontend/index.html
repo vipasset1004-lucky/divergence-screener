@@ -607,6 +607,59 @@
   }
   .modal-tab.active { background: rgba(74,108,247,.2); color: #7b9aff; border-color: #4a6cf7; }
 
+  /* 상세 모달 — 다이버전스 분해 + 매매룰 */
+  .detail-section { margin-bottom: 14px; }
+  .detail-section h4 {
+    font-size: 13px; color: #7b9aff; margin: 0 0 6px;
+    border-bottom: 1px solid #1e2a45; padding-bottom: 4px;
+  }
+  .detail-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 6px 12px; font-size: 13px;
+  }
+  .detail-grid > div { display: flex; justify-content: space-between; }
+  .detail-grid .k { color: #6b7a99; }
+  .detail-grid .v { color: #e1e5ee; font-weight: 600; }
+  .detail-tags { display: flex; flex-wrap: wrap; gap: 4px; font-size: 12px; }
+  .detail-tags span {
+    padding: 2px 8px; border-radius: 12px;
+    background: rgba(123,154,255,.1); color: #7b9aff;
+    border: 1px solid #3a4a6a;
+  }
+  .detail-tags span.daily {
+    background: rgba(255,107,138,.1); color: #ff6b8a;
+    border-color: #5a3a4a;
+  }
+  .detail-tags span.bonus {
+    background: rgba(255,212,107,.1); color: #ffd76b;
+    border-color: #5a4a3a;
+  }
+  .div-table { display: grid; gap: 4px; font-size: 13px; }
+  .div-table > div { display: flex; justify-content: space-between;
+    padding: 4px 8px; background: rgba(255,255,255,.03);
+    border-radius: 4px; }
+  .rule-row { display: flex; justify-content: space-between;
+    padding: 5px 0; font-size: 14px;
+    border-bottom: 1px dashed #1e2a45; }
+  .rule-row:last-child { border-bottom: none; }
+  .rule-row .k { color: #6b7a99; min-width: 90px; }
+  .rule-row .v { color: #e1e5ee; font-weight: 600; }
+  .rule-note { font-size: 12px; color: #ffd76b;
+    background: rgba(255,212,107,.06);
+    padding: 6px 10px; border-radius: 6px;
+    margin-top: 6px; }
+  .rule-warn { font-size: 12px; color: #ff6b6b;
+    background: rgba(255,107,107,.08);
+    padding: 6px 10px; border-radius: 6px;
+    margin-top: 6px; }
+  .modal-actions { display: flex; gap: 8px; margin-top: 12px; }
+  .modal-actions a {
+    flex: 1; text-align: center; padding: 8px; font-size: 14px;
+    background: #1a2238; color: #7b9aff; border: 1px solid #2a3555;
+    border-radius: 6px; text-decoration: none;
+  }
+  .modal-actions a:hover { background: #243153; }
+
   #chartCanvas { width: 100%; height: 250px; background: #0a0e17; border-radius: 8px; margin-bottom: 12px; }
 
   .modal-scores {
@@ -1610,7 +1663,7 @@ function renderCards(results) {
     const isTenbagger = (hasAccum && hasSqueeze) || (hasAccum && hasPocket && hasTrend);
 
     return `
-      <div class="card" onclick="openStock('${r.ticker}',${isKR})" style="cursor:pointer">
+      <div class="card" onclick="openDivDetail('${r.ticker}')" style="cursor:pointer">
         <div class="rank">#${i + 1}</div>
         <div class="top-row">
           <div>
@@ -1672,6 +1725,218 @@ function openStock(ticker, isKR) {
   } else {
     window.open(`https://finance.yahoo.com/quote/${ticker}`, '_blank');
   }
+}
+
+// ── 다이버전스 매매룰 자동 매칭 ──
+function getDivTradingRule(r) {
+  const w = r.score_10 || 0;
+  const d = r.daily_score || 0;
+  const t = r.total_score || w;
+  const g = computeGap(r);
+  const sigs = (r.signals || []).join(' ');
+  const overheated = r.is_overheated || r.is_weekly_overheated;
+  const ret3m = r.return_3m || 0;
+  const pos = r.position || '';
+
+  // 과열 종목 — 진입 보류
+  if (overheated || ret3m > 50) {
+    return {
+      label: '⚠️ 진입 보류',
+      reason: ret3m > 50 ? `3개월 +${ret3m}% 과열` : '주봉/일봉 과열 신호',
+      size: '관망', stop: '—', tp1: '—', tp2: '—',
+      hold: '추격 매수 X — 조정 대기',
+      note: null, warn: '이미 많이 올라온 종목, 추격은 위험',
+    };
+  }
+
+  // 검증 조합 우선 매칭 (백테스트 기반)
+  const hasAccum = sigs.includes('매집비율') || sigs.includes('Pocket Pivot');
+  const hasTrendStrong = sigs.includes('트렌드 구조 양호') || sigs.includes('상대강도 가속');
+
+  // 프리미엄 (백테스트 80%+ 승률)
+  if (t >= 3.0 && hasAccum && hasTrendStrong) {
+    return {
+      label: '🔥 프리미엄 (백테스트 80%+ 승률)',
+      reason: '매집 + 트렌드 + 점수 ≥ 3.0',
+      size: '1/3 (큰 비중)', stop: '-7%',
+      tp1: '+20% 1/3 분할', tp2: '+40% 추가 1/3',
+      hold: '나머지 추적매도 (MA50 이탈)',
+      note: '백테스트 490건, 평균 수익 +19%, 승률 80%+',
+      warn: null,
+    };
+  }
+
+  // 최강 조합 (GAP≥3 + 주봉≥6, 3M +26.6%)
+  if (g !== null && g >= 3 && w >= 6.0) {
+    return {
+      label: '💎 최강 조합 (3M +26.6%)',
+      reason: `GAP ${g} + 주봉 ${w}점`,
+      size: '1/3', stop: '-7%',
+      tp1: '+20% 1/3', tp2: '+50% 1/3',
+      hold: 'MA50 이탈 또는 일봉 점수 6+ 도달',
+      note: '주봉 강세 + 일봉 조용 = 폭발 직전',
+      warn: null,
+    };
+  }
+
+  // 급등 직전 (주봉≥6.5 + 일봉≤4.5, MAX≥50% 60%)
+  if (w >= 6.5 && d <= 4.5) {
+    return {
+      label: '⚡ 급등 직전 (60% 50%↑ 도달)',
+      reason: `주봉 ${w} + 일봉 ${d}`,
+      size: '1/4', stop: '-7%',
+      tp1: '+30% 1차', tp2: '+50% 추가',
+      hold: '일봉 신호 점등 시 사이즈 ↑',
+      note: '백테스트 n=5, MAX≥100% 20% 도달',
+      warn: null,
+    };
+  }
+
+  // 선점형 (주봉≥6 + 일봉≤3.5, 3M +18.6%)
+  if (w >= 6.0 && d <= 3.5) {
+    return {
+      label: '⭐ 선점형 (3M +18.6%)',
+      reason: `주봉 ${w} + 일봉 ${d} (선제)`,
+      size: '1/4', stop: '-7%',
+      tp1: '+20% 1차', tp2: '+40% 추가',
+      hold: '일봉 점수 5+ 도달 시 사이즈 ↑',
+      note: '백테스트 n=14, MAX≥50% 35.7%',
+      warn: null,
+    };
+  }
+
+  // 위치별 차등 (일반)
+  let sizeBase = '1/5';
+  let stopBase = '-5%';
+  let tpBase = '+15%';
+  let hold = '점수 하락 또는 일봉 약화 시 청산';
+
+  if (t >= 5.0) {
+    sizeBase = '1/4'; stopBase = '-7%'; tpBase = '+20% 1차, +35% 2차';
+  } else if (t >= 3.0) {
+    sizeBase = '1/5'; stopBase = '-7%'; tpBase = '+15% 1차, +25% 2차';
+  } else {
+    sizeBase = '1/6 (관찰성)'; stopBase = '-5%'; tpBase = '+10%';
+  }
+
+  let posNote = null;
+  if (pos === '바닥 출발') {
+    posNote = '바닥 반등 초기 — 손절 빡빡(-8%) 추천, 방향 확인 후 추가 매수';
+    stopBase = '-8%';
+  } else if (pos === '신고가 돌파') {
+    posNote = '이미 많이 올라옴 — 사이즈 ↓, 짧은 손절';
+    sizeBase = '1/6';
+  } else if (pos === '상승 중반') {
+    posNote = '추세 진행 중 — 안정적 진입';
+  }
+
+  return {
+    label: `위치 기반 (${pos || '미정'})`,
+    reason: `종합 ${t}점, ${pos || '위치 미확인'}`,
+    size: sizeBase, stop: stopBase,
+    tp1: tpBase.split(',')[0].trim(),
+    tp2: tpBase.includes(',') ? tpBase.split(',')[1].trim() : null,
+    hold,
+    note: posNote, warn: null,
+  };
+}
+
+// ── 다이버전스 상세 모달 ──
+function openDivDetail(ticker) {
+  const r = (allResults || []).find(x => x.ticker === ticker);
+  if (!r) return;
+  const isKR = /^\d{6}$/.test(r.ticker);
+  const priceStr = isKR
+    ? Number(r.current_price).toLocaleString() + '원'
+    : '$' + Number(r.current_price).toLocaleString(undefined, {minimumFractionDigits: 2});
+  const naverUrl = isKR
+    ? `https://m.stock.naver.com/domestic/stock/${r.ticker}/total`
+    : `https://finance.yahoo.com/quote/${r.ticker}`;
+
+  const rule = getDivTradingRule(r);
+  const g = computeGap(r);
+
+  const divEntries = Object.entries(r.divergences || {});
+  const divHtml = divEntries.length
+    ? `<div class="div-table">${divEntries.map(([k, v]) =>
+        `<div><span style="color:#7b9aff">${k}</span><span>${typeof v === 'object' ? JSON.stringify(v) : v}</span></div>`
+      ).join('')}</div>`
+    : '<div style="color:#6b7a99;font-size:12px">다이버전스 신호 없음</div>';
+
+  const sigsHtml = (r.signals || []).map(s => `<span>${s}</span>`).join('') || '<span style="color:#6b7a99">없음</span>';
+  const dailyHtml = (r.daily_signals || []).map(s => `<span class="daily">${s}</span>`).join('') || '<span style="color:#6b7a99">없음</span>';
+  const bonusHtml = (r.bonus_signals || []).map(s => `<span class="bonus">${s}</span>`).join('');
+
+  const html = `
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <div>
+          <div class="modal-title">${r.name} <span style="color:#6b7a99;font-size:14px;font-weight:400">${r.ticker}</span></div>
+          <div class="modal-sub">현재가 <b style="color:#e1e5ee">${priceStr}</b>${r.return_3m != null ? ` · 3개월 <b style="color:${r.return_3m > 0 ? '#00ff88' : '#ff6b8a'}">${r.return_3m > 0 ? '+' : ''}${r.return_3m}%</b>` : ''}${r.position && r.position !== '-' ? ` · ${r.position}` : ''}</div>
+        </div>
+        <button class="modal-close" onclick="closeDivDetail()">✕</button>
+      </div>
+
+      <div class="detail-section">
+        <h4>📊 점수 분해</h4>
+        <div class="detail-grid">
+          <div><span class="k">주봉 점수</span><span class="v">${r.score_10 ?? '—'} / 10</span></div>
+          <div><span class="k">일봉 점수</span><span class="v">${r.daily_score ?? '—'} / 10</span></div>
+          <div><span class="k">종합 점수</span><span class="v" style="color:#7b9aff">${r.total_score ?? r.score_10 ?? '—'}</span></div>
+          <div><span class="k">GAP</span><span class="v">${g !== null ? (g >= 0 ? '+' : '') + g : '—'}</span></div>
+          <div><span class="k">RSI (주봉)</span><span class="v">${r.current_rsi ?? '—'}</span></div>
+          <div><span class="k">Stoch (주봉)</span><span class="v">${r.current_stoch ?? '—'}</span></div>
+          <div><span class="k">RSI (일봉)</span><span class="v">${r.daily_rsi ?? '—'}</span></div>
+          <div><span class="k">거래량비</span><span class="v">${r.daily_vol_ratio ?? '—'}x</span></div>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h4>🎯 다이버전스 (${r.divergence_count || 0}개)</h4>
+        ${divHtml}
+      </div>
+
+      <div class="detail-section">
+        <h4>📡 신호</h4>
+        <div style="font-size:12px;color:#6b7a99;margin-bottom:4px">주봉 (${(r.signals || []).length})</div>
+        <div class="detail-tags">${sigsHtml}</div>
+        ${r.bonus_signals && r.bonus_signals.length ? `<div style="font-size:12px;color:#6b7a99;margin:6px 0 4px">보너스</div><div class="detail-tags">${bonusHtml}</div>` : ''}
+        <div style="font-size:12px;color:#6b7a99;margin:6px 0 4px">일봉 (${(r.daily_signals || []).length})</div>
+        <div class="detail-tags">${dailyHtml}</div>
+      </div>
+
+      <div class="detail-section">
+        <h4>📋 매매 룰 — ${rule.label}</h4>
+        <div style="font-size:12px;color:#7b9aff;margin-bottom:6px">${rule.reason}</div>
+        <div class="rule-row"><span class="k">사이즈</span><span class="v">${rule.size}</span></div>
+        <div class="rule-row"><span class="k">손절</span><span class="v" style="color:#ff6b6b">${rule.stop}</span></div>
+        <div class="rule-row"><span class="k">1차 익절</span><span class="v" style="color:#00ff88">${rule.tp1}</span></div>
+        ${rule.tp2 ? `<div class="rule-row"><span class="k">2차 익절</span><span class="v" style="color:#00ff88">${rule.tp2}</span></div>` : ''}
+        <div class="rule-row"><span class="k">보유</span><span class="v">${rule.hold}</span></div>
+        ${rule.note ? `<div class="rule-note">💡 ${rule.note}</div>` : ''}
+        ${rule.warn ? `<div class="rule-warn">⚠️ ${rule.warn}</div>` : ''}
+      </div>
+
+      <div class="modal-actions">
+        <a href="${naverUrl}" target="_blank" rel="noopener">🔗 네이버</a>
+      </div>
+    </div>`;
+
+  let modal = document.getElementById('divDetailModal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'divDetailModal';
+    modal.className = 'modal-overlay';
+    modal.onclick = closeDivDetail;
+    document.body.appendChild(modal);
+  }
+  modal.innerHTML = html;
+  modal.classList.add('active');
+}
+
+function closeDivDetail() {
+  const m = document.getElementById('divDetailModal');
+  if (m) m.classList.remove('active');
 }
 
 function closeDetail() {
