@@ -1717,7 +1717,8 @@ if __name__ == "__main__":
         sys.exit(1)
 
     if results:
-        base = "D:/클로드 작업 공간"
+        # GitHub Actions / 로컬 모두에서 동작 — 현재 작업 디렉터리에 출력
+        base = os.environ.get("OUTPUT_DIR", os.getcwd())
         export_json(results, os.path.join(base, "divergence_results.json"))
         export_html(results, base)
 

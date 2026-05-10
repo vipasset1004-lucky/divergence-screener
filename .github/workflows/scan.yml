@@ -1,0 +1,61 @@
+name: Divergence Scan
+
+on:
+  # 평일 KST 21:00 = UTC 12:00
+  schedule:
+    - cron: '0 12 * * 1-5'
+  workflow_dispatch:        # 수동 트리거 (관리자: GitHub Actions UI)
+
+permissions:
+  contents: write
+
+concurrency:
+  group: divergence-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run weekly divergence scan (KR ALL)
+        env:
+          TZ: Asia/Seoul
+        run: python weekly_divergence_screener.py KR 1500
+
+      - name: Prepare gh-pages payload (frontend 보존, JSON 새로)
+        run: |
+          # gh-pages의 index.html 가져오기 (보존)
+          git fetch origin gh-pages
+          git show origin/gh-pages:index.html > _index.html
+          mkdir -p _site
+          cp _index.html _site/index.html
+          [ -f divergence_results.json ] && cp divergence_results.json _site/
+          [ -f divergence_report.html ] && cp divergence_report.html _site/
+          date -u +"{\"updated_at\":\"%Y-%m-%dT%H:%M:%SZ\"}" > _site/last_update.json
+          ls -la _site/
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
+          keep_files: false
+          force_orphan: false
+          commit_message: "scan ${{ github.run_number }} (${{ github.event_name }})"
