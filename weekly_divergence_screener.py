@@ -1770,14 +1770,130 @@ def export_html(results, base_dir="D:/클로드 작업 공간"):
     print(f"     파일을 더블클릭하면 브라우저에서 바로 확인 가능!")
 
 
+def run_full_scan(top_n=500):
+    """기존 Render auto_scan_job 흐름 — 2단계 풀 스캔 (dashboard UI 호환).
+
+    Stage 1: 주봉 score_100 → score_10 ≥ 2.0 후보
+    Stage 2: 일봉 score_daily + 다이버전스 + total_score
+    """
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    import gc
+
+    print(f"\n{'='*60}\n  주봉 다이버전스 풀 스캔 (2단계)\n  대상: 상위 {top_n}개\n{'='*60}\n")
+
+    # 종목 수집
+    fast = os.environ.get("FAST_MODE") == "1" or os.environ.get("GITHUB_ACTIONS") == "true"
+    if fast:
+        print("[FAST] get_fallback_tickers 직행")
+        tickers = get_fallback_tickers(top_n)
+    else:
+        tickers = get_krx_tickers("ALL", top_n)
+    if not tickers:
+        return []
+    print(f"  → {len(tickers)} 종목 로드\n")
+
+    # ── Stage 1 ───────────────────────────────────
+    print("[1/2] 주봉 + score_100 (4 worker 병렬)")
+    min_score = 2.0
+
+    def _stage1(t):
+        try:
+            df = fetch_weekly_data(t["ticker"], is_korean=True)
+            if df is None: return None
+            df = calculate_indicators(df)
+            if df is None: return None
+            s100 = score_100(df)
+            if not s100 or s100["score_10"] < min_score: return None
+            close_vals = df["Close"].values
+            wk_ret_3m = None
+            if len(close_vals) >= 13 and close_vals[-13] > 0:
+                wk_ret_3m = round(((close_vals[-1] / close_vals[-13]) - 1) * 100, 1)
+            div_data = {}
+            if s100["score_10"] >= 2.0:
+                div = detect_bullish_divergence(df)
+                if div:
+                    div_data = {
+                        "divergence_count": div["divergence_count"],
+                        "divergences": div["divergences"],
+                        "div_score": div["score"],
+                        "bonus_signals": div.get("bonus_signals", []),
+                    }
+            return {"t": t, "s100": s100, "wk_ret_3m": wk_ret_3m, "div_data": div_data}
+        except Exception:
+            return None
+
+    candidates = []
+    with ThreadPoolExecutor(max_workers=4) as ex:
+        futs = {ex.submit(_stage1, t): t for t in tickers}
+        done = 0
+        for f in as_completed(futs):
+            r = f.result()
+            done += 1
+            if r is not None:
+                candidates.append(r)
+            if done % 100 == 0:
+                print(f"  진행 {done}/{len(tickers)} (후보 {len(candidates)})")
+    print(f"  → Stage 1: {len(candidates)} 후보\n")
+    gc.collect()
+
+    # ── Stage 2 ───────────────────────────────────
+    print("[2/2] 일봉 + 정밀 (4 worker 병렬)")
+
+    def _stage2(cand):
+        try:
+            t = cand["t"]
+            s100 = cand["s100"]
+            wk_ret_3m = cand["wk_ret_3m"]
+            df_daily = fetch_daily_data(t["ticker"], is_korean=True)
+            daily = score_daily(df_daily) if df_daily is not None else {
+                "daily_score": None, "daily_signals": [], "daily_rsi": 0,
+                "daily_vol_ratio": 0, "return_3m": None,
+                "vol_trend_60d": 1.0, "is_overheated": False,
+            }
+            result = {
+                "ticker": t["ticker"], "name": t["name"],
+                "themes": t.get("themes", []),
+                **s100, **daily, **cand["div_data"],
+                "earnings_type": "-",
+                "is_new_listing": bool(t.get("is_new_listing")),
+                "listing_date": t.get("listing_date"),
+                "weeks_available": t.get("weeks_available"),
+            }
+            if result.get("return_3m") is None and wk_ret_3m is not None:
+                result["return_3m"] = wk_ret_3m
+                result["is_overheated"] = bool(wk_ret_3m > 50)
+            elif result.get("return_3m") is None:
+                result["return_3m"] = 0
+            d_score = daily["daily_score"] if daily["daily_score"] is not None else 0
+            result["total_score"] = round(s100["score_10"] * 0.7 + d_score * 0.3, 1)
+            return result
+        except Exception:
+            return None
+
+    results = []
+    with ThreadPoolExecutor(max_workers=4) as ex:
+        futs = {ex.submit(_stage2, c): c for c in candidates}
+        done = 0
+        for f in as_completed(futs):
+            r = f.result()
+            done += 1
+            if r is not None:
+                results.append(r)
+            if done % 50 == 0:
+                print(f"  진행 {done}/{len(candidates)} ({len(results)} 라벨)")
+    print(f"  → Stage 2: {len(results)} 종목 라벨")
+    results.sort(key=lambda x: x.get("total_score", 0), reverse=True)
+    return results
+
+
 if __name__ == "__main__":
 
     market = sys.argv[1] if len(sys.argv) > 1 else "KR"
     top_n = int(sys.argv[2]) if len(sys.argv) > 2 else 100
 
     if market.upper() in ["KR", "KOSPI", "KOSDAQ", "ALL"]:
-        m = "ALL" if market.upper() == "KR" else market.upper()
-        results = screen_korean_stocks(market=m, top_n=top_n)
+        # 풀 스캔 (Render auto_scan_job 흐름) — dashboard UI 호환 데이터
+        results = run_full_scan(top_n=top_n)
     elif market.upper() == "US":
         results = screen_us_stocks()
     else:
