@@ -1849,6 +1849,51 @@ function getDivTradingRule(r) {
   };
 }
 
+// ── 다이버전스 한 줄 포맷 (지표 + 해석 + 변화율) ──
+function fmtDivRow(indicator, v) {
+  if (!v || typeof v !== 'object') return '';
+  const prev = v.prev_low, curr = v.curr_low, chg = v.change;
+
+  // 지표별 해석
+  const interp = {
+    'OBV':       { label: '매집 진행',   color: '#00ff88' },
+    'RSI':       { label: '모멘텀 상승',  color: '#7b9aff' },
+    'MACD_Hist': { label: '추세 전환',   color: '#ffaa00' },
+    'Stoch_K':   { label: '과매도 반등', color: '#ff6b8a' },
+  }[indicator] || { label: '다이버전스', color: '#7b9aff' };
+
+  // 지표별 숫자 포맷
+  const fmt = (n) => {
+    if (Math.abs(n) >= 1e8) return (n / 1e8).toFixed(2) + '억';
+    if (Math.abs(n) >= 1e4) return (n / 1e4).toFixed(1) + '만';
+    return n.toFixed(2);
+  };
+
+  // 변화율 (% 또는 절대값 p)
+  let chgStr;
+  if (Math.abs(prev) >= 1e6) {
+    // 큰 숫자 (OBV 등) — 백분율
+    const pct = prev !== 0 ? (chg / Math.abs(prev) * 100).toFixed(1) : '—';
+    chgStr = (chg > 0 ? '+' : '') + pct + '%';
+  } else {
+    // 작은 숫자 (RSI/MACD/Stoch) — 절대 변화
+    chgStr = (chg > 0 ? '+' : '') + chg.toFixed(2) + 'p';
+  }
+
+  // 표시 이름 정리
+  const displayName = {
+    'OBV': 'OBV',
+    'RSI': 'RSI',
+    'MACD_Hist': 'MACD',
+    'Stoch_K': 'Stoch',
+  }[indicator] || indicator;
+
+  return `<div>
+    <span><b style="color:${interp.color}">${displayName}</b> ${interp.label} <b style="color:${interp.color}">${chgStr}</b></span>
+    <span style="color:#6b7a99;font-size:12px">${fmt(prev)} → ${fmt(curr)}</span>
+  </div>`;
+}
+
 // ── 다이버전스 상세 모달 ──
 function openDivDetail(ticker) {
   const r = (allResults || []).find(x => x.ticker === ticker);
@@ -1866,9 +1911,7 @@ function openDivDetail(ticker) {
 
   const divEntries = Object.entries(r.divergences || {});
   const divHtml = divEntries.length
-    ? `<div class="div-table">${divEntries.map(([k, v]) =>
-        `<div><span style="color:#7b9aff">${k}</span><span>${typeof v === 'object' ? JSON.stringify(v) : v}</span></div>`
-      ).join('')}</div>`
+    ? `<div class="div-table">${divEntries.map(([k, v]) => fmtDivRow(k, v)).join('')}</div>`
     : '<div style="color:#6b7a99;font-size:12px">다이버전스 신호 없음</div>';
 
   const sigsHtml = (r.signals || []).map(s => `<span>${s}</span>`).join('') || '<span style="color:#6b7a99">없음</span>';
