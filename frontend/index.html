@@ -1805,18 +1805,26 @@ function getDivTradingRule(r) {
     };
   }
 
-  // 위치별 차등 (일반)
-  let sizeBase = '1/5';
-  let stopBase = '-5%';
-  let tpBase = '+15%';
+  // 점수 부족 — 관망 (진입 부적합, 수치 표시 X)
+  if (t < 3.0) {
+    return {
+      label: '👀 관망 (점수 부족)',
+      reason: `종합 ${t}점 — 진입 부적합`,
+      size: '관망', stop: '—', tp1: '—', tp2: null,
+      hold: '점수 ≥ 3.0 도달 대기',
+      note: '주봉/일봉 신호 강화 또는 매집 패턴 점등 후 재검토',
+      warn: null,
+    };
+  }
+
+  // 진입 가능 점수대 — 위치별 차등
+  let sizeBase, stopBase, tpBase;
   let hold = '점수 하락 또는 일봉 약화 시 청산';
 
   if (t >= 5.0) {
     sizeBase = '1/4'; stopBase = '-7%'; tpBase = '+20% 1차, +35% 2차';
-  } else if (t >= 3.0) {
+  } else {  // 3.0 ~ 5.0
     sizeBase = '1/5'; stopBase = '-7%'; tpBase = '+15% 1차, +25% 2차';
-  } else {
-    sizeBase = '1/6 (관찰성)'; stopBase = '-5%'; tpBase = '+10%';
   }
 
   let posNote = null;
