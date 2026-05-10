@@ -1,0 +1,625 @@
+{
+  "scan_date": "2026-05-10T14:54:33.726853",
+  "total_found": 27,
+  "results": [
+    {
+      "ticker": "053030",
+      "name": "바이넥스",
+      "divergence_count": 2,
+      "divergences": {
+        "Stochastic %K": {
+          "prev_low": 5.92,
+          "curr_low": 7.9,
+          "change": 1.98
+        },
+        "OBV": {
+          "prev_low": 14818190.0,
+          "curr_low": 15647642.0,
+          "change": 829452.0
+        }
+      },
+      "price_change_pct": -3.78,
+      "score": 3.0,
+      "bonus_signals": [
+        "Stochastic 과매도",
+        "MACD 히스토그램 반전"
+      ],
+      "current_price": 99400.0,
+      "current_rsi": 42.7,
+      "current_stoch": 28.5,
+      "current_macd_hist": -1248.53
+    },
+    {
+      "ticker": "950160",
+      "name": "코오롱티슈진",
+      "divergence_count": 2,
+      "divergences": {
+        "Stochastic %K": {
+          "prev_low": 5.92,
+          "curr_low": 7.9,
+          "change": 1.98
+        },
+        "OBV": {
+          "prev_low": 14818190.0,
+          "curr_low": 15647642.0,
+          "change": 829452.0
+        }
+      },
+      "price_change_pct": -3.78,
+      "score": 3.0,
+      "bonus_signals": [
+        "Stochastic 과매도",
+        "MACD 히스토그램 반전"
+      ],
+      "current_price": 99400.0,
+      "current_rsi": 42.7,
+      "current_stoch": 28.5,
+      "current_macd_hist": -1248.53
+    },
+    {
+      "ticker": "328130",
+      "name": "루닛",
+      "divergence_count": 2,
+      "divergences": {
+        "Stochastic %K": {
+          "prev_low": 5.92,
+          "curr_low": 7.9,
+          "change": 1.98
+        },
+        "OBV": {
+          "prev_low": 14818190.0,
+          "curr_low": 15647642.0,
+          "change": 829452.0
+        }
+      },
+      "price_change_pct": -3.78,
+      "score": 3.0,
+      "bonus_signals": [
+        "Stochastic 과매도",
+        "MACD 히스토그램 반전"
+      ],
+      "current_price": 99400.0,
+      "current_rsi": 42.7,
+      "current_stoch": 28.5,
+      "current_macd_hist": -1248.53
+    },
+    {
+      "ticker": "389030",
+      "name": "지놈앤컴퍼니",
+      "divergence_count": 2,
+      "divergences": {
+        "Stochastic %K": {
+          "prev_low": 5.92,
+          "curr_low": 7.9,
+          "change": 1.98
+        },
+        "OBV": {
+          "prev_low": 14818190.0,
+          "curr_low": 15647642.0,
+          "change": 829452.0
+        }
+      },
+      "price_change_pct": -3.78,
+      "score": 3.0,
+      "bonus_signals": [
+        "Stochastic 과매도",
+        "MACD 히스토그램 반전"
+      ],
+      "current_price": 99400.0,
+      "current_rsi": 42.7,
+      "current_stoch": 28.5,
+      "current_macd_hist": -1248.53
+    },
+    {
+      "ticker": "192400",
+      "name": "쿠쿠홀딩스",
+      "divergence_count": 2,
+      "divergences": {
+        "Stochastic %K": {
+          "prev_low": 15.24,
+          "curr_low": 17.4,
+          "change": 2.16
+        },
+        "MACD Histogram": {
+          "prev_low": -3500.61,
+          "curr_low": -3224.75,
+          "change": 275.86
+        }
+      },
+      "price_change_pct": -4.2,
+      "score": 3.0,
+      "bonus_signals": [
+        "MACD 히스토그램 반전",
+        "거래량 증가"
+      ],
+      "current_price": 141100.0,
+      "current_rsi": 59.5,
+      "current_stoch": 65.9,
+      "current_macd_hist": 1762.66
+    },
+    {
+      "ticker": "170900",
+      "name": "동아에스티",
+      "divergence_count": 2,
+      "divergences": {
+        "Stochastic %K": {
+          "prev_low": 15.24,
+          "curr_low": 17.4,
+          "change": 2.16
+        },
+        "MACD Histogram": {
+          "prev_low": -3500.61,
+          "curr_low": -3224.75,
+          "change": 275.86
+        }
+      },
+      "price_change_pct": -4.2,
+      "score": 3.0,
+      "bonus_signals": [
+        "MACD 히스토그램 반전",
+        "거래량 증가"
+      ],
+      "current_price": 141100.0,
+      "current_rsi": 59.5,
+      "current_stoch": 65.9,
+      "current_macd_hist": 1762.66
+    },
+    {
+      "ticker": "267260",
+      "name": "HD현대일렉트릭",
+      "divergence_count": 1,
+      "divergences": {
+        "OBV": {
+          "prev_low": 3868516.0,
+          "curr_low": 3920539.0,
+          "change": 52023.0
+        }
+      },
+      "price_change_pct": -2.39,
+      "score": 2.5,
+      "bonus_signals": [
+        "RSI 과매도 근처",
+        "Stochastic 과매도",
+        "거래량 증가"
+      ],
+      "current_price": 1472000.0,
+      "current_rsi": 37.5,
+      "current_stoch": 5.0,
+      "current_macd_hist": -26766.25
+    },
+    {
+      "ticker": "281820",
+      "name": "케이씨텍",
+      "divergence_count": 1,
+      "divergences": {
+        "OBV": {
+          "prev_low": 3868516.0,
+          "curr_low": 3920539.0,
+          "change": 52023.0
+        }
+      },
+      "price_change_pct": -2.39,
+      "score": 2.5,
+      "bonus_signals": [
+        "RSI 과매도 근처",
+        "Stochastic 과매도",
+        "거래량 증가"
+      ],
+      "current_price": 1472000.0,
+      "current_rsi": 37.5,
+      "current_stoch": 5.0,
+      "current_macd_hist": -26766.25
+    },
+    {
+      "ticker": "064350",
+      "name": "현대로템",
+      "divergence_count": 1,
+      "divergences": {
+        "OBV": {
+          "prev_low": 3868516.0,
+          "curr_low": 3920539.0,
+          "change": 52023.0
+        }
+      },
+      "price_change_pct": -2.39,
+      "score": 2.5,
+      "bonus_signals": [
+        "RSI 과매도 근처",
+        "Stochastic 과매도",
+        "거래량 증가"
+      ],
+      "current_price": 1472000.0,
+      "current_rsi": 37.5,
+      "current_stoch": 5.0,
+      "current_macd_hist": -26766.25
+    },
+    {
+      "ticker": "071970",
+      "name": "STX중공업",
+      "divergence_count": 1,
+      "divergences": {
+        "OBV": {
+          "prev_low": 3868516.0,
+          "curr_low": 3920539.0,
+          "change": 52023.0
+        }
+      },
+      "price_change_pct": -2.39,
+      "score": 2.5,
+      "bonus_signals": [
+        "RSI 과매도 근처",
+        "Stochastic 과매도",
+        "거래량 증가"
+      ],
+      "current_price": 1472000.0,
+      "current_rsi": 37.5,
+      "current_stoch": 5.0,
+      "current_macd_hist": -26766.25
+    },
+    {
+      "ticker": "020150",
+      "name": "일진머티리얼즈",
+      "divergence_count": 1,
+      "divergences": {
+        "OBV": {
+          "prev_low": 708950806.0,
+          "curr_low": 714111551.0,
+          "change": 5160745.0
+        }
+      },
+      "price_change_pct": -4.53,
+      "score": 2.0,
+      "bonus_signals": [
+        "MACD 히스토그램 반전",
+        "거래량 증가"
+      ],
+      "current_price": 31950.0,
+      "current_rsi": 60.2,
+      "current_stoch": 72.5,
+      "current_macd_hist": 133.7
+    },
+    {
+      "ticker": "006110",
+      "name": "삼아알미늄",
+      "divergence_count": 1,
+      "divergences": {
+        "OBV": {
+          "prev_low": 708950806.0,
+          "curr_low": 714111551.0,
+          "change": 5160745.0
+        }
+      },
+      "price_change_pct": -4.53,
+      "score": 2.0,
+      "bonus_signals": [
+        "MACD 히스토그램 반전",
+        "거래량 증가"
+      ],
+      "current_price": 31950.0,
+      "current_rsi": 60.2,
+      "current_stoch": 72.5,
+      "current_macd_hist": 133.7
+    },
+    {
+      "ticker": "069620",
+      "name": "대웅제약",
+      "divergence_count": 1,
+      "divergences": {
+        "OBV": {
+          "prev_low": 708950806.0,
+          "curr_low": 714111551.0,
+          "change": 5160745.0
+        }
+      },
+      "price_change_pct": -4.53,
+      "score": 2.0,
+      "bonus_signals": [
+        "MACD 히스토그램 반전",
+        "거래량 증가"
+      ],
+      "current_price": 31950.0,
+      "current_rsi": 60.2,
+      "current_stoch": 72.5,
+      "current_macd_hist": 133.7
+    },
+    {
+      "ticker": "011070",
+      "name": "LG이노텍",
+      "divergence_count": 1,
+      "divergences": {
+        "OBV": {
+          "prev_low": 708950806.0,
+          "curr_low": 714111551.0,
+          "change": 5160745.0
+        }
+      },
+      "price_change_pct": -4.53,
+      "score": 2.0,
+      "bonus_signals": [
+        "MACD 히스토그램 반전",
+        "거래량 증가"
+      ],
+      "current_price": 31950.0,
+      "current_rsi": 60.2,
+      "current_stoch": 72.5,
+      "current_macd_hist": 133.7
+    },
+    {
+      "ticker": "263810",
+      "name": "상신전자",
+      "divergence_count": 1,
+      "divergences": {
+        "OBV": {
+          "prev_low": 20499001.0,
+          "curr_low": 22701322.0,
+          "change": 2202321.0
+        }
+      },
+      "price_change_pct": -6.97,
+      "score": 2.0,
+      "bonus_signals": [
+        "MACD 히스토그램 반전",
+        "거래량 증가"
+      ],
+      "current_price": 592000.0,
+      "current_rsi": 73.2,
+      "current_stoch": 100.0,
+      "current_macd_hist": 3007.16
+    },
+    {
+      "ticker": "267790",
+      "name": "배럴",
+      "divergence_count": 1,
+      "divergences": {
+        "OBV": {
+          "prev_low": 20499001.0,
+          "curr_low": 22701322.0,
+          "change": 2202321.0
+        }
+      },
+      "price_change_pct": -6.97,
+      "score": 2.0,
+      "bonus_signals": [
+        "MACD 히스토그램 반전",
+        "거래량 증가"
+      ],
+      "current_price": 592000.0,
+      "current_rsi": 73.2,
+      "current_stoch": 100.0,
+      "current_macd_hist": 3007.16
+    },
+    {
+      "ticker": "270870",
+      "name": "뉴트리",
+      "divergence_count": 1,
+      "divergences": {
+        "OBV": {
+          "prev_low": 20499001.0,
+          "curr_low": 22701322.0,
+          "change": 2202321.0
+        }
+      },
+      "price_change_pct": -6.97,
+      "score": 2.0,
+      "bonus_signals": [
+        "MACD 히스토그램 반전",
+        "거래량 증가"
+      ],
+      "current_price": 592000.0,
+      "current_rsi": 73.2,
+      "current_stoch": 100.0,
+      "current_macd_hist": 3007.16
+    },
+    {
+      "ticker": "265520",
+      "name": "AP시스템",
+      "divergence_count": 1,
+      "divergences": {
+        "OBV": {
+          "prev_low": 20499001.0,
+          "curr_low": 22701322.0,
+          "change": 2202321.0
+        }
+      },
+      "price_change_pct": -6.97,
+      "score": 2.0,
+      "bonus_signals": [
+        "MACD 히스토그램 반전",
+        "거래량 증가"
+      ],
+      "current_price": 592000.0,
+      "current_rsi": 73.2,
+      "current_stoch": 100.0,
+      "current_macd_hist": 3007.16
+    },
+    {
+      "ticker": "014830",
+      "name": "유니드",
+      "divergence_count": 1,
+      "divergences": {
+        "OBV": {
+          "prev_low": 21423284.0,
+          "curr_low": 21671566.0,
+          "change": 248282.0
+        }
+      },
+      "price_change_pct": -5.0,
+      "score": 1.5,
+      "bonus_signals": [
+        "Stochastic 과매도"
+      ],
+      "current_price": 19190.0,
+      "current_rsi": 43.4,
+      "current_stoch": 12.5,
+      "current_macd_hist": -258.18
+    },
+    {
+      "ticker": "290650",
+      "name": "엘앤씨바이오",
+      "divergence_count": 1,
+      "divergences": {
+        "OBV": {
+          "prev_low": 41135933.0,
+          "curr_low": 42357946.0,
+          "change": 1222013.0
+        }
+      },
+      "price_change_pct": -5.97,
+      "score": 1.5,
+      "bonus_signals": [
+        "MACD 히스토그램 반전"
+      ],
+      "current_price": 62100.0,
+      "current_rsi": 54.3,
+      "current_stoch": 44.7,
+      "current_macd_hist": -799.86
+    },
+    {
+      "ticker": "278280",
+      "name": "천보",
+      "divergence_count": 1,
+      "divergences": {
+        "OBV": {
+          "prev_low": 41135933.0,
+          "curr_low": 42357946.0,
+          "change": 1222013.0
+        }
+      },
+      "price_change_pct": -5.97,
+      "score": 1.5,
+      "bonus_signals": [
+        "MACD 히스토그램 반전"
+      ],
+      "current_price": 62100.0,
+      "current_rsi": 54.3,
+      "current_stoch": 44.7,
+      "current_macd_hist": -799.86
+    },
+    {
+      "ticker": "282720",
+      "name": "KMH",
+      "divergence_count": 1,
+      "divergences": {
+        "OBV": {
+          "prev_low": 41135933.0,
+          "curr_low": 42357946.0,
+          "change": 1222013.0
+        }
+      },
+      "price_change_pct": -5.97,
+      "score": 1.5,
+      "bonus_signals": [
+        "MACD 히스토그램 반전"
+      ],
+      "current_price": 62100.0,
+      "current_rsi": 54.3,
+      "current_stoch": 44.7,
+      "current_macd_hist": -799.86
+    },
+    {
+      "ticker": "261200",
+      "name": "덴티움",
+      "divergence_count": 1,
+      "divergences": {
+        "OBV": {
+          "prev_low": 41135933.0,
+          "curr_low": 42357946.0,
+          "change": 1222013.0
+        }
+      },
+      "price_change_pct": -5.97,
+      "score": 1.5,
+      "bonus_signals": [
+        "MACD 히스토그램 반전"
+      ],
+      "current_price": 62100.0,
+      "current_rsi": 54.3,
+      "current_stoch": 44.7,
+      "current_macd_hist": -799.86
+    },
+    {
+      "ticker": "027580",
+      "name": "상보",
+      "divergence_count": 1,
+      "divergences": {
+        "OBV": {
+          "prev_low": 31068535.0,
+          "curr_low": 31439902.0,
+          "change": 371367.0
+        }
+      },
+      "price_change_pct": -5.16,
+      "score": 1.5,
+      "bonus_signals": [
+        "Stochastic 과매도"
+      ],
+      "current_price": 19540.0,
+      "current_rsi": 57.4,
+      "current_stoch": 20.8,
+      "current_macd_hist": -527.66
+    },
+    {
+      "ticker": "003920",
+      "name": "남양유업",
+      "divergence_count": 1,
+      "divergences": {
+        "OBV": {
+          "prev_low": 31068535.0,
+          "curr_low": 31439902.0,
+          "change": 371367.0
+        }
+      },
+      "price_change_pct": -5.16,
+      "score": 1.5,
+      "bonus_signals": [
+        "Stochastic 과매도"
+      ],
+      "current_price": 19540.0,
+      "current_rsi": 57.4,
+      "current_stoch": 20.8,
+      "current_macd_hist": -527.66
+    },
+    {
+      "ticker": "049520",
+      "name": "유아이엘",
+      "divergence_count": 1,
+      "divergences": {
+        "OBV": {
+          "prev_low": 31068535.0,
+          "curr_low": 31439902.0,
+          "change": 371367.0
+        }
+      },
+      "price_change_pct": -5.16,
+      "score": 1.5,
+      "bonus_signals": [
+        "Stochastic 과매도"
+      ],
+      "current_price": 19540.0,
+      "current_rsi": 57.4,
+      "current_stoch": 20.8,
+      "current_macd_hist": -527.66
+    },
+    {
+      "ticker": "046440",
+      "name": "KG모빌리언스",
+      "divergence_count": 1,
+      "divergences": {
+        "OBV": {
+          "prev_low": 31068535.0,
+          "curr_low": 31439902.0,
+          "change": 371367.0
+        }
+      },
+      "price_change_pct": -5.16,
+      "score": 1.5,
+      "bonus_signals": [
+        "Stochastic 과매도"
+      ],
+      "current_price": 19540.0,
+      "current_rsi": 57.4,
+      "current_stoch": 20.8,
+      "current_macd_hist": -527.66
+    }
+  ]
+}
