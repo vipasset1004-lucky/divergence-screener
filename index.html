@@ -55,6 +55,7 @@
     cursor: pointer;
     -webkit-appearance: none;
     appearance: none;
+    touch-action: manipulation;
   }
 
   select {
@@ -89,6 +90,7 @@
 
   .status-bar .stat { display: flex; align-items: center; gap: 4px; }
   .status-bar .stat .val { color: #00d4ff; font-weight: 600; }
+  .scan-progress { flex: 1; gap: 8px !important; min-width: 150px; }
 
   .main { padding: 12px; }
 
@@ -125,8 +127,8 @@
     margin-bottom: 12px;
   }
 
-  .card .name { font-size: 16px; font-weight: 700; color: #fff; }
-  .card .ticker { font-size: 11px; color: #6b7a99; margin-top: 2px; }
+  .card .name { font-size: 22px; font-weight: 700; color: #fff; }
+  .card .ticker { font-size: 14px; color: #6b7a99; margin-top: 2px; }
 
   /* ── 점수 바 (유니코드 별 대신 CSS 바) ── */
   .score-badge {
@@ -142,26 +144,148 @@
     white-space: nowrap;
   }
 
-  .score-badge.high { background: rgba(0, 212, 255, .15); color: #00d4ff; }
-  .score-badge.very-high { background: rgba(0, 255, 136, .15); color: #00ff88; }
-
-  .score-dots {
-    display: flex;
-    gap: 3px;
+  .pick-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ff6b2b, #ff4d6a);
+    color: #fff;
+    margin-bottom: 4px;
   }
 
-  .score-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
+  .earnings-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 4px;
+  }
+
+  .earnings-tag.surge { background: rgba(0,255,136,.15); color: #00ff88; }
+  .earnings-tag.up { background: rgba(0,212,255,.12); color: #00d4ff; }
+  .earnings-tag.turn { background: rgba(255,215,0,.15); color: #ffd700; }
+  .earnings-tag.down { background: rgba(255,170,0,.1); color: #ffaa00; }
+  .earnings-tag.loss { background: rgba(255,77,106,.12); color: #ff4d6a; }
+
+  .position-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-bottom: 4px;
+    margin-left: 4px;
+  }
+
+  .position-tag.bottom {
+    background: rgba(0, 200, 255, .15);
+    color: #00c8ff;
+  }
+
+  .position-tag.early {
+    background: rgba(0, 255, 136, .15);
+    color: #00ff88;
+  }
+
+  .position-tag.mid {
+    background: rgba(255, 170, 0, .12);
+    color: #ffaa00;
+  }
+
+  .position-tag.high {
+    background: rgba(255, 77, 106, .15);
+    color: #ff4d6a;
+  }
+
+  .div-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #00d4ff, #7b61ff);
+    color: #fff;
+    margin-bottom: 4px;
+    margin-right: 4px;
+  }
+
+  .tenbagger-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ffd700, #ff8c00);
+    color: #000;
+    margin-bottom: 4px;
+  }
+
+  .overheat-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: rgba(255, 0, 0, .2);
+    color: #ff4444;
+    margin-bottom: 4px;
+  }
+  .new-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ff6bb5, #ff8fc8);
+    color: #fff;
+    margin-bottom: 4px;
+    margin-right: 4px;
+  }
+  .surge-tag {
+    display: inline-block;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 8px;
+    margin-left: 6px;
+  }
+  .surge-tag.ready { background: rgba(0,255,136,.15); color: #00ff88; }
+  .surge-tag.early { background: rgba(0,212,255,.15); color: #00d4ff; }
+  .surge-tag.down  { background: rgba(255,77,106,.15); color: #ff4d6a; }
+  .surge-tag.wait  { background: rgba(255,170,0,.12); color: #ffaa00; }
+
+  .score-badge.grade-S { background: rgba(255, 0, 80, .2); color: #ff4d6a; }
+  .score-badge.grade-A { background: rgba(0, 255, 136, .15); color: #00ff88; }
+  .score-badge.grade-B { background: rgba(0, 212, 255, .15); color: #00d4ff; }
+  .score-badge.grade-C { background: rgba(255, 170, 0, .12); color: #ffaa00; }
+
+  .score-bar-wrap {
+    width: 40px;
+    height: 6px;
     background: #2a3555;
+    border-radius: 3px;
+    overflow: hidden;
   }
 
-  .score-dot.filled { background: currentColor; }
+  .score-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width .3s;
+  }
 
   .score-num {
+    font-size: 22px;
+    font-weight: 800;
+  }
+
+  .grade-label {
     font-size: 13px;
     font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+    background: rgba(255,255,255,.1);
   }
 
   /* ── 지표 영역 ── */
@@ -180,15 +304,15 @@
   }
 
   .metric .label {
-    font-size: 9px;
-    color: #4a5578;
+    font-size: 13px;
+    color: #c9a83e;
     text-transform: uppercase;
     letter-spacing: .5px;
     margin-bottom: 3px;
   }
 
   .metric .value {
-    font-size: 13px;
+    font-size: 18px;
     font-weight: 600;
     color: #c8d0e0;
   }
@@ -205,8 +329,8 @@
   }
 
   .div-tag {
-    font-size: 11px;
-    padding: 3px 8px;
+    font-size: 13px;
+    padding: 3px 9px;
     border-radius: 20px;
     background: rgba(123, 97, 255, .12);
     color: #a78bfa;
@@ -216,13 +340,187 @@
   .bonus-signals { display: flex; flex-wrap: wrap; gap: 5px; }
 
   .bonus-tag {
-    font-size: 11px;
-    padding: 3px 8px;
+    font-size: 13px;
+    padding: 3px 9px;
     border-radius: 20px;
     background: rgba(0, 255, 136, .08);
     color: #34d399;
     border: 1px solid rgba(0, 255, 136, .2);
   }
+
+  .theme-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+
+  .theme-tag {
+    font-size: 14px;
+    padding: 4px 10px;
+    border-radius: 10px;
+    background: rgba(255, 170, 0, .1);
+    color: #e6a817;
+    border: 1px solid rgba(255, 170, 0, .15);
+  }
+
+  .filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 10px 16px;
+    background: #0d1321;
+    border-bottom: 1px solid #1e2a45;
+    overflow-x: auto;
+  }
+
+  .filter-chip {
+    font-size: 11px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #141a2e;
+    color: #6b7a99;
+    border: 1px solid #2a3555;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background .15s, color .15s, border-color .15s;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .filter-chip.active {
+    background: rgba(74, 108, 247, .2);
+    color: #7b9aff;
+    border-color: #4a6cf7;
+  }
+
+  .filter-chip:active { opacity: .7; }
+
+  .filter-chip.daily {
+    border-color: #3a2040;
+    color: #8b6b99;
+  }
+
+  .filter-chip.daily.active {
+    background: rgba(255, 107, 138, .15);
+    color: #ff6b8a;
+    border-color: #ff4d6a;
+  }
+
+  .filter-chip[data-new].active {
+    background: rgba(255, 143, 200, .25) !important;
+    color: #ff8fc8 !important;
+    border-color: #ff8fc8 !important;
+    box-shadow: 0 0 8px rgba(255, 143, 200, .5);
+  }
+
+  /* 위치 필터 칩 — 각 색상 유지하면서 active 시 배경+글로우 */
+  .filter-chip[data-pos="바닥 출발"].active {
+    background: rgba(0, 200, 255, .2) !important;
+    color: #00c8ff !important;
+    border-color: #00c8ff !important;
+    box-shadow: 0 0 8px rgba(0, 200, 255, .4);
+  }
+  .filter-chip[data-pos="상승 초입"].active {
+    background: rgba(0, 255, 136, .2) !important;
+    color: #00ff88 !important;
+    border-color: #00ff88 !important;
+    box-shadow: 0 0 8px rgba(0, 255, 136, .4);
+  }
+  .filter-chip[data-pos="상승 중반"].active {
+    background: rgba(255, 165, 0, .2) !important;
+    color: #ffa500 !important;
+    border-color: #ffa500 !important;
+    box-shadow: 0 0 8px rgba(255, 165, 0, .4);
+  }
+  .filter-chip[data-pos="신고가 돌파"].active {
+    background: rgba(255, 77, 106, .2) !important;
+    color: #ff4d6a !important;
+    border-color: #ff4d6a !important;
+    box-shadow: 0 0 8px rgba(255, 77, 106, .4);
+  }
+
+  /* GAP, 다이버전스, 검증조합 칩도 동일하게 */
+  .filter-chip[data-gap].active {
+    background: rgba(197, 143, 255, .2) !important;
+    color: #c58fff !important;
+    border-color: #c58fff !important;
+    box-shadow: 0 0 8px rgba(197, 143, 255, .4);
+  }
+  .filter-chip[data-combo="early"].active {
+    background: rgba(255, 215, 107, .2) !important;
+    color: #ffd76b !important;
+    border-color: #ffd76b !important;
+    box-shadow: 0 0 8px rgba(255, 215, 107, .4);
+  }
+  .filter-chip[data-combo="prelaunch"].active {
+    background: rgba(255, 168, 74, .2) !important;
+    color: #ffa84a !important;
+    border-color: #ffa84a !important;
+    box-shadow: 0 0 8px rgba(255, 168, 74, .4);
+  }
+  .filter-chip[data-combo="momentum"].active {
+    background: rgba(107, 255, 176, .2) !important;
+    color: #6bffb0 !important;
+    border-color: #6bffb0 !important;
+    box-shadow: 0 0 8px rgba(107, 255, 176, .4);
+  }
+  .filter-chip[data-combo="premium"].active {
+    background: rgba(255, 60, 60, .15) !important;
+    color: #ff6060 !important;
+    border-color: #ff6060 !important;
+    box-shadow: 0 0 10px rgba(255, 60, 60, .5);
+  }
+  #repeatFilter.active {
+    background: rgba(100, 180, 255, .15) !important;
+    color: #64b4ff !important;
+    border-color: #64b4ff !important;
+    box-shadow: 0 0 8px rgba(100, 180, 255, .4);
+  }
+  .filter-chip[data-div].active {
+    background: rgba(123, 97, 255, .2) !important;
+    color: #7b61ff !important;
+    border-color: #7b61ff !important;
+    box-shadow: 0 0 8px rgba(123, 97, 255, .4);
+  }
+
+  .daily-signals { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+
+  .daily-tag {
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    background: rgba(255, 107, 138, .1);
+    color: #ff6b8a;
+    border: 1px solid rgba(255, 107, 138, .2);
+  }
+
+  .score-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 11px;
+  }
+
+  .score-label { color: #e6c84a; }
+  .score-val { font-weight: 700; }
+  .score-val.weekly { color: #7b9aff; }
+  .score-val.daily { color: #ff6b8a; }
+  .score-val.total { color: #00ff88; font-size: 13px; }
+  .score-val.gap { color: #c58fff; font-weight: 800; }
+  .score-val.gap.strong { color: #ff9ef0; text-shadow: 0 0 6px rgba(255,158,240,.5); }
+
+  .search-box {
+    background: #0e1526;
+    border: 1px solid #2a3550;
+    color: #d8def0;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    outline: none;
+    width: 140px;
+    transition: border-color .15s, width .2s;
+  }
+  .search-box:focus { border-color: #4a6cf7; width: 180px; }
+  .search-box::placeholder { color: #4a5578; }
 
   .empty-state {
     text-align: center;
@@ -260,6 +558,51 @@
   .log-area .log-line.info { color: #00d4ff; }
   .log-area .log-line.success { color: #00ff88; }
 
+  /* ── 모달 ── */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,.85);
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 20px;
+  }
+
+  .modal-overlay.active { display: flex; justify-content: center; align-items: flex-start; }
+
+  .modal-content {
+    background: #111827;
+    border: 1px solid #2a3555;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 800px;
+    padding: 16px;
+    margin-top: 20px;
+  }
+
+  .modal-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+  .modal-title { font-size: 18px; font-weight: 700; color: #fff; }
+  .modal-sub { font-size: 12px; color: #6b7a99; margin-top: 2px; }
+  .modal-close { background: none; border: none; color: #6b7a99; font-size: 18px; cursor: pointer; padding: 4px 8px; }
+  .modal-close:hover { color: #fff; }
+
+  .modal-tabs { display: flex; gap: 8px; margin-bottom: 12px; }
+  .modal-tab {
+    padding: 6px 16px; border-radius: 20px; border: 1px solid #2a3555;
+    background: #0d1321; color: #6b7a99; font-size: 12px; cursor: pointer;
+  }
+  .modal-tab.active { background: rgba(74,108,247,.2); color: #7b9aff; border-color: #4a6cf7; }
+
+  #chartCanvas { width: 100%; height: 250px; background: #0a0e17; border-radius: 8px; margin-bottom: 12px; }
+
+  .modal-scores {
+    display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 10px;
+    font-size: 12px; color: #c8d0e0;
+  }
+
+  .modal-signals { display: flex; flex-wrap: wrap; gap: 5px; }
+
   /* ── 데스크톱 (768px 이상) ── */
   @media (min-width: 769px) {
     .header { padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
@@ -268,6 +611,7 @@
     .controls { display: flex; gap: 10px; }
     .controls select, .controls button { padding: 8px 14px; font-size: 13px; }
     .btn-scan { grid-column: auto; padding: 8px 20px; }
+    .filter-row { padding: 10px 32px; }
     .status-bar { padding: 10px 32px; }
     .main { padding: 24px 32px; }
     .cards {
@@ -282,35 +626,188 @@
     .metric .value { font-size: 14px; }
     .log-area { max-height: 150px; }
   }
+
+  /* ── 섹터 클러스터 박스 ── */
+  .cluster-box {
+    background: linear-gradient(135deg, #1a2340 0%, #0d1321 100%);
+    border: 1px solid #2a3a66;
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+  }
+  .cluster-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffd700;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .cluster-title .sub { font-size: 10px; font-weight: 400; color: #8a95b3; }
+  .cluster-item {
+    background: #0d1321;
+    border-left: 3px solid #4a5578;
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin-bottom: 6px;
+    font-size: 12px;
+  }
+  .cluster-item:last-child { margin-bottom: 0; }
+  .cluster-item.tier-gold { border-left-color: #ffd700; background: linear-gradient(90deg, rgba(255,215,0,.08), #0d1321); }
+  .cluster-item.tier-silver { border-left-color: #00d4ff; }
+  .cluster-item-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+  }
+  .cluster-theme-name {
+    font-weight: 700;
+    color: #fff;
+    font-size: 13px;
+  }
+  .cluster-count {
+    font-size: 11px;
+    color: #8a95b3;
+    background: rgba(255,255,255,.06);
+    padding: 2px 6px;
+    border-radius: 8px;
+  }
+  .cluster-item.tier-gold .cluster-count { color: #ffd700; background: rgba(255,215,0,.12); }
+  .cluster-stocks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .cluster-stock {
+    font-size: 11px;
+    padding: 2px 7px;
+    border-radius: 8px;
+    background: rgba(255,255,255,.05);
+    color: #c8d0e0;
+  }
+  .cluster-stock.has-pick {
+    background: linear-gradient(135deg, #ff6b2b, #ff4d6a);
+    color: #fff;
+    font-weight: 600;
+  }
+  .cluster-stock.strong {
+    background: rgba(255,215,0,.18);
+    color: #ffd76b;
+    font-weight: 600;
+  }
+  .cluster-stock.strong.has-pick {
+    background: linear-gradient(135deg, #ff8c00, #ff4d6a);
+    color: #fff;
+  }
 </style>
 </head>
 <body>
 
 <div class="header">
   <div>
-    <h1>Weekly Bullish Divergence Screener</h1>
-    <div class="sub">주봉 상승 다이버전스 - 주가 하락 + 지표 상승 패턴</div>
+    <h1>Stock Surge Screener</h1>
+    <div class="sub">100점 만점 급등 확률 스코어링 - 14개 패턴 종합 분석</div>
   </div>
   <div class="controls">
+    <input id="searchBox" class="search-box" type="text" placeholder="종목명/티커 검색" oninput="onSearchInput()">
     <select id="market">
       <option value="KR">한국 전체</option>
       <option value="KOSPI">KOSPI</option>
       <option value="KOSDAQ">KOSDAQ</option>
       <option value="US">미국 주식</option>
     </select>
-    <select id="minScore">
-      <option value="1">1점 이상</option>
-      <option value="1.5" selected>1.5점 이상</option>
-      <option value="2">2점 이상</option>
-      <option value="3">3점 이상</option>
+    <select id="topN">
+      <option value="50">50종목</option>
+      <option value="100" selected>100종목</option>
+      <option value="200">200종목</option>
+      <option value="300">300종목</option>
+      <option value="527">전체 (527)</option>
     </select>
-    <button class="btn-scan" id="btnScan" onclick="startScan()">스캔 시작</button>
+    <select id="minScore">
+      <option value="tenbagger">텐버거 포착</option>
+      <option value="pick">핵심 포착</option>
+      <option value="0">전체</option>
+      <option value="2" selected>2.0+</option>
+      <option value="4">4.0+ (B)</option>
+      <option value="5.5">5.5+ (A)</option>
+      <option value="7">7.0+ (S)</option>
+    </select>
+    <select id="sortBy" onchange="filterAndRender()" title="정렬 기준">
+      <option value="total" selected>종합 순</option>
+      <option value="gap">GAP 순</option>
+      <option value="weekly">주봉 순</option>
+      <option value="daily">일봉 순</option>
+    </select>
+    <button class="btn-scan" id="btnScan" onclick="startScan()">새로고침</button>
   </div>
 </div>
 
+<div class="filter-row" id="filterRow">
+  <span style="color:#4a5578;font-size:11px;padding:5px 0;">핵심 신호:</span>
+  <div class="filter-chip" data-sig="Pocket Pivot" onclick="toggleFilter(this)">Pocket Pivot</div>
+  <div class="filter-chip" data-sig="볼린저 스퀴즈" onclick="toggleFilter(this)">볼린저 스퀴즈</div>
+  <div class="filter-chip" data-sig="매집비율" onclick="toggleFilter(this)">매집 2배+</div>
+  <div class="filter-chip" data-sig="OBV 매집" onclick="toggleFilter(this)">OBV 매집</div>
+  <div class="filter-chip" data-sig="VCP" onclick="toggleFilter(this)">VCP 수축</div>
+  <div class="filter-chip" data-sig="MACD 골든" onclick="toggleFilter(this)">MACD 골든</div>
+  <div class="filter-chip" data-sig="정배열" onclick="toggleFilter(this)">정배열</div>
+  <div class="filter-chip" data-sig="종가 밀집" onclick="toggleFilter(this)">종가 밀집</div>
+  <div class="filter-chip" data-sig="RSI 다이버" onclick="toggleFilter(this)">RSI 다이버전스</div>
+  <div class="filter-chip" data-sig="상대강도" onclick="toggleFilter(this)">상대강도</div>
+  <div class="filter-chip" data-sig="거래량 고갈" onclick="toggleFilter(this)">거래량 고갈</div>
+  <div class="filter-chip" data-sig="저항선" onclick="toggleFilter(this)">저항선 터치</div>
+  <span style="color:#4a5578;margin-left:8px;">|</span>
+  <div class="filter-chip" data-div="1" onclick="toggleDivFilter(this)" style="color:#7b61ff;border-color:#3a2a6a;">다이버전스</div>
+  <span style="color:#4a5578;margin-left:8px;">|</span>
+  <span style="color:#c58fff;font-size:11px;padding:5px 0;" title="주봉-일봉 점수 차이">GAP:</span>
+  <div class="filter-chip" data-gap="2" onclick="toggleGapFilter(this)" style="color:#c58fff;border-color:#3a2a5a;" title="약한 선행 - 기관 약간 앞섬">GAP ≥ 2</div>
+  <div class="filter-chip" data-gap="3" onclick="toggleGapFilter(this)" style="color:#ff9ef0;border-color:#4a2a5a;" title="GAP 스윗스팟 (주봉은 강한데 일봉은 조용) - 재검증 예정">GAP ≥ 3 ⭐</div>
+  <span style="color:#4a5578;margin-left:8px;">|</span>
+  <span style="color:#ffd76b;font-size:11px;padding:5px 0;" title="2026-04 재백테스트 검증 (498건)">검증 조합:</span>
+  <div class="filter-chip" data-combo="early" onclick="toggleComboFilter(this)" style="color:#ffd76b;border-color:#5a4a1a;" title="주봉≥6.0 & 일봉≤3.5 (선점형) · 백테스트: 3M +18.6%, MAX≥50% 35.7%">⭐ 선점형</div>
+  <div class="filter-chip" data-combo="prelaunch" onclick="toggleComboFilter(this)" style="color:#ffa84a;border-color:#5a3a1a;" title="주봉≥6.5 & 일봉≤4.5 (급등 직전) · 백테스트: MAX≥50% 60%, MAX≥100% 20% (n=5)">⚡ 급등 직전</div>
+  <div class="filter-chip" data-combo="momentum" onclick="toggleComboFilter(this)" style="color:#6bffb0;border-color:#1a5a3a;" title="GAP≥3 & 주봉≥6 (최강 조합) · 백테스트: 3M +26.6%, MAX≥50% 46.7%">💎 최강 조합</div>
+  <div class="filter-chip" data-combo="premium" onclick="toggleComboFilter(this)" style="color:#ff6060;border-color:#5a1a1a;" title="매집비율 + 트렌드 + 점수≥3.0 · 백테스트 승률 80%+, 평균 수익 19%+">🔥 프리미엄</div>
+  <span style="color:#4a5578;margin-left:8px;">|</span>
+  <div class="filter-chip" data-new="1" onclick="toggleNewFilter(this)" style="color:#ff8fc8;border-color:#5a2a4a;" title="상장 52-104주 신규 상장 종목만 (완화 모드)">🆕 신규상장</div>
+</div>
+
+<div class="filter-row" id="filterRowDaily" style="border-top:none;padding-top:0;">
+  <span style="color:#ff6b8a;font-size:11px;padding:5px 0;">일봉 타이밍:</span>
+  <div class="filter-chip daily" data-dsig="거래량 폭발" onclick="toggleDailyFilter(this)">거래량 폭발</div>
+  <div class="filter-chip daily" data-dsig="5일선 돌파" onclick="toggleDailyFilter(this)">5일선 돌파</div>
+  <div class="filter-chip daily" data-dsig="MACD 골든" onclick="toggleDailyFilter(this)">MACD 골든</div>
+  <div class="filter-chip daily" data-dsig="지지 반등" onclick="toggleDailyFilter(this)">지지 반등</div>
+  <div class="filter-chip daily" data-dsig="갭상승" onclick="toggleDailyFilter(this)">갭상승</div>
+  <div class="filter-chip daily" data-dsig="RSI" onclick="toggleDailyFilter(this)">RSI 반등</div>
+  <div class="filter-chip daily" data-dsig="정배열" onclick="toggleDailyFilter(this)">일봉 정배열</div>
+  <span style="color:#4a5578;margin-left:8px;">|</span>
+  <span style="color:#00c8ff;font-size:11px;padding:5px 0;">위치:</span>
+  <div class="filter-chip" data-pos="바닥 출발" onclick="togglePosFilter(this)" style="color:#00c8ff;border-color:#1a3a4a;">바닥 출발</div>
+  <div class="filter-chip" data-pos="상승 초입" onclick="togglePosFilter(this)" style="color:#00ff88;border-color:#1a4a2a;">상승 초입</div>
+  <div class="filter-chip" data-pos="상승 중반" onclick="togglePosFilter(this)" style="color:#ffa500;border-color:#4a3a1a;">상승 중반</div>
+  <div class="filter-chip" data-pos="신고가 돌파" onclick="togglePosFilter(this)" style="color:#ff4d6a;border-color:#4a1a2a;">신고가 돌파</div>
+  <span style="color:#4a5578;margin-left:8px;">|</span>
+  <span style="color:#50e090;font-size:11px;padding:5px 0;">실적:</span>
+  <div class="filter-chip" data-earnings="실적 급증" onclick="toggleEarningsFilter(this)" style="color:#ff6060;border-color:#5a1a1a;">실적 급증</div>
+  <div class="filter-chip" data-earnings="실적 증가" onclick="toggleEarningsFilter(this)" style="color:#50e090;border-color:#1a4a2a;">실적 증가</div>
+  <div class="filter-chip" data-earnings="흑자 전환" onclick="toggleEarningsFilter(this)" style="color:#7eb3ff;border-color:#1a2a5a;">흑자 전환</div>
+  <span style="color:#4a5578;margin-left:8px;">|</span>
+  <div class="filter-chip" id="repeatFilter" onclick="toggleRepeatFilter(this)" style="color:#64b4ff;border-color:#1a2a5a;" title="연속 2회 이상 스캔에 등장한 종목만 표시">🔁 연속 등장</div>
+</div>
+
+<div id="cacheNotice" style="display:none;text-align:center;padding:6px 16px;background:#1a2a45;color:#7eb3ff;font-size:13px;border-bottom:1px solid #1e2a45;"></div>
 <div class="status-bar">
   <div class="stat">발견: <span class="val" id="foundCount">-</span></div>
   <div class="stat">업데이트: <span class="val" id="lastUpdate">-</span></div>
+  <div class="stat scan-progress" id="scanProgress" style="display:none;">
+    <span id="progressText">스캔 중...</span>
+    <div style="flex:1;height:4px;background:#1e2a45;border-radius:2px;min-width:100px;overflow:hidden;">
+      <div id="progressFill" style="height:100%;background:linear-gradient(90deg,#4a6cf7,#00d4ff);width:0%;transition:width .3s;border-radius:2px;"></div>
+    </div>
+  </div>
 </div>
 
 <div class="main">
@@ -323,14 +820,62 @@
   </div>
 </div>
 
+<!-- 상세 모달 -->
+<div class="modal-overlay" id="detailModal" onclick="if(event.target===this)closeDetail()">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title" id="modalTitle">-</div>
+        <div class="modal-sub" id="modalSub">-</div>
+      </div>
+      <button class="modal-close" onclick="closeDetail()">X</button>
+    </div>
+    <div class="modal-tabs">
+      <button class="modal-tab active" onclick="switchChart('weekly',this)">주봉</button>
+      <button class="modal-tab" onclick="switchChart('daily',this)">일봉</button>
+    </div>
+    <canvas id="chartCanvas" width="800" height="300"></canvas>
+    <div class="modal-scores" id="modalScores"></div>
+    <div class="modal-signals" id="modalSignals"></div>
+  </div>
+</div>
+
 <div class="disclaimer">
   기술적 분석 참고용 | 투자 추천이 아닙니다 | 투자 판단과 책임은 본인에게 있습니다
 </div>
 
 <script>
-const EMBEDDED_DATA = {"scan_date": "2026-04-05T14:23:29.744331", "total_found": 28, "results": [{"ticker": "460870", "name": "에스엠씨지", "divergence_count": 3, "divergences": {"Stochastic %K": {"prev_low": 4.74, "curr_low": 14.59, "change": 9.85}, "RSI": {"prev_low": 31.07, "curr_low": 32.48, "change": 1.41}, "MACD Histogram": {"prev_low": -51.09, "curr_low": -4.86, "change": 46.23}}, "price_change_pct": -4.27, "score": 4.0, "bonus_signals": ["MACD 히스토그램 반전", "거래량 증가"], "current_price": 3610.0, "current_rsi": 42.7, "current_stoch": 45.7, "current_macd_hist": 101.69}, {"ticker": "373220", "name": "LG에너지솔루션", "divergence_count": 3, "divergences": {"Stochastic %K": {"prev_low": 19.41, "curr_low": 21.1, "change": 1.69}, "MACD Histogram": {"prev_low": -7161.68, "curr_low": -5267.28, "change": 1894.4}, "OBV": {"prev_low": 10685398.0, "curr_low": 11536282.0, "change": 850884.0}}, "price_change_pct": -4.16, "score": 3.5, "bonus_signals": ["MACD 히스토그램 반전"], "current_price": 398500.0, "current_rsi": 51.7, "current_stoch": 48.2, "current_macd_hist": -2807.95}, {"ticker": "285800", "name": "진영", "divergence_count": 2, "divergences": {"Stochastic %K": {"prev_low": 6.01, "curr_low": 6.23, "change": 0.21}, "MACD Histogram": {"prev_low": -19.69, "curr_low": -14.18, "change": 5.51}}, "price_change_pct": -9.1, "score": 3.5, "bonus_signals": ["Stochastic 과매도", "MACD 히스토그램 반전", "거래량 증가"], "current_price": 1709.0, "current_rsi": 50.8, "current_stoch": 29.7, "current_macd_hist": 50.92}, {"ticker": "356680", "name": "엑스게이트", "divergence_count": 3, "divergences": {"Stochastic %K": {"prev_low": 8.24, "curr_low": 25.25, "change": 17.01}, "MACD Histogram": {"prev_low": -111.87, "curr_low": -91.9, "change": 19.97}, "OBV": {"prev_low": 22584369.0, "curr_low": 23826271.0, "change": 1241902.0}}, "price_change_pct": -4.72, "score": 3.5, "bonus_signals": ["Stochastic 과매도"], "current_price": 6870.0, "current_rsi": 43.4, "current_stoch": 25.6, "current_macd_hist": -81.18}, {"ticker": "259960", "name": "크래프톤", "divergence_count": 3, "divergences": {"Stochastic %K": {"prev_low": 17.32, "curr_low": 25.87, "change": 8.54}, "RSI": {"prev_low": 29.16, "curr_low": 34.74, "change": 5.59}, "MACD Histogram": {"prev_low": -287.26, "curr_low": 2988.85, "change": 3276.11}}, "price_change_pct": -4.24, "score": 3, "bonus_signals": [], "current_price": 243500.0, "current_rsi": 44.3, "current_stoch": 51.7, "current_macd_hist": 3924.68}, {"ticker": "098070", "name": "한텍", "divergence_count": 2, "divergences": {"Stochastic %K": {"prev_low": 34.12, "curr_low": 45.61, "change": 11.48}, "MACD Histogram": {"prev_low": -380.7, "curr_low": 113.71, "change": 494.41}}, "price_change_pct": -3.02, "score": 3.0, "bonus_signals": ["MACD 히스토그램 반전", "거래량 증가"], "current_price": 49300.0, "current_rsi": 64.1, "current_stoch": 61.9, "current_macd_hist": 1631.97}, {"ticker": "419530", "name": "SAMG엔터", "divergence_count": 2, "divergences": {"MACD Histogram": {"prev_low": -1065.73, "curr_low": -236.13, "change": 829.6}, "OBV": {"prev_low": 11265882.0, "curr_low": 12323507.0, "change": 1057625.0}}, "price_change_pct": -6.26, "score": 3.0, "bonus_signals": ["RSI 과매도 근처", "Stochastic 과매도"], "current_price": 33000.0, "current_rsi": 36.1, "current_stoch": 20.1, "current_macd_hist": 169.13}, {"ticker": "382900", "name": "범한퓨얼셀", "divergence_count": 3, "divergences": {"Stochastic %K": {"prev_low": 30.4, "curr_low": 42.68, "change": 12.28}, "MACD Histogram": {"prev_low": -394.06, "curr_low": -383.52, "change": 10.54}, "OBV": {"prev_low": 29667393.0, "curr_low": 30211960.0, "change": 544567.0}}, "price_change_pct": -4.08, "score": 3, "bonus_signals": [], "current_price": 28550.0, "current_rsi": 49.1, "current_stoch": 35.1, "current_macd_hist": -627.64}, {"ticker": "376930", "name": "노을", "divergence_count": 2, "divergences": {"Stochastic %K": {"prev_low": 2.08, "curr_low": 11.83, "change": 9.75}, "MACD Histogram": {"prev_low": -59.05, "curr_low": -37.1, "change": 21.95}}, "price_change_pct": -8.29, "score": 3.0, "bonus_signals": ["RSI 과매도 근처", "MACD 히스토그램 반전"], "current_price": 1625.0, "current_rsi": 38.3, "current_stoch": 32.5, "current_macd_hist": -19.81}, {"ticker": "SMCI", "name": "SMCI", "divergence_count": 1, "divergences": {"MACD Histogram": {"prev_low": -1.34, "curr_low": -0.78, "change": 0.56}}, "price_change_pct": -29.47, "score": 3.0, "bonus_signals": ["RSI 과매도 근처", "Stochastic 과매도", "MACD 히스토그램 반전", "거래량 증가"], "current_price": 23.0, "current_rsi": 35.8, "current_stoch": 24.2, "current_macd_hist": -0.78}, {"ticker": "287840", "name": "인투셀", "divergence_count": 2, "divergences": {"Stochastic %K": {"prev_low": 4.2, "curr_low": 11.36, "change": 7.16}, "OBV": {"prev_low": 52932466.0, "curr_low": 53272511.0, "change": 340045.0}}, "price_change_pct": -5.19, "score": 2.5, "bonus_signals": ["Stochastic 과매도"], "current_price": 38500.0, "current_rsi": 41.3, "current_stoch": 4.0, "current_macd_hist": -2268.86}, {"ticker": "405100", "name": "큐알티", "divergence_count": 2, "divergences": {"MACD Histogram": {"prev_low": 76.89, "curr_low": 79.99, "change": 3.1}, "OBV": {"prev_low": 4944498.0, "curr_low": 5131171.0, "change": 186673.0}}, "price_change_pct": -2.83, "score": 2.5, "bonus_signals": ["Stochastic 과매도"], "current_price": 15100.0, "current_rsi": 45.6, "current_stoch": 16.3, "current_macd_hist": -180.83}, {"ticker": "299030", "name": "하나기술", "divergence_count": 2, "divergences": {"MACD Histogram": {"prev_low": -621.47, "curr_low": -617.04, "change": 4.42}, "OBV": {"prev_low": 1893527.0, "curr_low": 2348736.0, "change": 455209.0}}, "price_change_pct": -10.17, "score": 2.5, "bonus_signals": ["Stochastic 과매도"], "current_price": 25650.0, "current_rsi": 44.3, "current_stoch": 18.4, "current_macd_hist": -697.71}, {"ticker": "487570", "name": "HS효성", "divergence_count": 2, "divergences": {"MACD Histogram": {"prev_low": -698.21, "curr_low": -618.03, "change": 80.18}, "OBV": {"prev_low": 3271426.0, "curr_low": 3440393.0, "change": 168967.0}}, "price_change_pct": -7.8, "score": 2.5, "bonus_signals": ["Stochastic 과매도"], "current_price": 54200.0, "current_rsi": 44.1, "current_stoch": 18.6, "current_macd_hist": -947.24}, {"ticker": "257720", "name": "실리콘투", "divergence_count": 1, "divergences": {"OBV": {"prev_low": 38519896.0, "curr_low": 39974234.0, "change": 1454338.0}}, "price_change_pct": -11.62, "score": 2.0, "bonus_signals": ["Stochastic 과매도", "MACD 히스토그램 반전"], "current_price": 38990.0, "current_rsi": 45.7, "current_stoch": 20.4, "current_macd_hist": -620.38}, {"ticker": "462870", "name": "시프트업", "divergence_count": 1, "divergences": {"Stochastic %K": {"prev_low": 2.86, "curr_low": 26.15, "change": 23.29}}, "price_change_pct": -5.89, "score": 2.0, "bonus_signals": ["MACD 히스토그램 반전", "거래량 증가"], "current_price": 33000.0, "current_rsi": 40.8, "current_stoch": 57.9, "current_macd_hist": 181.6}, {"ticker": "198940", "name": "한주라이트메탈", "divergence_count": 1, "divergences": {"OBV": {"prev_low": 14744342.0, "curr_low": 17524256.0, "change": 2779914.0}}, "price_change_pct": -6.37, "score": 2.0, "bonus_signals": ["Stochastic 과매도", "거래량 증가"], "current_price": 691.0, "current_rsi": 48.7, "current_stoch": 22.4, "current_macd_hist": 2.55}, {"ticker": "424760", "name": "벨로크", "divergence_count": 1, "divergences": {"OBV": {"prev_low": 29931658.0, "curr_low": 30278808.0, "change": 347150.0}}, "price_change_pct": -9.43, "score": 2.0, "bonus_signals": ["MACD 히스토그램 반전", "거래량 증가"], "current_price": 1290.0, "current_rsi": 64.3, "current_stoch": 62.0, "current_macd_hist": 11.13}, {"ticker": "377480", "name": "마음AI", "divergence_count": 1, "divergences": {"Stochastic %K": {"prev_low": 4.71, "curr_low": 6.58, "change": 1.87}}, "price_change_pct": -9.58, "score": 2.0, "bonus_signals": ["RSI 과매도 근처", "Stochastic 과매도"], "current_price": 14080.0, "current_rsi": 33.3, "current_stoch": 15.9, "current_macd_hist": -406.36}, {"ticker": "064400", "name": "LG씨엔에스", "divergence_count": 1, "divergences": {"OBV": {"prev_low": 29277094.0, "curr_low": 37318810.0, "change": 8041716.0}}, "price_change_pct": -3.85, "score": 1.5, "bonus_signals": ["Stochastic 과매도"], "current_price": 57600.0, "current_rsi": 42.5, "current_stoch": 10.2, "current_macd_hist": -941.98}, {"ticker": "017860", "name": "DS단석", "divergence_count": 1, "divergences": {"MACD Histogram": {"prev_low": 15.52, "curr_low": 114.91, "change": 99.39}}, "price_change_pct": -7.36, "score": 1.5, "bonus_signals": ["MACD 히스토그램 반전"], "current_price": 20000.0, "current_rsi": 51.0, "current_stoch": 69.3, "current_macd_hist": 303.92}, {"ticker": "209640", "name": "와이제이링크", "divergence_count": 1, "divergences": {"OBV": {"prev_low": 115994670.0, "curr_low": 155225966.0, "change": 39231296.0}}, "price_change_pct": -10.99, "score": 1.5, "bonus_signals": ["거래량 증가"], "current_price": 4330.0, "current_rsi": 49.1, "current_stoch": 41.4, "current_macd_hist": 125.52}, {"ticker": "199820", "name": "제일일렉트릭", "divergence_count": 1, "divergences": {"MACD Histogram": {"prev_low": -26.29, "curr_low": 54.64, "change": 80.93}}, "price_change_pct": -4.67, "score": 1.5, "bonus_signals": ["거래량 증가"], "current_price": 10120.0, "current_rsi": 50.3, "current_stoch": 40.3, "current_macd_hist": 76.3}, {"ticker": "413630", "name": "씨피시스템", "divergence_count": 1, "divergences": {"OBV": {"prev_low": 583540893.0, "curr_low": 596990139.0, "change": 13449246.0}}, "price_change_pct": -8.61, "score": 1.5, "bonus_signals": ["Stochastic 과매도"], "current_price": 3506.0, "current_rsi": 46.3, "current_stoch": 8.1, "current_macd_hist": -205.75}, {"ticker": "484810", "name": "티엑스알로보틱스", "divergence_count": 1, "divergences": {"OBV": {"prev_low": 20062871.0, "curr_low": 20251379.0, "change": 188508.0}}, "price_change_pct": -14.91, "score": 1.5, "bonus_signals": ["Stochastic 과매도"], "current_price": 15940.0, "current_rsi": 47.2, "current_stoch": 18.6, "current_macd_hist": -307.88}, {"ticker": "099430", "name": "바이오플러스", "divergence_count": 1, "divergences": {"MACD Histogram": {"prev_low": -44.84, "curr_low": 20.44, "change": 65.28}}, "price_change_pct": -4.49, "score": 1.5, "bonus_signals": ["MACD 히스토그램 반전"], "current_price": 5250.0, "current_rsi": 45.3, "current_stoch": 63.2, "current_macd_hist": 52.33}, {"ticker": "146320", "name": "비씨엔씨", "divergence_count": 1, "divergences": {"OBV": {"prev_low": 7533534.0, "curr_low": 7570135.0, "change": 36601.0}}, "price_change_pct": -9.84, "score": 1.5, "bonus_signals": ["Stochastic 과매도"], "current_price": 12880.0, "current_rsi": 46.0, "current_stoch": 10.8, "current_macd_hist": -248.88}, {"ticker": "AAPL", "name": "AAPL", "divergence_count": 1, "divergences": {"MACD Histogram": {"prev_low": -4.3, "curr_low": -3.99, "change": 0.31}}, "price_change_pct": -2.95, "score": 1.5, "bonus_signals": ["MACD 히스토그램 반전"], "current_price": 256.0, "current_rsi": 50.9, "current_stoch": 34.0, "current_macd_hist": -3.4}]};
+const EMBEDDED_DATA = null; // __EMBED_MARKER__
+
+// 관리자 모드 — URL ?admin=vipasset1004 또는 localStorage 기억
+(function() {
+  const params = new URLSearchParams(location.search);
+  const ADMIN_KEY = "vipasset1004";
+  if (params.get("admin") === ADMIN_KEY) {
+    localStorage.setItem("dv_admin", ADMIN_KEY);
+  }
+})();
 
 let allResults = [];
+let prevTickers = new Set();
+
+(async function loadCachedResults() {
+  // GitHub Actions 모드: /api/cached-results 대신 정적 divergence_results.json
+  try {
+    const res = await fetch('./divergence_results.json?t=' + Date.now(), { cache: 'no-store' });
+    const data = await res.json();
+    if (data.results && data.results.length > 0) {
+      prevTickers = new Set(data.prev_tickers || []);
+      allResults = data.results;
+      const dt = new Date(data.scan_date).toLocaleString('ko-KR');
+      document.getElementById('lastUpdate').textContent = dt + ' (자동 스캔)';
+      document.getElementById('foundCount').textContent = (data.total_found || data.total || data.results.length) + '개';
+      const notice = document.getElementById('cacheNotice');
+      if (notice) { notice.textContent = '📅 자동 스캔: ' + dt + ' (GitHub Actions)'; notice.style.display = 'block'; }
+      filterAndRender();
+    }
+  } catch(e) { console.warn('정적 결과 로드 실패:', e); }
+})();
 
 function log(msg, type = '') {
   const area = document.getElementById('logArea');
@@ -342,64 +887,502 @@ function log(msg, type = '') {
   area.scrollTop = area.scrollHeight;
 }
 
+let scanning = false;
+let eventSource = null;
+let renderTimer = null;
+let activeFilters = [];
+let activeDailyFilters = [];
+let activePosFilters = [];
+let activeDivFilter = false;
+let activeGapFilter = 0;
+let activeComboFilter = '';
+let activeNewFilter = false;
+let activeEarningsFilters = [];
+let activeRepeatFilter = false;
+let searchQuery = '';
+
+function computeGap(r) {
+  // daily_score가 null/undefined이면 데이터 미수집. 0은 유효(조용한 상태).
+  const d = r.daily_score;
+  if (d === undefined || d === null) return null;
+  const w = r.score_10 || 0;
+  return Math.round((w - d) * 10) / 10;
+}
+
+function onSearchInput() {
+  searchQuery = (document.getElementById('searchBox').value || '').trim().toLowerCase();
+  if (allResults.length > 0 && !scanning) filterAndRender();
+}
+
+function toggleGapFilter(el) {
+  const val = parseFloat(el.dataset.gap);
+  const wasActive = el.classList.contains('active');
+  document.querySelectorAll('.filter-chip[data-gap]').forEach(c => c.classList.remove('active'));
+  if (!wasActive) {
+    el.classList.add('active');
+    activeGapFilter = val;
+  } else {
+    activeGapFilter = 0;
+  }
+  if (allResults.length > 0 && !scanning) filterAndRender();
+}
+
+function toggleComboFilter(el) {
+  const val = el.dataset.combo;
+  const wasActive = el.classList.contains('active');
+  document.querySelectorAll('.filter-chip[data-combo]').forEach(c => c.classList.remove('active'));
+  if (!wasActive) {
+    el.classList.add('active');
+    activeComboFilter = val;
+  } else {
+    activeComboFilter = '';
+  }
+  if (allResults.length > 0 && !scanning) filterAndRender();
+}
+
+function toggleNewFilter(el) {
+  activeNewFilter = !el.classList.contains('active');
+  el.classList.toggle('active');
+  if (allResults.length > 0 && !scanning) filterAndRender();
+}
+function toggleRepeatFilter(el) {
+  activeRepeatFilter = !activeRepeatFilter;
+  el.classList.toggle('active', activeRepeatFilter);
+  if (allResults.length > 0 && !scanning) filterAndRender();
+}
+function toggleEarningsFilter(el) {
+  el.classList.toggle('active');
+  const val = el.dataset.earnings;
+  if (el.classList.contains('active')) {
+    activeEarningsFilters.push(val);
+  } else {
+    activeEarningsFilters = activeEarningsFilters.filter(f => f !== val);
+  }
+  if (allResults.length > 0 && !scanning) filterAndRender();
+}
+function togglePosFilter(el) {
+  el.classList.toggle('active');
+  const pos = el.dataset.pos;
+  if (el.classList.contains('active')) {
+    activePosFilters.push(pos);
+  } else {
+    activePosFilters = activePosFilters.filter(f => f !== pos);
+  }
+  if (allResults.length > 0) filterAndRender();
+}
+
+
+function toggleDivFilter(el) {
+  el.classList.toggle('active');
+  activeDivFilter = el.classList.contains('active');
+  if (allResults.length > 0 && !scanning) filterAndRender();
+}
+
+function toggleFilter(el) {
+  el.classList.toggle('active');
+  const sig = el.dataset.sig;
+  if (el.classList.contains('active')) {
+    activeFilters.push(sig);
+  } else {
+    activeFilters = activeFilters.filter(f => f !== sig);
+  }
+  if (allResults.length > 0 && !scanning) filterAndRender();
+}
+
+function toggleDailyFilter(el) {
+  el.classList.toggle('active');
+  const sig = el.dataset.dsig;
+  if (el.classList.contains('active')) {
+    activeDailyFilters.push(sig);
+  } else {
+    activeDailyFilters = activeDailyFilters.filter(f => f !== sig);
+  }
+  if (allResults.length > 0 && !scanning) filterAndRender();
+}
+
 function filterAndRender() {
-  const minScore = parseFloat(document.getElementById('minScore').value);
+  const minScoreVal = document.getElementById('minScore').value;
+  const minScore = (minScoreVal === 'pick' || minScoreVal === 'tenbagger') ? minScoreVal : parseFloat(minScoreVal);
   const market = document.getElementById('market').value;
 
-  let filtered = allResults.filter(r => r.score >= minScore);
+  // 텐버거 포착: 신호 조합 + 과열/추세/타이밍/거래량 4중 필터
+  if (minScore === 'tenbagger') {
+    filtered = allResults.filter(r => {
+      const sigs = (r.signals || []).join(' ');
+      const dsigs = (r.daily_signals || []).join(' ');
 
-  // 시장별 필터 (한국 종목은 6자리 숫자 코드)
+      // ── 기본 조건: 신호 조합 (매집+스퀴즈 or 매집+PP+트렌드) ──
+      const has_accumulation = sigs.includes('매집비율') || sigs.includes('OBV 매집') || sigs.includes('거래량 선행');
+      const has_squeeze = sigs.includes('볼린저 스퀴즈') || sigs.includes('VCP') || sigs.includes('종가 밀집');
+      const has_pocket = sigs.includes('Pocket Pivot');
+      const has_trend = sigs.includes('트렌드') || sigs.includes('정배열');
+      const base_pattern = (has_accumulation && has_squeeze) || (has_accumulation && has_pocket && has_trend);
+      if (!base_pattern) return false;
+
+      // ── 강화 필터 1: 과열 제외 ──
+      if (r.is_overheated || r.is_weekly_overheated) return false;
+      if ((r.return_3m || 0) > 50) return false;
+
+      // ── 강화 필터 2: 일봉 타이밍 확인 ──
+      // 다이버전스 2개+ 또는 주봉 4점+ 이면 일봉 없어도 통과
+      const weeklyScore = r.score_10 || 0;
+      const divCount = r.divergence_count || 0;
+      if (weeklyScore < 4.0 && divCount < 2 && (!r.daily_signals || r.daily_signals.length === 0)) return false;
+
+      // ── 강화 필터 3: 거래량 급감 추세 제외 ──
+      if ((r.vol_trend_60d || 1) < 0.7) return false;
+
+      // ── 강화 필터 4: 주봉 데드크로스(단기 MA 역배열) 제외 ──
+      if (r.has_dead_cross) return false;
+
+      // ── 강화 필터 5: 실적 악화 + 낮은 점수 제외 ──
+      const et = r.earnings_type || '-';
+      if ((et === '적자' || et === '실적 감소') && weeklyScore < 5.0) return false;
+
+      return true;
+    });
+  } else if (minScore === 'pick') {
+    filtered = allResults.filter(r => {
+      const sigs = (r.signals || []).join(' ');
+      const dsigs = (r.daily_signals || []).join(' ');
+      const s = r.score_10 || 0;
+      const d = r.daily_score || 0;
+
+      // 조합1: Pocket Pivot + 매집 (백테스트 +133%)
+      const combo1 = sigs.includes('Pocket Pivot') && sigs.includes('매집비율');
+      // 조합2: 볼린저 스퀴즈 + 트렌드 (백테스트 +82%)
+      const combo2 = sigs.includes('볼린저 스퀴즈') && (sigs.includes('트렌드') || sigs.includes('정배열'));
+      // 조합3: 주봉 3점+ AND 일봉 타이밍 있음
+      const combo3 = s >= 3.0 && d >= 1.0;
+      // 조합4: OBV 매집 + 모멘텀 전환
+      const combo4 = sigs.includes('OBV 매집') && (sigs.includes('MACD') || sigs.includes('상대강도'));
+      // 조합5: 매집 + 일봉 거래량 폭발 (진짜 타이밍)
+      const combo5 = sigs.includes('매집비율') && dsigs.includes('거래량');
+
+      return combo1 || combo2 || combo3 || combo4 || combo5;
+    });
+  } else {
+    filtered = allResults.filter(r => (r.total_score || r.score_10 || 0) >= minScore);
+  }
+
+  // 주봉 신호 필터
+  if (activeFilters.length > 0) {
+    filtered = filtered.filter(r => {
+      const sigs = (r.signals || []).join(' ');
+      return activeFilters.every(f => sigs.includes(f));
+    });
+  }
+
+  // 일봉 신호 필터
+  if (activeDailyFilters.length > 0) {
+    filtered = filtered.filter(r => {
+      const dsigs = (r.daily_signals || []).join(' ');
+      return activeDailyFilters.every(f => dsigs.includes(f));
+    });
+  }
+
+  // 다이버전스 필터
+  if (activeDivFilter) {
+    filtered = filtered.filter(r => (r.divergence_count || 0) > 0);
+  }
+
+  // 위치 필터
+  if (activePosFilters.length > 0) {
+    filtered = filtered.filter(r => activePosFilters.includes(r.position));
+  }
+
+
   if (market === 'KOSPI' || market === 'KOSDAQ' || market === 'KR') {
     filtered = filtered.filter(r => /^\d{6}$/.test(r.ticker));
   } else if (market === 'US') {
     filtered = filtered.filter(r => !/^\d{6}$/.test(r.ticker));
   }
 
-  filtered.sort((a, b) => b.score - a.score);
+  // GAP 필터 (주봉 floor 포함 - 2026-04 재백테스트 기준)
+  if (activeGapFilter > 0) {
+    const weeklyFloor = activeGapFilter >= 3 ? 5.0 : 4.0;
+    filtered = filtered.filter(r => {
+      const g = computeGap(r);
+      const w = r.score_10 || 0;
+      return g !== null && g >= activeGapFilter && w >= weeklyFloor;
+    });
+  }
+
+  // 검증 조합 필터 (2026-04 재백테스트 498건 기준)
+  if (activeComboFilter === 'early') {
+    // 선점형: 주봉≥6.0 & 일봉≤3.5 (n=14, 3M +18.6%, MAX≥50% 35.7%)
+    filtered = filtered.filter(r => (r.score_10 || 0) >= 6.0 && (r.daily_score ?? 99) <= 3.5);
+  } else if (activeComboFilter === 'prelaunch') {
+    // 급등 직전: 주봉≥6.5 & 일봉≤4.5 (n=5, MAX≥50% 60%, MAX≥100% 20%)
+    filtered = filtered.filter(r => (r.score_10 || 0) >= 6.5 && (r.daily_score ?? 99) <= 4.5);
+  } else if (activeComboFilter === 'momentum') {
+    // 최강 조합: GAP≥3 & 주봉≥6 (n=15, 3M +26.6%, MAX≥50% 46.7%)
+    filtered = filtered.filter(r => {
+      const w = r.score_10 || 0;
+      const g = computeGap(r);
+      return w >= 6.0 && g !== null && g >= 3;
+    });
+  } else if (activeComboFilter === 'premium') {
+    // 프리미엄: 점수≥3.0 + (매집비율 OR Pocket Pivot) + (트렌드 구조 OR 상대강도 가속)
+    // 백테스트 490건 기준 승률 80%+, 평균 수익 19%+
+    filtered = filtered.filter(r => {
+      const w = r.score_10 || 0;
+      if (w < 3.0) return false;
+      const sigs = (r.signals || []).join(' ');
+      const hasAccum = sigs.includes('매집비율') || sigs.includes('Pocket Pivot');
+      const hasTrend = sigs.includes('트렌드 구조 양호') || sigs.includes('상대강도 가속');
+      return hasAccum && hasTrend;
+    });
+  }
+
+  // 신규상장 필터
+  if (activeNewFilter) {
+    filtered = filtered.filter(r => r.is_new_listing === true);
+  }
+
+  // 실적 필터 (복수 선택 OR 조건)
+  if (activeEarningsFilters.length > 0) {
+    filtered = filtered.filter(r => activeEarningsFilters.includes(r.earnings_type));
+  }
+
+  // 연속 등장 필터
+  if (activeRepeatFilter) {
+    filtered = filtered.filter(r => !r.is_new_listing && prevTickers.has(r.ticker));
+  }
+
+  // 종목 검색 (종목명 or 티커)
+  if (searchQuery) {
+    filtered = filtered.filter(r => {
+      const n = (r.name || '').toLowerCase();
+      const t = (r.ticker || '').toLowerCase();
+      return n.includes(searchQuery) || t.includes(searchQuery);
+    });
+  }
+
+  // 정렬
+  const sortBy = document.getElementById('sortBy') ? document.getElementById('sortBy').value : 'total';
+  if (sortBy === 'gap') {
+    filtered.sort((a, b) => { const ga = computeGap(a), gb = computeGap(b); return (gb === null ? -999 : gb) - (ga === null ? -999 : ga); });
+  } else if (sortBy === 'weekly') {
+    filtered.sort((a, b) => (b.score_10 || 0) - (a.score_10 || 0));
+  } else if (sortBy === 'daily') {
+    filtered.sort((a, b) => (b.daily_score || 0) - (a.daily_score || 0));
+  } else {
+    filtered.sort((a, b) => (b.total_score || b.score_10 || 0) - (a.total_score || a.score_10 || 0));
+  }
   document.getElementById('foundCount').textContent = filtered.length + '개';
   renderCards(filtered);
   return filtered.length;
 }
 
+function showProgress(show, text, pct) {
+  const el = document.getElementById('scanProgress');
+  el.style.display = show ? 'flex' : 'none';
+  if (text) document.getElementById('progressText').textContent = text;
+  if (pct !== undefined) document.getElementById('progressFill').style.width = pct + '%';
+}
+
 function startScan() {
   const btn = document.getElementById('btnScan');
 
-  if (allResults.length > 0) {
-    // 버튼 피드백
-    btn.textContent = '적용 중...';
-    btn.style.opacity = '0.6';
-    setTimeout(() => {
-      const count = filterAndRender();
-      btn.textContent = count + '개 표시';
-      btn.style.opacity = '1';
-      setTimeout(() => { btn.textContent = '스캔 시작'; }, 1500);
-    }, 200);
+  // GitHub Actions 모드: 항상 정적 데이터 사용 + 관리자만 워크플로우 트리거
+  // 1) 검색창 값 있으면 클라이언트 필터로만 처리 (단일 스캔 불가)
+  const searchVal = (document.getElementById('searchBox').value || '').trim();
+  if (searchVal) {
+    // 검색은 filterAndRender 가 처리 — 그냥 다시 그리기만
+    const count = filterAndRender();
+    btn.textContent = count + '개 표시';
+    setTimeout(() => { btn.textContent = '스캔 시작'; }, 1500);
     return;
   }
 
-  // 임베드 데이터 없으면 JSON fetch 시도
-  btn.textContent = '로딩...';
-  fetch('divergence_results.json?t=' + Date.now())
-    .then(r => r.ok ? r.json() : Promise.reject())
-    .then(data => {
-      allResults = data.results || [];
-      document.getElementById('lastUpdate').textContent = new Date(data.scan_date).toLocaleString('ko-KR');
-      filterAndRender();
-      btn.textContent = '스캔 시작';
-    })
-    .catch(() => {
-      btn.textContent = '스캔 시작';
-      document.getElementById('cardsContainer').innerHTML = `
-        <div class="empty-state">
-          <h3>데이터가 없습니다</h3>
-          <p>터미널에서 스크립트를 먼저 실행하세요</p>
-          <p style="margin-top:10px;font-family:monospace;color:#00d4ff;font-size:12px;">
-            python weekly_divergence_screener.py KR 300
-          </p>
-        </div>
-      `;
-    });
+  // 2) admin 모드일 때만 워크플로우 트리거 (URL ?admin=vipasset1004 또는 localStorage)
+  const isAdmin = localStorage.getItem('dv_admin') === 'vipasset1004';
+  if (isAdmin) {
+    if (confirm('GitHub Actions에서 수동 스캔을 트리거합니다.\n새 탭에서 "Run workflow" 버튼을 누르세요.')) {
+      window.open('https://github.com/vipasset1004-lucky/divergence-screener/actions/workflows/scan.yml', '_blank', 'noopener');
+    }
+    return;
+  }
+
+  // 3) 일반 사용자: 결과 리프레시만
+  (async () => {
+    try {
+      btn.textContent = '새로고침 중...';
+      const res = await fetch('./divergence_results.json?t=' + Date.now(), { cache: 'no-store' });
+      const data = await res.json();
+      if (data.results) {
+        allResults = data.results;
+        const dt = new Date(data.scan_date).toLocaleString('ko-KR');
+        document.getElementById('lastUpdate').textContent = dt + ' (자동 스캔)';
+        const count = filterAndRender();
+        btn.textContent = count + '개 표시';
+        setTimeout(() => { btn.textContent = '새로고침'; }, 1500);
+      } else {
+        btn.textContent = '데이터 없음';
+        setTimeout(() => { btn.textContent = '새로고침'; }, 1500);
+      }
+    } catch (e) {
+      btn.textContent = '오류';
+      setTimeout(() => { btn.textContent = '새로고침'; }, 1500);
+    }
+  })();
+  return;
 }
+
+function _legacyStartScan_unused() {
+  const btn = document.getElementById('btnScan');
+
+  // 이미 임베드 데이터만 있고 서버 없는 환경 (GitHub Pages)
+  if (EMBEDDED_DATA && !isServerAvailable) {
+    const count = filterAndRender();
+    btn.textContent = count + '개 표시';
+    setTimeout(() => { btn.textContent = '스캔 시작'; }, 1500);
+    return;
+  }
+
+  // 스캔 중이면 중단
+  if (scanning && eventSource) {
+    eventSource.close();
+    scanning = false;
+    btn.textContent = '스캔 시작';
+    showProgress(false);
+    return;
+  }
+
+  // 검색창에 값이 있으면 단일 종목 스캔
+  const searchVal = (document.getElementById('searchBox').value || '').trim();
+  if (searchVal) {
+    scanning = true;
+    allResults = [];
+    btn.textContent = '분석 중...';
+    btn.style.background = '#ff4d6a';
+    document.getElementById('cardsContainer').innerHTML = '';
+    showProgress(true, `${searchVal} 개별 분석 중... (3~5초)`, 30);
+    log(`개별 분석: ${searchVal}`, 'info');
+    fetch(`/api/scan_single?q=${encodeURIComponent(searchVal)}`)
+      .then(r => r.json())
+      .then(data => {
+        if (data.error) {
+          log(data.error, 'warn');
+          endScan();
+          return;
+        }
+        allResults = [data.result];
+        searchQuery = '';  // 검색 필터 해제 (결과 가려지지 않게)
+        document.getElementById('searchBox').value = searchVal;  // 입력값은 유지
+        document.getElementById('lastUpdate').textContent = new Date().toLocaleString('ko-KR');
+        filterAndRender();
+        log(`완료: ${data.result.name} (종합:${data.result.total_score}점)`, 'success');
+        endScan();
+      })
+      .catch(err => { log(`오류: ${err.message}`, 'warn'); endScan(); });
+    return;
+  }
+
+  // 실시간 스캔 시작
+  const market = document.getElementById('market').value;
+  const topN = document.getElementById('topN') ? document.getElementById('topN').value : '100';
+  const minScore = document.getElementById('minScore').value;
+
+  scanning = true;
+  allResults = [];
+  btn.textContent = '중단';
+  btn.style.background = '#ff4d6a';
+  document.getElementById('cardsContainer').innerHTML = '';
+  showProgress(true, '종목 리스트 수집 중...', 0);
+
+  // 텐버거/핵심 포착은 서버에서 전체 가져와 클라이언트 필터, 점수 필터는 서버에서 직접 필터
+  const serverMinScore = (minScore === 'tenbagger' || minScore === 'pick') ? '0' : minScore;
+  const url = `/api/scan?market=${market}&top_n=${topN}&min_score=${serverMinScore}`;
+  eventSource = new EventSource(url);
+
+  eventSource.onmessage = (e) => {
+    const data = JSON.parse(e.data);
+
+    switch (data.type) {
+      case 'status':
+        showProgress(true, data.message, data.progress || 0);
+        log(data.message, 'info');
+        break;
+
+      case 'progress':
+        showProgress(true, `${data.index}/${data.total} ${data.current} (발견: ${data.found}개)`, data.progress);
+        break;
+
+      case 'found':
+        allResults.push(data.result);
+        log(`발견: ${data.result.name} (종합:${data.result.total_score || data.result.score_10 || 0}점)`, 'success');
+        // 스캔 중 렌더링은 500ms 디바운스 (폭주 방지)
+        clearTimeout(renderTimer);
+        renderTimer = setTimeout(() => filterAndRender(), 500);
+        break;
+
+      case 'complete':
+        allResults = data.results;
+        document.getElementById('lastUpdate').textContent = new Date(data.scan_date).toLocaleString('ko-KR');
+        filterAndRender();
+        log(`스캔 완료! ${data.total_found}개 분석, ${document.getElementById('foundCount').textContent} 표시`, 'success');
+        endScan();
+        break;
+
+      case 'error':
+        log(data.message, 'warn');
+        endScan();
+        break;
+    }
+  };
+
+  eventSource.onerror = () => {
+    if (scanning) {
+      // 서버 없는 환경 - 임베드 데이터 또는 fetch 시도
+      eventSource.close();
+      scanning = false;
+      isServerAvailable = false;
+      btn.style.background = '';
+      btn.textContent = '스캔 시작';
+      showProgress(false);
+
+      // 임베드 데이터가 있으면 그걸 사용
+      if (EMBEDDED_DATA && EMBEDDED_DATA.results) {
+        allResults = EMBEDDED_DATA.results;
+        filterAndRender();
+        log('서버 없음 - 저장된 데이터 표시', 'info');
+      } else {
+        // fetch 시도
+        fetch('divergence_results.json?t=' + Date.now())
+          .then(r => r.ok ? r.json() : Promise.reject())
+          .then(data => {
+            allResults = data.results || [];
+            document.getElementById('lastUpdate').textContent = new Date(data.scan_date).toLocaleString('ko-KR');
+            filterAndRender();
+          })
+          .catch(() => {
+            document.getElementById('cardsContainer').innerHTML = `
+              <div class="empty-state">
+                <h3>서버에 연결할 수 없습니다</h3>
+                <p>PC에서 서버를 실행하세요:</p>
+                <p style="margin-top:10px;font-family:monospace;color:#00d4ff;font-size:12px;">
+                  python web_server.py
+                </p>
+              </div>
+            `;
+          });
+      }
+    }
+  };
+}
+
+function endScan() {
+  if (eventSource) eventSource.close();
+  scanning = false;
+  const btn = document.getElementById('btnScan');
+  btn.textContent = '스캔 시작';
+  btn.style.background = '';
+  showProgress(false);
+}
+
+let isServerAvailable = true;
 
 document.getElementById('minScore').addEventListener('change', () => {
   if (allResults.length > 0) filterAndRender();
@@ -408,15 +1391,71 @@ document.getElementById('market').addEventListener('change', () => {
   if (allResults.length > 0) filterAndRender();
 });
 
-function makeScoreDots(score) {
-  const full = Math.floor(score);
-  const max = 5;
-  let html = '<div class="score-dots">';
-  for (let i = 0; i < max; i++) {
-    html += `<div class="score-dot ${i < full ? 'filled' : ''}"></div>`;
-  }
-  html += '</div>';
-  return html;
+function makeScoreBar(score) {
+  const pct = Math.min(score, 100);
+  const color = pct >= 70 ? '#ff4d6a' : pct >= 55 ? '#00ff88' : pct >= 40 ? '#00d4ff' : '#ffaa00';
+  return `<div class="score-bar-wrap"><div class="score-bar-fill" style="width:${pct}%;background:${color}"></div></div>`;
+}
+
+function computeIsPick(r) {
+  const s10 = r.score_10 !== undefined ? r.score_10 : (r.score_100 ? r.score_100/10 : (r.score || 0));
+  const sAll = (r.signals || []).join(' ');
+  const dAll = (r.daily_signals || []).join(' ');
+  return (sAll.includes('Pocket Pivot') && sAll.includes('매집비율'))
+    || (sAll.includes('볼린저 스퀴즈') && (sAll.includes('트렌드') || sAll.includes('정배열')))
+    || (s10 >= 3.0 && (r.daily_score || 0) >= 1.0)
+    || (sAll.includes('OBV 매집') && (sAll.includes('MACD') || sAll.includes('상대강도')))
+    || (sAll.includes('매집비율') && dAll.includes('거래량'));
+}
+
+function aggregateClusters(results) {
+  const map = {};
+  results.forEach(r => {
+    const isPick = computeIsPick(r);
+    const w = r.score_10 || 0;
+    (r.themes || []).forEach(t => {
+      if (!t || t === '기타' || t.length <= 1) return;
+      if (!map[t]) map[t] = { theme: t, stocks: [], hasPick: false, hasStrong: false, maxWeekly: 0 };
+      map[t].stocks.push({ name: r.name, ticker: r.ticker, isPick: isPick, weekly: w });
+      if (isPick) map[t].hasPick = true;
+      if (w >= 6.0) map[t].hasStrong = true;
+      if (w > map[t].maxWeekly) map[t].maxWeekly = w;
+    });
+  });
+  // 2026-04 재백테스트: 3종+ 단독은 노이즈(MAX>100% 3.8%). 주봉≥6 포함돼야 의미(11.8%).
+  return Object.values(map)
+    .filter(c => c.stocks.length >= 3 && c.hasStrong)
+    .sort((a, b) => (b.hasPick - a.hasPick) || (b.maxWeekly - a.maxWeekly) || (b.stocks.length - a.stocks.length));
+}
+
+function renderClusterBox(results) {
+  const clusters = aggregateClusters(results);
+  if (!clusters.length) return '';
+  const items = clusters.map(c => {
+    const tier = c.hasPick ? 'tier-gold' : 'tier-silver';
+    const icon = c.hasPick ? '🥇' : '🥈';
+    const stockTags = c.stocks
+      .sort((a, b) => b.weekly - a.weekly)
+      .map(s => {
+        const isKR = s.ticker && /^\d{6}$/.test(s.ticker);
+        return `<span class="cluster-stock${s.isPick ? ' has-pick' : ''}${s.weekly >= 6.0 ? ' strong' : ''}" onclick="openStock('${s.ticker}',${isKR})" style="cursor:pointer">${s.name}${s.weekly >= 6.0 ? ' ★' : ''}</span>`;
+      }).join('');
+    return `
+      <div class="cluster-item ${tier}">
+        <div class="cluster-item-head">
+          <span class="cluster-theme-name">${icon} ${c.theme}</span>
+          <span class="cluster-count">${c.stocks.length}종 · 주봉 최고 ${c.maxWeekly.toFixed(1)}${c.hasPick ? ' · 핵심포착' : ''}</span>
+        </div>
+        <div class="cluster-stocks">${stockTags}</div>
+      </div>
+    `;
+  }).join('');
+  return `
+    <div class="cluster-box">
+      <div class="cluster-title">🔥 강한 섹터 클러스터 <span class="sub">3종+ & 주봉≥6 포함 · 재백테스트 MAX≥50% 47% · ★ = 주봉 6+ 리더</span></div>
+      ${items}
+    </div>
+  `;
 }
 
 function renderCards(results) {
@@ -432,45 +1471,78 @@ function renderCards(results) {
     return;
   }
 
-  container.innerHTML = results.map((r, i) => {
-    const scoreClass = r.score >= 3 ? 'very-high' : r.score >= 2 ? 'high' : '';
-    const priceClass = r.price_change_pct < 0 ? 'negative' : 'positive';
+  const clusterHtml = renderClusterBox(results);
+
+  container.innerHTML = clusterHtml + results.map((r, i) => {
+    // 10점제
+    const s10 = r.score_10 !== undefined ? r.score_10 : (r.score_100 ? r.score_100/10 : (r.score || 0));
+    const grade = r.grade || (s10 >= 7 ? 'S' : s10 >= 5.5 ? 'A' : s10 >= 4 ? 'B' : 'C');
+    const gradeClass = 'grade-' + grade;
+
+    const isKR = r.ticker && /^\d{6}$/.test(r.ticker);
     const rsiClass = r.current_rsi < 30 ? 'positive' : r.current_rsi < 40 ? 'warn' : '';
     const stochClass = r.current_stoch < 25 ? 'positive' : r.current_stoch < 35 ? 'warn' : '';
-    const isKR = r.ticker && /^\d{6}$/.test(r.ticker);
     const priceStr = isKR
       ? Number(r.current_price).toLocaleString() + '원'
       : '$' + Number(r.current_price).toLocaleString(undefined, {minimumFractionDigits:2});
 
-    const divTags = Object.keys(r.divergences || {}).map(d =>
-      `<span class="div-tag">${d}</span>`
+    // 신호 태그 (signals 또는 divergences 호환)
+    const signalTags = (r.signals || Object.keys(r.divergences || {})).map(s =>
+      `<span class="div-tag">${s}</span>`
     ).join('');
 
     const bonusTags = (r.bonus_signals || []).map(s =>
       `<span class="bonus-tag">${s}</span>`
     ).join('');
 
+    // 52주 고점 대비
+    const vs52w = r.price_vs_52w_high ? `${r.price_vs_52w_high}%` : '-';
+
+    // 핵심 포착 조합 체크
+    const sAll = (r.signals || []).join(' ');
+    const dAll = (r.daily_signals || []).join(' ');
+    const isPick = (sAll.includes('Pocket Pivot') && sAll.includes('매집비율'))
+      || (sAll.includes('볼린저 스퀴즈') && (sAll.includes('트렌드') || sAll.includes('정배열')))
+      || (s10 >= 3.0 && (r.daily_score || 0) >= 1.0)
+      || (sAll.includes('OBV 매집') && (sAll.includes('MACD') || sAll.includes('상대강도')))
+      || (sAll.includes('매집비율') && dAll.includes('거래량'));
+
+    const hasAccum = sAll.includes('매집비율') || sAll.includes('OBV 매집') || sAll.includes('거래량 선행');
+    const hasSqueeze = sAll.includes('볼린저 스퀴즈') || sAll.includes('VCP') || sAll.includes('종가 밀집');
+    const hasPocket = sAll.includes('Pocket Pivot');
+    const hasTrend = sAll.includes('트렌드') || sAll.includes('정배열');
+    const isTenbagger = (hasAccum && hasSqueeze) || (hasAccum && hasPocket && hasTrend);
+
     return `
-      <div class="card">
+      <div class="card" onclick="openStock('${r.ticker}',${isKR})" style="cursor:pointer">
         <div class="rank">#${i + 1}</div>
         <div class="top-row">
           <div>
-            <div class="name">${r.name}</div>
-            <div class="ticker">${r.ticker}</div>
+            ${r.divergence_count > 0 ? `<div class="div-badge">다이버전스 ${r.divergence_count}개</div>` : ''}
+            ${isTenbagger ? '<div class="tenbagger-badge">텐버거 포착</div>' : isPick ? '<div class="pick-badge">핵심 포착</div>' : ''}
+            ${r.is_overheated || r.is_weekly_overheated ? '<div class="overheat-badge">과열 주의</div>' : ''}
+            ${r.is_new_listing ? `<div class="new-badge" title="신규 상장 (${r.listing_date || ''}, ${r.weeks_available || '?'}주)">🆕 신규상장</div>` : ''}
+            ${!r.is_new_listing && prevTickers.size > 0 ? (prevTickers.has(r.ticker) ? `<div class="new-badge" style="background:rgba(100,180,255,.15);color:#64b4ff;border-color:#64b4ff;" title="어제도 등장한 종목">🔁 연속 등장</div>` : `<div class="new-badge" style="background:rgba(80,255,160,.12);color:#50ffa0;border-color:#50ffa0;" title="오늘 새로 등장한 종목">✨ 신규 진입</div>`) : ''}
+            <div class="name">${r.name}${r.position && r.position !== '-' ? `<span class="position-tag ${r.position === '바닥 출발' ? 'bottom' : r.position === '상승 초입' ? 'early' : r.position === '상승 중반' ? 'mid' : 'high'}">${r.position}</span>` : ''}${r.surge_phase && r.surge_phase !== '미확인' ? `<span class="surge-tag ${r.surge_phase.includes('상승 추세') ? 'ready' : r.surge_phase.includes('전환') || r.surge_phase.includes('눌림') ? 'early' : r.surge_phase.includes('하락') ? 'down' : 'wait'}">${r.surge_phase}</span>` : ''}</div>
+            <div class="ticker">${r.ticker}${r.earnings_type && r.earnings_type !== '-' ? `<span class="earnings-tag ${r.earnings_type === '실적 급증' ? 'surge' : r.earnings_type === '실적 증가' ? 'up' : r.earnings_type === '흑자 전환' ? 'turn' : r.earnings_type === '실적 감소' ? 'down' : 'loss'}">${r.earnings_type}</span>` : ''}</div>
+            ${(r.themes||[]).length ? `<div class="theme-tags">${r.themes.map(t => `<span class="theme-tag">${t}</span>`).join('')}</div>` : ''}
           </div>
-          <div class="score-badge ${scoreClass}">
-            ${makeScoreDots(r.score)}
-            <span class="score-num">${r.score}</span>
+          <div class="score-badge ${gradeClass}">
+            <span class="grade-label">${grade}</span>
+            <span class="score-num">${r.total_score || s10}</span>
+            ${makeScoreBar((r.total_score || s10) * 10)}
           </div>
+        </div>
+        <div class="score-row">
+          <span class="score-label">주봉</span><span class="score-val weekly">${s10}</span>
+          <span class="score-label">일봉</span><span class="score-val daily">${r.daily_score || '-'}</span>
+          <span class="score-label">종합</span><span class="score-val total">${r.total_score || s10}</span>
+          ${(() => { const g = computeGap(r); if (g === null) return `<span class="score-label">GAP</span><span class="score-val gap" style="color:#4a5578">-</span>`; return `<span class="score-label">GAP</span><span class="score-val gap${g >= 4 ? ' strong' : ''}">${g >= 0 ? '+' : ''}${g}</span>`; })()}
         </div>
         <div class="metrics">
           <div class="metric">
             <div class="label">현재가</div>
             <div class="value">${priceStr}</div>
-          </div>
-          <div class="metric">
-            <div class="label">주가변화</div>
-            <div class="value ${priceClass}">${r.price_change_pct > 0 ? '+' : ''}${r.price_change_pct}%</div>
           </div>
           <div class="metric">
             <div class="label">RSI</div>
@@ -480,13 +1552,36 @@ function renderCards(results) {
             <div class="label">Stoch</div>
             <div class="value ${stochClass}">${r.current_stoch}</div>
           </div>
+          <div class="metric">
+            <div class="label">52주고점</div>
+            <div class="value">${vs52w}</div>
+          </div>
+          <div class="metric">
+            <div class="label">3개월</div>
+            <div class="value" style="color:${(r.return_3m||0) > 50 ? '#ff4d6a' : (r.return_3m||0) > 20 ? '#ffaa00' : (r.return_3m||0) > 0 ? '#00ff88' : '#6b7a99'}">${r.return_3m != null ? (r.return_3m > 0 ? '+' : '') + r.return_3m + '%' : '-'}</div>
+          </div>
         </div>
-        <div class="divergence-tags">${divTags}</div>
+        <div class="divergence-tags">${signalTags}</div>
         ${bonusTags ? `<div class="bonus-signals">${bonusTags}</div>` : ''}
+        ${(r.daily_signals||[]).length ? `<div class="daily-signals">${r.daily_signals.map(s => `<span class="daily-tag">${s}</span>`).join('')}</div>` : ''}
       </div>
     `;
   }).join('');
 }
+
+// ── 종목 클릭 → 네이버 금융으로 이동 ──
+function openStock(ticker, isKR) {
+  if (isKR) {
+    window.open(`https://m.stock.naver.com/domestic/stock/${ticker}/total`, '_blank');
+  } else {
+    window.open(`https://finance.yahoo.com/quote/${ticker}`, '_blank');
+  }
+}
+
+function closeDetail() {
+  document.getElementById('detailModal').classList.remove('active');
+}
+
 
 window.addEventListener('load', () => {
   if (EMBEDDED_DATA && EMBEDDED_DATA.results) {
