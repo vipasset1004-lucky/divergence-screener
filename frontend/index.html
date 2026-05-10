@@ -390,6 +390,19 @@
     color: #7b9aff;
     border-color: #4a6cf7;
   }
+  .filter-chip .cnt {
+    margin-left: 5px;
+    padding: 1px 5px;
+    background: rgba(255,255,255,.06);
+    border-radius: 8px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #8fa0c8;
+  }
+  .filter-chip.active .cnt {
+    background: rgba(123,154,255,.18);
+    color: #a6bcff;
+  }
 
   .filter-chip:active { opacity: .7; }
 
@@ -872,6 +885,7 @@ let prevTickers = new Set();
       document.getElementById('foundCount').textContent = (data.total_found || data.total || data.results.length) + '개';
       const notice = document.getElementById('cacheNotice');
       if (notice) { notice.textContent = '📅 자동 스캔: ' + dt + ' (GitHub Actions)'; notice.style.display = 'block'; }
+      updateChipCounts();  // chip 옆 카운트 업데이트
       filterAndRender();
     }
   } catch(e) { console.warn('정적 결과 로드 실패:', e); }
@@ -998,6 +1012,88 @@ function toggleDailyFilter(el) {
     activeDailyFilters = activeDailyFilters.filter(f => f !== sig);
   }
   if (allResults.length > 0 && !scanning) filterAndRender();
+}
+
+// 각 filter chip 옆에 일치 종목 수 표시 (전체 결과 기준)
+function updateChipCounts() {
+  if (!allResults || !allResults.length) return;
+  const sel = (s) => document.querySelectorAll(s);
+
+  // data-sig (핵심 신호 — r.signals 배열에 키워드 포함)
+  sel('.filter-chip[data-sig]').forEach(c => {
+    const k = c.dataset.sig;
+    const n = allResults.filter(r => (r.signals || []).some(s => s.includes(k))).length;
+    setChipCount(c, n);
+  });
+  // data-dsig (일봉 신호 — r.daily_signals)
+  sel('.filter-chip[data-dsig]').forEach(c => {
+    const k = c.dataset.dsig;
+    const n = allResults.filter(r => (r.daily_signals || []).some(s => s.includes(k))).length;
+    setChipCount(c, n);
+  });
+  // data-pos (위치)
+  sel('.filter-chip[data-pos]').forEach(c => {
+    const k = c.dataset.pos;
+    const n = allResults.filter(r => r.position === k).length;
+    setChipCount(c, n);
+  });
+  // data-div (다이버전스)
+  sel('.filter-chip[data-div]').forEach(c => {
+    const n = allResults.filter(r => (r.divergence_count || 0) >= 1).length;
+    setChipCount(c, n);
+  });
+  // data-gap (GAP — computeGap 함수 사용)
+  sel('.filter-chip[data-gap]').forEach(c => {
+    const g = parseFloat(c.dataset.gap);
+    const weeklyFloor = g >= 3 ? 5.0 : 4.0;
+    const n = allResults.filter(r => {
+      const gv = computeGap(r);
+      const w = r.score_10 || 0;
+      return gv !== null && gv >= g && w >= weeklyFloor;
+    }).length;
+    setChipCount(c, n);
+  });
+  // data-combo (검증 조합)
+  sel('.filter-chip[data-combo]').forEach(c => {
+    const k = c.dataset.combo;
+    let n = 0;
+    if (k === 'early') {
+      n = allResults.filter(r => (r.score_10 || 0) >= 6.0 && (r.daily_score ?? 99) <= 3.5).length;
+    } else if (k === 'prelaunch') {
+      n = allResults.filter(r => (r.score_10 || 0) >= 6.5 && (r.daily_score ?? 99) <= 4.5).length;
+    } else if (k === 'momentum') {
+      n = allResults.filter(r => {
+        const w = r.score_10 || 0;
+        const gv = computeGap(r);
+        return w >= 6.0 && gv !== null && gv >= 3;
+      }).length;
+    } else if (k === 'premium') {
+      n = allResults.filter(r => {
+        const w = r.score_10 || 0;
+        if (w < 3.0) return false;
+        const sigs = (r.signals || []).join(' ');
+        const hasAccum = sigs.includes('매집비율') || sigs.includes('Pocket Pivot');
+        const hasTrend = sigs.includes('트렌드 구조 양호') || sigs.includes('상대강도 가속');
+        return hasAccum && hasTrend;
+      }).length;
+    }
+    setChipCount(c, n);
+  });
+  // data-new (신규상장)
+  sel('.filter-chip[data-new]').forEach(c => {
+    const n = allResults.filter(r => r.is_new_listing === true).length;
+    setChipCount(c, n);
+  });
+}
+
+function setChipCount(chip, n) {
+  let badge = chip.querySelector('.cnt');
+  if (!badge) {
+    badge = document.createElement('span');
+    badge.className = 'cnt';
+    chip.appendChild(badge);
+  }
+  badge.textContent = n;
 }
 
 function filterAndRender() {
