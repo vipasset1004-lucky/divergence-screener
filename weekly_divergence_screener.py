@@ -1790,7 +1790,18 @@ def run_full_scan(top_n=500):
         tickers = get_krx_tickers("ALL", top_n)
     if not tickers:
         return []
-    print(f"  → {len(tickers)} 종목 로드\n")
+
+    # 신규상장 (52~104주) 추가 — 텐버거 초기 매집 후보의 핵심군
+    try:
+        existing = {t["ticker"] for t in tickers}
+        new_listings = get_new_listings(existing, force_refresh=False)
+        if new_listings:
+            tickers = tickers + new_listings
+            print(f"  + 신규상장 {len(new_listings)}개 추가")
+    except Exception as e:
+        print(f"  [warn] 신규상장 수집 실패 (무시): {e}")
+
+    print(f"  → 총 {len(tickers)} 종목 로드\n")
 
     # ── Stage 1 ───────────────────────────────────
     print("[1/2] 주봉 + score_100 (4 worker 병렬)")

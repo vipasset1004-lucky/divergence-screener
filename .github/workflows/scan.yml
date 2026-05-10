@@ -33,11 +33,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run weekly divergence scan (KR ALL)
+      - name: Restore new_listings cache from gh-pages (있으면)
+        continue-on-error: true
+        run: |
+          git fetch origin gh-pages || true
+          git show origin/gh-pages:new_listings_cache.json > new_listings_cache.json 2>/dev/null || echo "캐시 없음 (첫 실행)"
+
+      - name: Run weekly divergence scan (KR ALL + 신규상장)
         env:
           TZ: Asia/Seoul
           FAST_MODE: "1"  # get_fallback_tickers 직행 (KRX live 너무 느림)
-        run: python weekly_divergence_screener.py KR 500
+        run: python weekly_divergence_screener.py KR 9999  # cap 제거, fallback 527 + 신규상장
 
       - name: Prepare gh-pages payload (master frontend + 새 JSON)
         run: |
@@ -51,6 +57,7 @@ jobs:
           fi
           [ -f divergence_results.json ] && cp divergence_results.json _site/
           [ -f divergence_report.html ] && cp divergence_report.html _site/
+          [ -f new_listings_cache.json ] && cp new_listings_cache.json _site/  # 다음 실행 캐시
           date -u +"{\"updated_at\":\"%Y-%m-%dT%H:%M:%SZ\"}" > _site/last_update.json
           ls -la _site/
 
