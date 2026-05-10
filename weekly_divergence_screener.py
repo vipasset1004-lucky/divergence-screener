@@ -11,6 +11,7 @@ from ta.momentum import StochRSIIndicator, RSIIndicator, StochasticOscillator
 from ta.trend import MACD
 from ta.volume import OnBalanceVolumeIndicator
 from datetime import datetime, timedelta
+import ast
 import json
 import sys
 import os
@@ -19,6 +20,43 @@ import time
 import requests
 
 warnings.filterwarnings("ignore")
+
+
+# ── Naver 차트 API (한국 종목 — yfinance보다 빠르고 안정) ──────
+def _fetch_naver_chart(ticker, start_date, end_date, timeframe="day"):
+    """Naver chart API → yfinance-like DataFrame.
+
+    timeframe: 'day' or 'week'
+    Returns DataFrame indexed by date with [Open, High, Low, Close, Volume] or None.
+    """
+    url = (f"https://api.finance.naver.com/siseJson.naver"
+           f"?symbol={ticker}&requestType=1"
+           f"&startTime={start_date}&endTime={end_date}&timeframe={timeframe}")
+    try:
+        r = requests.get(url, timeout=10,
+                         headers={"User-Agent": "Mozilla/5.0"})
+        if r.status_code != 200:
+            return None
+        text = r.text.strip()
+        if text.startswith("﻿"):
+            text = text[1:]
+        # Naver returns Python-list-like literal
+        data = ast.literal_eval(text)
+        if not data or len(data) < 2:
+            return None
+        rows = data[1:]  # skip header
+        df = pd.DataFrame(rows, columns=[
+            "Date", "Open", "High", "Low", "Close", "Volume", "ForeignPct",
+        ])
+        df["Date"] = pd.to_datetime(df["Date"].astype(str), format="%Y%m%d")
+        df = df.set_index("Date")
+        # 거래정지일 등 OHLC=0인 행 제외
+        df = df[(df["Open"] > 0) & (df["Close"] > 0)]
+        if df.empty:
+            return None
+        return df[["Open", "High", "Low", "Close", "Volume"]].copy()
+    except Exception:
+        return None
 
 
 # ── 설정 ──────────────────────────────────────────────
@@ -783,16 +821,26 @@ US_THEMES = {
 
 
 def fetch_daily_data(ticker_code, is_korean=True, days=120):
-    """일봉 데이터 수집 (최근 120일 - 단기 타이밍용)"""
+    """일봉 데이터 수집 — 한국은 Naver 우선 (yfinance fallback)."""
     try:
         if is_korean:
-            symbol = f"{ticker_code}.KS"
-            data = yf.download(symbol, period=f"{days}d", interval="1d",
-                               progress=False, timeout=10)
-            if data.empty:
-                symbol = f"{ticker_code}.KQ"
+            # Naver 차트 API (빠름)
+            end = datetime.now()
+            start = end - timedelta(days=days + 14)
+            data = _fetch_naver_chart(
+                ticker_code,
+                start.strftime("%Y%m%d"),
+                end.strftime("%Y%m%d"),
+                "day",
+            )
+            if data is None or data.empty:
+                symbol = f"{ticker_code}.KS"
                 data = yf.download(symbol, period=f"{days}d", interval="1d",
                                    progress=False, timeout=10)
+                if data.empty:
+                    symbol = f"{ticker_code}.KQ"
+                    data = yf.download(symbol, period=f"{days}d", interval="1d",
+                                       progress=False, timeout=10)
         else:
             data = yf.download(ticker_code, period=f"{days}d", interval="1d",
                                progress=False, timeout=10)
@@ -946,16 +994,27 @@ def score_daily(df):
 
 
 def fetch_weekly_data(ticker_code, is_korean=True, weeks=104):
-    """주봉 데이터 수집"""
+    """주봉 데이터 수집 — 한국은 Naver 우선 (yfinance fallback)."""
     try:
         if is_korean:
-            symbol = f"{ticker_code}.KS"
-            data = yf.download(symbol, period=f"{weeks}wk", interval="1wk",
-                               progress=False, timeout=10)
-            if data.empty:
-                symbol = f"{ticker_code}.KQ"
+            # Naver 차트 API (빠름 + 안정적)
+            end = datetime.now()
+            start = end - timedelta(weeks=weeks + 4)
+            data = _fetch_naver_chart(
+                ticker_code,
+                start.strftime("%Y%m%d"),
+                end.strftime("%Y%m%d"),
+                "week",
+            )
+            if data is None or data.empty:
+                # fallback: yfinance
+                symbol = f"{ticker_code}.KS"
                 data = yf.download(symbol, period=f"{weeks}wk", interval="1wk",
                                    progress=False, timeout=10)
+                if data.empty:
+                    symbol = f"{ticker_code}.KQ"
+                    data = yf.download(symbol, period=f"{weeks}wk", interval="1wk",
+                                       progress=False, timeout=10)
         else:
             data = yf.download(ticker_code, period=f"{weeks}wk", interval="1wk",
                                progress=False, timeout=10)
