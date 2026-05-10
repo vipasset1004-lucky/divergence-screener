@@ -1521,56 +1521,65 @@ def score_100(df):
     }
 
 
+def _screen_one_korean(t):
+    """병렬 스캔용 단일 종목 처리. 결과 dict 또는 None 반환."""
+    try:
+        ticker = t["ticker"]
+        name = t["name"]
+        df = fetch_weekly_data(ticker, is_korean=True)
+        if df is None:
+            return None
+        df = calculate_indicators(df)
+        if df is None:
+            return None
+        div = detect_bullish_divergence(df)
+        if div and div["score"] >= 1.5:
+            return {"ticker": ticker, "name": name, **div}
+        return None
+    except Exception as e:
+        print(f"  [warn] {t.get('ticker','?')}: {e}")
+        return None
+
+
 def screen_korean_stocks(market="ALL", top_n=200):
-    """한국 주식 스크리닝"""
+    """한국 주식 스크리닝 (병렬화 + GitHub Actions 호환)."""
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
     print(f"\n{'='*60}")
     print(f"  주봉 상승 다이버전스 스크리너")
     print(f"  시장: {market} | 스캔 대상: 상위 {top_n}개 종목")
     print(f"  날짜: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print(f"{'='*60}\n")
 
-    # 종목 수집
+    # 종목 수집 — GitHub Actions / 빠른 모드는 fallback 직행 (KRX live는 너무 느림)
     print("[1/3] 종목 리스트 수집 중...")
-    tickers = get_krx_tickers(market, top_n)
+    fast = os.environ.get("FAST_MODE") == "1" or os.environ.get("GITHUB_ACTIONS") == "true"
+    if fast:
+        print("  [FAST_MODE] get_fallback_tickers 직접 사용")
+        tickers = get_fallback_tickers(top_n)
+        # 시장 필터는 fallback에서 지원 안 함 — KR 전체 사용
+    else:
+        tickers = get_krx_tickers(market, top_n)
     if not tickers:
         print("[ERROR] 종목 수집 실패")
         return []
 
     print(f"  → {len(tickers)}개 종목 로드 완료\n")
 
-    # 스크리닝
-    print(f"[2/3] 주봉 데이터 분석 중...")
+    # 스크리닝 — 병렬 (yfinance rate-limit 회피 위해 4 workers)
+    print(f"[2/3] 주봉 데이터 분석 중 (4 workers 병렬)...")
     results = []
     total = len(tickers)
-
-    for i, t in enumerate(tickers):
-        ticker = t["ticker"]
-        name = t["name"]
-
-        if (i + 1) % 20 == 0 or i == 0:
-            print(f"  진행: {i+1}/{total} ({name}...)")
-
-        # 데이터 수집
-        df = fetch_weekly_data(ticker, is_korean=True)
-        if df is None:
-            continue
-
-        # 지표 계산
-        df = calculate_indicators(df)
-        if df is None:
-            continue
-
-        # 다이버전스 탐지
-        div = detect_bullish_divergence(df)
-        if div and div["score"] >= 1.5:
-            results.append({
-                "ticker": ticker,
-                "name": name,
-                **div
-            })
-
-        # API 부하 방지
-        time.sleep(0.3)
+    done = 0
+    with ThreadPoolExecutor(max_workers=4) as ex:
+        futs = {ex.submit(_screen_one_korean, t): t for t in tickers}
+        for f in as_completed(futs):
+            r = f.result()
+            done += 1
+            if r is not None:
+                results.append(r)
+            if done % 50 == 0 or done == total:
+                print(f"  진행: {done}/{total} (검출 {len(results)}개)")
 
     # 점수순 정렬
     results.sort(key=lambda x: x["score"], reverse=True)

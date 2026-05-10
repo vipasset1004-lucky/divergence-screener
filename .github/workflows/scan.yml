@@ -16,7 +16,7 @@ concurrency:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 35
 
     steps:
       - name: Checkout master
@@ -36,7 +36,8 @@ jobs:
       - name: Run weekly divergence scan (KR ALL)
         env:
           TZ: Asia/Seoul
-        run: python weekly_divergence_screener.py KR 1500
+          FAST_MODE: "1"  # get_fallback_tickers 직행 (KRX live 너무 느림)
+        run: python weekly_divergence_screener.py KR 500
 
       - name: Prepare gh-pages payload (frontend 보존, JSON 새로)
         run: |
