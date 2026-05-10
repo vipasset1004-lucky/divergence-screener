@@ -1,10 +1,12 @@
 name: Deploy Frontend Only
 
-# 향후 frontend index.html을 master에 두면 push로 빠른 배포 가능
-# 현재는 index.html이 gh-pages 브랜치에만 있어 직접 편집 권장
-# (이 워크플로우는 향후 마이그레이션 시 활용)
+# frontend/** 변경 push 시 자동 트리거 — 스캔 재실행 없이 빠른 배포
 
 on:
+  push:
+    branches: [master]
+    paths:
+      - 'frontend/**'
   workflow_dispatch:
 
 permissions:

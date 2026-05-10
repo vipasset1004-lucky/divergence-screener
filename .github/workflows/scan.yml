@@ -39,13 +39,16 @@ jobs:
           FAST_MODE: "1"  # get_fallback_tickers 직행 (KRX live 너무 느림)
         run: python weekly_divergence_screener.py KR 500
 
-      - name: Prepare gh-pages payload (frontend 보존, JSON 새로)
+      - name: Prepare gh-pages payload (master frontend + 새 JSON)
         run: |
-          # gh-pages의 index.html 가져오기 (보존)
-          git fetch origin gh-pages
-          git show origin/gh-pages:index.html > _index.html
           mkdir -p _site
-          cp _index.html _site/index.html
+          # frontend/index.html 우선, fallback to gh-pages 기존 index.html
+          if [ -f frontend/index.html ]; then
+            cp frontend/index.html _site/index.html
+          else
+            git fetch origin gh-pages
+            git show origin/gh-pages:index.html > _site/index.html
+          fi
           [ -f divergence_results.json ] && cp divergence_results.json _site/
           [ -f divergence_report.html ] && cp divergence_report.html _site/
           date -u +"{\"updated_at\":\"%Y-%m-%dT%H:%M:%SZ\"}" > _site/last_update.json
