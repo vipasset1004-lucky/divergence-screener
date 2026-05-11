@@ -1,0 +1,775 @@
+{
+  "updated_at": "2026-05-11T23:48:48.541425",
+  "listings": [
+    {
+      "ticker": "376900",
+      "name": "로킷헬스케어",
+      "themes": [
+        "료용품"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-05-12",
+      "weeks_available": 52
+    },
+    {
+      "ticker": "136150",
+      "name": "원일티엔아이",
+      "themes": [
+        "일반"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-05-09",
+      "weeks_available": 53
+    },
+    {
+      "ticker": "476040",
+      "name": "오가노이드사이언스",
+      "themes": [
+        "자연과학"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-05-09",
+      "weeks_available": 53
+    },
+    {
+      "ticker": "459510",
+      "name": "나우로보틱스",
+      "themes": [
+        "특수"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-05-08",
+      "weeks_available": 53
+    },
+    {
+      "ticker": "364950",
+      "name": "에이아이코리아",
+      "themes": [
+        "특수"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-04-29",
+      "weeks_available": 54
+    },
+    {
+      "ticker": "081180",
+      "name": "쎄크",
+      "themes": [
+        "일반"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-04-28",
+      "weeks_available": 54
+    },
+    {
+      "ticker": "481070",
+      "name": "에이유브랜즈",
+      "themes": [
+        "섬유,"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-04-03",
+      "weeks_available": 58
+    },
+    {
+      "ticker": "101970",
+      "name": "우양에이치씨",
+      "themes": [
+        "구조용"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-03-28",
+      "weeks_available": 59
+    },
+    {
+      "ticker": "462860",
+      "name": "더즌",
+      "themes": [
+        "전기"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-03-24",
+      "weeks_available": 59
+    },
+    {
+      "ticker": "444530",
+      "name": "심플랫폼",
+      "themes": [
+        "소프트웨어"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-03-21",
+      "weeks_available": 60
+    },
+    {
+      "ticker": "484810",
+      "name": "티엑스알로보틱스",
+      "themes": [
+        "일반"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-03-20",
+      "weeks_available": 60
+    },
+    {
+      "ticker": "098070",
+      "name": "한텍",
+      "themes": [
+        "구조용"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-03-20",
+      "weeks_available": 60
+    },
+    {
+      "ticker": "480370",
+      "name": "씨케이솔루션",
+      "themes": [
+        "일반"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-03-17",
+      "weeks_available": 60
+    },
+    {
+      "ticker": "031210",
+      "name": "서울보증보험",
+      "themes": [
+        "보험"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-03-14",
+      "weeks_available": 61
+    },
+    {
+      "ticker": "226590",
+      "name": "엠디바이스",
+      "themes": [
+        "전자부품"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-03-07",
+      "weeks_available": 62
+    },
+    {
+      "ticker": "460870",
+      "name": "에스엠씨지",
+      "themes": [
+        "유리"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-03-07",
+      "weeks_available": 62
+    },
+    {
+      "ticker": "393970",
+      "name": "대진첨단소재",
+      "themes": [
+        "플라스틱제품"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-03-06",
+      "weeks_available": 52
+    },
+    {
+      "ticker": "435570",
+      "name": "에르코스",
+      "themes": [
+        "도시락"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-02-28",
+      "weeks_available": 63
+    },
+    {
+      "ticker": "489500",
+      "name": "엘케이켐",
+      "themes": [
+        "기타"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-02-25",
+      "weeks_available": 63
+    },
+    {
+      "ticker": "479960",
+      "name": "위너스일렉",
+      "themes": [
+        "기타"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-02-24",
+      "weeks_available": 63
+    },
+    {
+      "ticker": "463480",
+      "name": "모티브링크",
+      "themes": [
+        "전자부품"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-02-20",
+      "weeks_available": 64
+    },
+    {
+      "ticker": "303810",
+      "name": "동국생명과학",
+      "themes": [
+        "약품"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-02-17",
+      "weeks_available": 64
+    },
+    {
+      "ticker": "475830",
+      "name": "오름테라퓨틱",
+      "themes": [
+        "기초"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-02-14",
+      "weeks_available": 65
+    },
+    {
+      "ticker": "240550",
+      "name": "동방메디컬",
+      "themes": [
+        "료용"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-02-13",
+      "weeks_available": 65
+    },
+    {
+      "ticker": "212710",
+      "name": "아이에스티이",
+      "themes": [
+        "반도체"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-02-12",
+      "weeks_available": 64
+    },
+    {
+      "ticker": "064400",
+      "name": "LG씨엔에스",
+      "themes": [
+        "컴퓨터"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-02-05",
+      "weeks_available": 66
+    },
+    {
+      "ticker": "462980",
+      "name": "아이지넷",
+      "themes": [
+        "기타"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-02-04",
+      "weeks_available": 66
+    },
+    {
+      "ticker": "452450",
+      "name": "피아이이",
+      "themes": [
+        "특수"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-02-04",
+      "weeks_available": 66
+    },
+    {
+      "ticker": "482630",
+      "name": "삼양엔씨켐",
+      "themes": [
+        "기타"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-02-03",
+      "weeks_available": 66
+    },
+    {
+      "ticker": "096250",
+      "name": "와이즈넛",
+      "themes": [
+        "소프트웨어"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-01-24",
+      "weeks_available": 68
+    },
+    {
+      "ticker": "373160",
+      "name": "데이원컴퍼니",
+      "themes": [
+        "기타"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-01-24",
+      "weeks_available": 68
+    },
+    {
+      "ticker": "450950",
+      "name": "아스테라시스",
+      "themes": [
+        "료용"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-01-24",
+      "weeks_available": 68
+    },
+    {
+      "ticker": "475460",
+      "name": "미트박스",
+      "themes": [
+        "기타"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-01-23",
+      "weeks_available": 68
+    },
+    {
+      "ticker": "478560",
+      "name": "블랙야크아이앤씨",
+      "themes": [
+        "신발"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-01-21",
+      "weeks_available": 68
+    },
+    {
+      "ticker": "332190",
+      "name": "오션스바이오",
+      "themes": [
+        "료용"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-01-14",
+      "weeks_available": 69
+    },
+    {
+      "ticker": "432980",
+      "name": "엠에프씨",
+      "themes": [
+        "기초"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-12-26",
+      "weeks_available": 72
+    },
+    {
+      "ticker": "387570",
+      "name": "파인메딕스",
+      "themes": [
+        "료용"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-12-26",
+      "weeks_available": 72
+    },
+    {
+      "ticker": "177900",
+      "name": "쓰리에이로직스",
+      "themes": [
+        "반도체"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-12-24",
+      "weeks_available": 72
+    },
+    {
+      "ticker": "499790",
+      "name": "GS피앤엘",
+      "themes": [
+        "기타"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-12-23",
+      "weeks_available": 72
+    },
+    {
+      "ticker": "495810",
+      "name": "유비씨",
+      "themes": [
+        "소프트웨어"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-12-23",
+      "weeks_available": 72
+    },
+    {
+      "ticker": "368030",
+      "name": "창대정밀",
+      "themes": [
+        "특수"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-12-23",
+      "weeks_available": 66
+    },
+    {
+      "ticker": "398120",
+      "name": "에스지헬스케어",
+      "themes": [
+        "료용"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-12-19",
+      "weeks_available": 73
+    },
+    {
+      "ticker": "476060",
+      "name": "온코닉테라퓨틱스",
+      "themes": [
+        "자연과학"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-12-19",
+      "weeks_available": 73
+    },
+    {
+      "ticker": "382150",
+      "name": "온코크로스",
+      "themes": [
+        "자연과학"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-12-18",
+      "weeks_available": 73
+    },
+    {
+      "ticker": "484870",
+      "name": "엠앤씨솔루션",
+      "themes": [
+        "특수"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-12-16",
+      "weeks_available": 73
+    },
+    {
+      "ticker": "457600",
+      "name": "벡트",
+      "themes": [
+        "영상"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-12-16",
+      "weeks_available": 73
+    },
+    {
+      "ticker": "471820",
+      "name": "셀로맥스사이언스",
+      "themes": [
+        "기타"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-12-13",
+      "weeks_available": 74
+    },
+    {
+      "ticker": "415640",
+      "name": "KB발해인프라",
+      "themes": [
+        "신탁"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-11-29",
+      "weeks_available": 76
+    },
+    {
+      "ticker": "459100",
+      "name": "위츠",
+      "themes": [
+        "전자부품"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-11-20",
+      "weeks_available": 77
+    },
+    {
+      "ticker": "389680",
+      "name": "유디엠텍",
+      "themes": [
+        "소프트웨어"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-11-20",
+      "weeks_available": 73
+    },
+    {
+      "ticker": "474610",
+      "name": "RF시스템즈",
+      "themes": [
+        "기타"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-11-19",
+      "weeks_available": 77
+    },
+    {
+      "ticker": "466410",
+      "name": "사이냅소프트",
+      "themes": [
+        "소프트웨어"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-11-19",
+      "weeks_available": 77
+    },
+    {
+      "ticker": "475660",
+      "name": "에스켐",
+      "themes": [
+        "기타"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-11-18",
+      "weeks_available": 77
+    },
+    {
+      "ticker": "413390",
+      "name": "엠오티",
+      "themes": [
+        "특수"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-11-18",
+      "weeks_available": 77
+    },
+    {
+      "ticker": "394800",
+      "name": "쓰리빌리언",
+      "themes": [
+        "자연과학"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-11-14",
+      "weeks_available": 78
+    },
+    {
+      "ticker": "464580",
+      "name": "닷밀",
+      "themes": [
+        "영화,"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-11-13",
+      "weeks_available": 78
+    },
+    {
+      "ticker": "473980",
+      "name": "노머스",
+      "themes": [
+        "창작"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-11-12",
+      "weeks_available": 78
+    },
+    {
+      "ticker": "163280",
+      "name": "에어레인",
+      "themes": [
+        "일반"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-11-08",
+      "weeks_available": 79
+    },
+    {
+      "ticker": "475960",
+      "name": "토모큐브",
+      "themes": [
+        "사진장비"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-11-07",
+      "weeks_available": 79
+    },
+    {
+      "ticker": "475560",
+      "name": "더본코리아",
+      "themes": [
+        "상품"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-11-06",
+      "weeks_available": 79
+    },
+    {
+      "ticker": "376270",
+      "name": "HEM파마",
+      "themes": [
+        "자연과학"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-11-05",
+      "weeks_available": 79
+    },
+    {
+      "ticker": "475580",
+      "name": "에이럭스",
+      "themes": [
+        "그외"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-11-01",
+      "weeks_available": 80
+    },
+    {
+      "ticker": "336680",
+      "name": "탑런토탈솔루션",
+      "themes": [
+        "전자부품"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-11-01",
+      "weeks_available": 80
+    },
+    {
+      "ticker": "458650",
+      "name": "성우",
+      "themes": [
+        "일차전지"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-10-31",
+      "weeks_available": 80
+    },
+    {
+      "ticker": "476710",
+      "name": "타조이엔터테인먼트",
+      "themes": [
+        "창작"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-10-30",
+      "weeks_available": 80
+    },
+    {
+      "ticker": "466100",
+      "name": "클로봇",
+      "themes": [
+        "소프트웨어"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-10-28",
+      "weeks_available": 80
+    },
+    {
+      "ticker": "289930",
+      "name": "웨이비스",
+      "themes": [
+        "반도체"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-10-25",
+      "weeks_available": 81
+    },
+    {
+      "ticker": "475400",
+      "name": "씨메스로보틱스",
+      "themes": [
+        "특수"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-10-24",
+      "weeks_available": 81
+    },
+    {
+      "ticker": "457370",
+      "name": "한켐",
+      "themes": [
+        "기초"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-10-22",
+      "weeks_available": 81
+    },
+    {
+      "ticker": "474170",
+      "name": "루미르",
+      "themes": [
+        "항공기,우주선"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-10-21",
+      "weeks_available": 81
+    },
+    {
+      "ticker": "209640",
+      "name": "와이제이링크",
+      "themes": [
+        "특수"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-10-18",
+      "weeks_available": 81
+    },
+    {
+      "ticker": "465480",
+      "name": "인스피언",
+      "themes": [
+        "소프트웨어"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-10-18",
+      "weeks_available": 82
+    },
+    {
+      "ticker": "308430",
+      "name": "셀비온",
+      "themes": [
+        "약품"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-10-16",
+      "weeks_available": 82
+    },
+    {
+      "ticker": "381620",
+      "name": "제닉스로보틱스",
+      "themes": [
+        "특수"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-09-30",
+      "weeks_available": 84
+    },
+    {
+      "ticker": "351870",
+      "name": "차이커뮤니케이션",
+      "themes": [
+        "광고"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-09-27",
+      "weeks_available": 85
+    },
+    {
+      "ticker": "489790",
+      "name": "한화비전",
+      "themes": [
+        "통신"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-09-27",
+      "weeks_available": 85
+    },
+    {
+      "ticker": "464500",
+      "name": "아이언디바이스",
+      "themes": [
+        "반도체"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-09-23",
+      "weeks_available": 85
+    }
+  ]
+}
