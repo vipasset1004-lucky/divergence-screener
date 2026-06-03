@@ -1,5 +1,5 @@
 {
-  "scan_date": "2026-06-03T01:24:50.920770",
+  "scan_date": "2026-06-04T01:48:12.235721",
   "total_found": 130,
   "results": [
     {
@@ -52,6 +52,54 @@
       "total_score": 5.9
     },
     {
+      "ticker": "036570",
+      "name": "엔씨소프트",
+      "themes": [
+        "게임",
+        "AI"
+      ],
+      "score_100": 50,
+      "score_10": 5.0,
+      "grade": "B",
+      "signals": [
+        "Pocket Pivot 매수",
+        "매집비율 5.3배",
+        "상대강도 가속",
+        "MACD 모멘텀 상승",
+        "트렌드 구조 양호",
+        "이평선 정배열"
+      ],
+      "signal_count": 6,
+      "current_price": 289500.0,
+      "current_rsi": 66.6,
+      "current_stoch": 93.1,
+      "current_macd_hist": 4664.02,
+      "price_vs_52w_high": 97.6,
+      "price_vs_52w_low": 88.6,
+      "position": "신고가 돌파",
+      "surge_phase": "상승 추세",
+      "is_weekly_overheated": false,
+      "has_dead_cross": false,
+      "daily_score": 5.2,
+      "daily_signals": [
+        "거래량 폭발 4.3배",
+        "5일선 위 양봉",
+        "MACD 상승 중",
+        "3연속 양봉",
+        "일봉 정배열"
+      ],
+      "daily_rsi": 79.9,
+      "daily_vol_ratio": 4.3,
+      "return_3m": 54.0,
+      "vol_trend_60d": 2.21,
+      "is_overheated": true,
+      "earnings_type": "-",
+      "is_new_listing": false,
+      "listing_date": null,
+      "weeks_available": null,
+      "total_score": 5.1
+    },
+    {
       "ticker": "018260",
       "name": "삼성에스디에스",
       "themes": [
@@ -93,54 +141,6 @@
       "daily_vol_ratio": 1.8,
       "return_3m": 69.2,
       "vol_trend_60d": 4.87,
-      "is_overheated": true,
-      "earnings_type": "-",
-      "is_new_listing": false,
-      "listing_date": null,
-      "weeks_available": null,
-      "total_score": 5.1
-    },
-    {
-      "ticker": "036570",
-      "name": "엔씨소프트",
-      "themes": [
-        "게임",
-        "AI"
-      ],
-      "score_100": 50,
-      "score_10": 5.0,
-      "grade": "B",
-      "signals": [
-        "Pocket Pivot 매수",
-        "매집비율 5.3배",
-        "상대강도 가속",
-        "MACD 모멘텀 상승",
-        "트렌드 구조 양호",
-        "이평선 정배열"
-      ],
-      "signal_count": 6,
-      "current_price": 289500.0,
-      "current_rsi": 66.6,
-      "current_stoch": 93.1,
-      "current_macd_hist": 4664.02,
-      "price_vs_52w_high": 97.6,
-      "price_vs_52w_low": 88.6,
-      "position": "신고가 돌파",
-      "surge_phase": "상승 추세",
-      "is_weekly_overheated": false,
-      "has_dead_cross": false,
-      "daily_score": 5.2,
-      "daily_signals": [
-        "거래량 폭발 4.3배",
-        "5일선 위 양봉",
-        "MACD 상승 중",
-        "3연속 양봉",
-        "일봉 정배열"
-      ],
-      "daily_rsi": 79.9,
-      "daily_vol_ratio": 4.3,
-      "return_3m": 54.0,
-      "vol_trend_60d": 2.21,
       "is_overheated": true,
       "earnings_type": "-",
       "is_new_listing": false,
@@ -2200,48 +2200,6 @@
       "total_score": 2.7
     },
     {
-      "ticker": "086790",
-      "name": "하나금융지주",
-      "themes": [
-        "금융"
-      ],
-      "score_100": 26,
-      "score_10": 2.6,
-      "grade": "C",
-      "signals": [
-        "VCP 변동성 수축",
-        "트렌드 구조 양호",
-        "이평선 정배열"
-      ],
-      "signal_count": 3,
-      "current_price": 115100.0,
-      "current_rsi": 53.5,
-      "current_stoch": 43.5,
-      "current_macd_hist": -885.2,
-      "price_vs_52w_high": 86.1,
-      "price_vs_52w_low": 66.6,
-      "position": "상승 중반",
-      "surge_phase": "눌림목",
-      "is_weekly_overheated": false,
-      "has_dead_cross": false,
-      "daily_score": 2.8,
-      "daily_signals": [
-        "5일선 돌파 양봉",
-        "20일선 지지 반등",
-        "RSI 반등(42)"
-      ],
-      "daily_rsi": 41.6,
-      "daily_vol_ratio": 1.0,
-      "return_3m": -2.6,
-      "vol_trend_60d": 1.15,
-      "is_overheated": false,
-      "earnings_type": "-",
-      "is_new_listing": false,
-      "listing_date": null,
-      "weeks_available": null,
-      "total_score": 2.7
-    },
-    {
       "ticker": "009150",
       "name": "삼성전기",
       "themes": [
@@ -2280,6 +2238,48 @@
       "return_3m": 343.3,
       "vol_trend_60d": 2.32,
       "is_overheated": true,
+      "earnings_type": "-",
+      "is_new_listing": false,
+      "listing_date": null,
+      "weeks_available": null,
+      "total_score": 2.7
+    },
+    {
+      "ticker": "086790",
+      "name": "하나금융지주",
+      "themes": [
+        "금융"
+      ],
+      "score_100": 26,
+      "score_10": 2.6,
+      "grade": "C",
+      "signals": [
+        "VCP 변동성 수축",
+        "트렌드 구조 양호",
+        "이평선 정배열"
+      ],
+      "signal_count": 3,
+      "current_price": 115100.0,
+      "current_rsi": 53.5,
+      "current_stoch": 43.5,
+      "current_macd_hist": -885.2,
+      "price_vs_52w_high": 86.1,
+      "price_vs_52w_low": 66.6,
+      "position": "상승 중반",
+      "surge_phase": "눌림목",
+      "is_weekly_overheated": false,
+      "has_dead_cross": false,
+      "daily_score": 2.8,
+      "daily_signals": [
+        "5일선 돌파 양봉",
+        "20일선 지지 반등",
+        "RSI 반등(42)"
+      ],
+      "daily_rsi": 41.6,
+      "daily_vol_ratio": 1.0,
+      "return_3m": -2.6,
+      "vol_trend_60d": 1.15,
+      "is_overheated": false,
       "earnings_type": "-",
       "is_new_listing": false,
       "listing_date": null,
