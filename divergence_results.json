@@ -1,53 +1,7 @@
 {
-  "scan_date": "2026-07-27T23:31:02.690100",
+  "scan_date": "2026-07-28T23:04:21.177403",
   "total_found": 59,
   "results": [
-    {
-      "ticker": "457600",
-      "name": "벡트",
-      "themes": [
-        "영상"
-      ],
-      "score_100": 59,
-      "score_10": 5.9,
-      "grade": "A",
-      "signals": [
-        "Pocket Pivot 매수",
-        "거래량 선행 매집",
-        "상대강도 가속",
-        "MACD 모멘텀 상승",
-        "트렌드 구조 양호",
-        "20주선 안착 (3주)",
-        "20주선 지지 반등"
-      ],
-      "signal_count": 7,
-      "current_price": 3295.0,
-      "current_rsi": 68.8,
-      "current_stoch": 88.1,
-      "current_macd_hist": 157.61,
-      "price_vs_52w_high": 92.8,
-      "price_vs_52w_low": 135.2,
-      "position": "상승 중반",
-      "surge_phase": "하락 추세",
-      "is_weekly_overheated": false,
-      "has_dead_cross": false,
-      "daily_score": 3.5,
-      "daily_signals": [
-        "5일선 돌파 양봉",
-        "MACD 상승 중",
-        "일봉 정배열"
-      ],
-      "daily_rsi": 71.0,
-      "daily_vol_ratio": 0.3,
-      "return_3m": 60.2,
-      "vol_trend_60d": 1.29,
-      "is_overheated": true,
-      "earnings_type": "-",
-      "is_new_listing": true,
-      "listing_date": "2024-12-16",
-      "weeks_available": 83,
-      "total_score": 5.2
-    },
     {
       "ticker": "078930",
       "name": "GS",
@@ -80,21 +34,66 @@
       "surge_phase": "상승 추세",
       "is_weekly_overheated": true,
       "has_dead_cross": false,
-      "daily_score": 2.0,
+      "daily_score": 1.5,
       "daily_signals": [
-        "MACD 상승 중",
         "일봉 정배열"
       ],
-      "daily_rsi": 70.0,
+      "daily_rsi": 60.3,
       "daily_vol_ratio": 0.8,
-      "return_3m": 19.3,
-      "vol_trend_60d": 1.59,
+      "return_3m": 15.6,
+      "vol_trend_60d": 1.63,
       "is_overheated": false,
       "earnings_type": "-",
       "is_new_listing": false,
       "listing_date": null,
       "weeks_available": null,
-      "total_score": 5.1
+      "total_score": 5.0
+    },
+    {
+      "ticker": "457600",
+      "name": "벡트",
+      "themes": [
+        "영상"
+      ],
+      "score_100": 59,
+      "score_10": 5.9,
+      "grade": "A",
+      "signals": [
+        "Pocket Pivot 매수",
+        "거래량 선행 매집",
+        "상대강도 가속",
+        "MACD 모멘텀 상승",
+        "트렌드 구조 양호",
+        "20주선 안착 (3주)",
+        "20주선 지지 반등"
+      ],
+      "signal_count": 7,
+      "current_price": 3295.0,
+      "current_rsi": 68.8,
+      "current_stoch": 88.1,
+      "current_macd_hist": 157.61,
+      "price_vs_52w_high": 92.8,
+      "price_vs_52w_low": 135.2,
+      "position": "상승 중반",
+      "surge_phase": "하락 추세",
+      "is_weekly_overheated": false,
+      "has_dead_cross": false,
+      "daily_score": 2.7,
+      "daily_signals": [
+        "5일선 위 양봉",
+        "MACD 상승 중",
+        "일봉 정배열"
+      ],
+      "daily_rsi": 70.1,
+      "daily_vol_ratio": 0.5,
+      "return_3m": 57.4,
+      "vol_trend_60d": 0.86,
+      "is_overheated": true,
+      "earnings_type": "-",
+      "is_new_listing": true,
+      "listing_date": "2024-12-16",
+      "weeks_available": 84,
+      "total_score": 4.9
     },
     {
       "ticker": "014100",
@@ -126,21 +125,20 @@
       "surge_phase": "하락 추세",
       "is_weekly_overheated": false,
       "has_dead_cross": false,
-      "daily_score": 2.0,
+      "daily_score": 1.5,
       "daily_signals": [
-        "MACD 상승 중",
         "일봉 정배열"
       ],
-      "daily_rsi": 84.1,
-      "daily_vol_ratio": 0.2,
-      "return_3m": 9.9,
-      "vol_trend_60d": 1.84,
+      "daily_rsi": 76.8,
+      "daily_vol_ratio": 1.4,
+      "return_3m": 6.2,
+      "vol_trend_60d": 1.23,
       "is_overheated": false,
       "earnings_type": "-",
       "is_new_listing": false,
       "listing_date": null,
       "weeks_available": null,
-      "total_score": 4.4
+      "total_score": 4.3
     },
     {
       "ticker": "080010",
@@ -172,72 +170,20 @@
       "surge_phase": "정리 중",
       "is_weekly_overheated": false,
       "has_dead_cross": false,
-      "daily_score": 2.7,
+      "daily_score": 1.5,
       "daily_signals": [
-        "5일선 위 양봉",
-        "MACD 상승 중",
         "일봉 정배열"
       ],
-      "daily_rsi": 80.2,
-      "daily_vol_ratio": 0.5,
-      "return_3m": 9.6,
-      "vol_trend_60d": 0.86,
+      "daily_rsi": 70.0,
+      "daily_vol_ratio": 1.0,
+      "return_3m": 6.1,
+      "vol_trend_60d": 0.54,
       "is_overheated": false,
       "earnings_type": "-",
       "is_new_listing": false,
       "listing_date": null,
       "weeks_available": null,
-      "total_score": 4.4
-    },
-    {
-      "ticker": "423160",
-      "name": "에이에스텍",
-      "themes": [
-        "반도체장비"
-      ],
-      "score_100": 40,
-      "score_10": 4.0,
-      "grade": "B",
-      "signals": [
-        "볼린저 스퀴즈",
-        "종가 밀집 (고점 근처)",
-        "거래량 고갈 (대기)",
-        "MACD 모멘텀 상승",
-        "트렌드 구조 양호",
-        "이평선 정배열",
-        "20주선 지지 반등",
-        "주봉 RSI 과열"
-      ],
-      "signal_count": 8,
-      "current_price": 110850.0,
-      "current_rsi": 100.0,
-      "current_stoch": 99.4,
-      "current_macd_hist": 1.54,
-      "price_vs_52w_high": 100.0,
-      "price_vs_52w_low": 2.6,
-      "position": "신고가 돌파",
-      "surge_phase": "상승 추세",
-      "is_weekly_overheated": true,
-      "has_dead_cross": false,
-      "daily_score": 5.2,
-      "daily_signals": [
-        "5일선 위 양봉",
-        "MACD 상승 중",
-        "20일선 지지 반등",
-        "RSI 과매도 반등(0)",
-        "3연속 양봉",
-        "일봉 정배열"
-      ],
-      "daily_rsi": 0.0,
-      "daily_vol_ratio": 0.7,
-      "return_3m": 0.7,
-      "vol_trend_60d": 0.41,
-      "is_overheated": false,
-      "earnings_type": "-",
-      "is_new_listing": false,
-      "listing_date": null,
-      "weeks_available": null,
-      "total_score": 4.4
+      "total_score": 4.1
     },
     {
       "ticker": "014710",
@@ -268,97 +214,50 @@
       "surge_phase": "하락 추세",
       "is_weekly_overheated": false,
       "has_dead_cross": false,
-      "daily_score": 4.2,
+      "daily_score": 3.2,
       "daily_signals": [
         "5일선 위 양봉",
-        "일봉 MACD 골든크로스",
+        "MACD 상승 중",
         "3연속 양봉",
         "일봉 정배열"
       ],
-      "daily_rsi": 62.7,
-      "daily_vol_ratio": 0.3,
-      "return_3m": 22.1,
-      "vol_trend_60d": 0.71,
+      "daily_rsi": 64.4,
+      "daily_vol_ratio": 0.4,
+      "return_3m": 19.7,
+      "vol_trend_60d": 0.54,
       "is_overheated": false,
       "earnings_type": "-",
       "is_new_listing": false,
       "listing_date": null,
       "weeks_available": null,
-      "total_score": 4.3
+      "total_score": 4.0
     },
     {
-      "ticker": "044820",
-      "name": "코스맥스비티아이",
+      "ticker": "489460",
+      "name": "바이오비쥬",
       "themes": [
-        "화장품",
-        "ODM"
+        "기타"
       ],
-      "score_100": 38,
-      "score_10": 3.8,
-      "grade": "C",
-      "signals": [
-        "종가 밀집",
-        "거래량 고갈 (대기)",
-        "MACD 모멘텀 상승",
-        "트렌드 구조 양호",
-        "이평선 정배열",
-        "20주선 안착 (4주)"
-      ],
-      "signal_count": 6,
-      "current_price": 19550.0,
-      "current_rsi": 59.0,
-      "current_stoch": 45.3,
-      "current_macd_hist": 44.91,
-      "price_vs_52w_high": 81.8,
-      "price_vs_52w_low": 65.5,
-      "position": "상승 중반",
-      "surge_phase": "추세 전환",
-      "is_weekly_overheated": false,
-      "has_dead_cross": false,
-      "daily_score": 5.2,
-      "daily_signals": [
-        "5일선 위 양봉",
-        "일봉 MACD 골든크로스",
-        "20일선 지지 반등",
-        "3연속 양봉",
-        "일봉 정배열"
-      ],
-      "daily_rsi": 54.0,
-      "daily_vol_ratio": 0.8,
-      "return_3m": 16.6,
-      "vol_trend_60d": 0.28,
-      "is_overheated": false,
-      "earnings_type": "-",
-      "is_new_listing": false,
-      "listing_date": null,
-      "weeks_available": null,
-      "total_score": 4.2
-    },
-    {
-      "ticker": "950190",
-      "name": "에이비프로바이오",
-      "themes": [
-        "바이오"
-      ],
-      "score_100": 45,
-      "score_10": 4.5,
+      "score_100": 44,
+      "score_10": 4.4,
       "grade": "B",
       "signals": [
         "Pocket Pivot 매수",
+        "거래량 선행 매집",
         "매집비율 2.1배",
-        "상대강도 가속",
-        "트렌드 구조 양호",
-        "이평선 정배열"
+        "RSI 다이버전스",
+        "MACD 모멘텀 상승",
+        "20주선 돌파"
       ],
-      "signal_count": 5,
-      "current_price": 10020.0,
-      "current_rsi": 65.3,
-      "current_stoch": 99.7,
-      "current_macd_hist": 197.68,
-      "price_vs_52w_high": 94.8,
-      "price_vs_52w_low": 44.8,
-      "position": "상승 중반",
-      "surge_phase": "추세 전환",
+      "signal_count": 6,
+      "current_price": 8930.0,
+      "current_rsi": 51.5,
+      "current_stoch": 93.2,
+      "current_macd_hist": 294.97,
+      "price_vs_52w_high": 0.0,
+      "price_vs_52w_low": 0.0,
+      "position": "-",
+      "surge_phase": "하락 추세",
       "is_weekly_overheated": false,
       "has_dead_cross": false,
       "daily_score": 3.2,
@@ -368,61 +267,39 @@
         "3연속 양봉",
         "일봉 정배열"
       ],
-      "daily_rsi": 67.7,
-      "daily_vol_ratio": 1.2,
-      "return_3m": 19.6,
-      "vol_trend_60d": 1.39,
+      "daily_rsi": 81.1,
+      "daily_vol_ratio": 0.8,
+      "return_3m": 3.6,
+      "vol_trend_60d": 3.11,
       "is_overheated": false,
+      "divergence_count": 3,
+      "divergences": {
+        "Stochastic %K": {
+          "prev_low": 2.43,
+          "curr_low": 16.12,
+          "change": 13.69
+        },
+        "RSI": {
+          "prev_low": 26.64,
+          "curr_low": 29.24,
+          "change": 2.6
+        },
+        "MACD Histogram": {
+          "prev_low": -150.56,
+          "curr_low": -33.64,
+          "change": 116.92
+        }
+      },
+      "div_score": 4.0,
+      "bonus_signals": [
+        "MACD 히스토그램 반전",
+        "거래량 증가"
+      ],
       "earnings_type": "-",
-      "is_new_listing": false,
-      "listing_date": null,
-      "weeks_available": null,
-      "total_score": 4.1
-    },
-    {
-      "ticker": "093320",
-      "name": "케이아이엔엑스",
-      "themes": [
-        "데이터센터",
-        "IDC"
-      ],
-      "score_100": 47,
-      "score_10": 4.7,
-      "grade": "B",
-      "signals": [
-        "거래량 선행 매집",
-        "매집비율 1.8배",
-        "상대강도 가속",
-        "MACD 모멘텀 상승",
-        "트렌드 구조 양호",
-        "20주선 안착 (4주)"
-      ],
-      "signal_count": 6,
-      "current_price": 143800.0,
-      "current_rsi": 64.8,
-      "current_stoch": 89.4,
-      "current_macd_hist": 2657.2,
-      "price_vs_52w_high": 96.6,
-      "price_vs_52w_low": 81.6,
-      "position": "신고가 돌파",
-      "surge_phase": "상승 추세",
-      "is_weekly_overheated": false,
-      "has_dead_cross": false,
-      "daily_score": 2.0,
-      "daily_signals": [
-        "MACD 상승 중",
-        "일봉 정배열"
-      ],
-      "daily_rsi": 65.2,
-      "daily_vol_ratio": 1.0,
-      "return_3m": 32.0,
-      "vol_trend_60d": 1.42,
-      "is_overheated": false,
-      "earnings_type": "-",
-      "is_new_listing": false,
-      "listing_date": null,
-      "weeks_available": null,
-      "total_score": 3.9
+      "is_new_listing": true,
+      "listing_date": "2025-05-20",
+      "weeks_available": 62,
+      "total_score": 4.0
     },
     {
       "ticker": "086790",
@@ -456,10 +333,10 @@
       "daily_signals": [
         "일봉 정배열"
       ],
-      "daily_rsi": 59.3,
-      "daily_vol_ratio": 0.7,
-      "return_3m": 8.0,
-      "vol_trend_60d": 0.9,
+      "daily_rsi": 44.7,
+      "daily_vol_ratio": 1.1,
+      "return_3m": -0.2,
+      "vol_trend_60d": 0.93,
       "is_overheated": false,
       "divergence_count": 1,
       "divergences": {
@@ -478,6 +355,93 @@
       "listing_date": null,
       "weeks_available": null,
       "total_score": 3.8
+    },
+    {
+      "ticker": "950190",
+      "name": "에이비프로바이오",
+      "themes": [
+        "바이오"
+      ],
+      "score_100": 45,
+      "score_10": 4.5,
+      "grade": "B",
+      "signals": [
+        "Pocket Pivot 매수",
+        "매집비율 2.1배",
+        "상대강도 가속",
+        "트렌드 구조 양호",
+        "이평선 정배열"
+      ],
+      "signal_count": 5,
+      "current_price": 10020.0,
+      "current_rsi": 65.3,
+      "current_stoch": 99.7,
+      "current_macd_hist": 197.68,
+      "price_vs_52w_high": 94.8,
+      "price_vs_52w_low": 44.8,
+      "position": "상승 중반",
+      "surge_phase": "추세 전환",
+      "is_weekly_overheated": false,
+      "has_dead_cross": false,
+      "daily_score": 2.0,
+      "daily_signals": [
+        "MACD 상승 중",
+        "일봉 정배열"
+      ],
+      "daily_rsi": 71.9,
+      "daily_vol_ratio": 0.9,
+      "return_3m": 19.0,
+      "vol_trend_60d": 1.39,
+      "is_overheated": false,
+      "earnings_type": "-",
+      "is_new_listing": false,
+      "listing_date": null,
+      "weeks_available": null,
+      "total_score": 3.8
+    },
+    {
+      "ticker": "093320",
+      "name": "케이아이엔엑스",
+      "themes": [
+        "데이터센터",
+        "IDC"
+      ],
+      "score_100": 47,
+      "score_10": 4.7,
+      "grade": "B",
+      "signals": [
+        "거래량 선행 매집",
+        "매집비율 1.8배",
+        "상대강도 가속",
+        "MACD 모멘텀 상승",
+        "트렌드 구조 양호",
+        "20주선 안착 (4주)"
+      ],
+      "signal_count": 6,
+      "current_price": 143800.0,
+      "current_rsi": 64.8,
+      "current_stoch": 89.4,
+      "current_macd_hist": 2657.2,
+      "price_vs_52w_high": 96.6,
+      "price_vs_52w_low": 81.6,
+      "position": "신고가 돌파",
+      "surge_phase": "상승 추세",
+      "is_weekly_overheated": false,
+      "has_dead_cross": false,
+      "daily_score": 1.5,
+      "daily_signals": [
+        "일봉 정배열"
+      ],
+      "daily_rsi": 57.6,
+      "daily_vol_ratio": 0.5,
+      "return_3m": 26.3,
+      "vol_trend_60d": 1.17,
+      "is_overheated": false,
+      "earnings_type": "-",
+      "is_new_listing": false,
+      "listing_date": null,
+      "weeks_available": null,
+      "total_score": 3.7
     },
     {
       "ticker": "950170",
@@ -506,348 +470,16 @@
       "surge_phase": "추세 전환",
       "is_weekly_overheated": false,
       "has_dead_cross": false,
-      "daily_score": 3.2,
+      "daily_score": 2.0,
       "daily_signals": [
-        "5일선 위 양봉",
         "MACD 상승 중",
-        "3연속 양봉",
         "일봉 정배열"
       ],
-      "daily_rsi": 71.1,
+      "daily_rsi": 60.4,
       "daily_vol_ratio": 1.0,
-      "return_3m": 20.6,
-      "vol_trend_60d": 0.8,
+      "return_3m": 18.4,
+      "vol_trend_60d": 0.82,
       "is_overheated": false,
-      "earnings_type": "-",
-      "is_new_listing": false,
-      "listing_date": null,
-      "weeks_available": null,
-      "total_score": 3.8
-    },
-    {
-      "ticker": "052460",
-      "name": "아이크래프트",
-      "themes": [
-        "항공",
-        "MRO"
-      ],
-      "score_100": 24,
-      "score_10": 2.4,
-      "grade": "D",
-      "signals": [
-        "MACD 모멘텀 상승",
-        "트렌드 5/7",
-        "20주선 돌파",
-        "20주선 지지 반등"
-      ],
-      "signal_count": 4,
-      "current_price": 3400.0,
-      "current_rsi": 53.6,
-      "current_stoch": 45.8,
-      "current_macd_hist": -29.74,
-      "price_vs_52w_high": 71.4,
-      "price_vs_52w_low": 51.1,
-      "position": "상승 초입",
-      "surge_phase": "상승 추세",
-      "is_weekly_overheated": false,
-      "has_dead_cross": false,
-      "daily_score": 7.2,
-      "daily_signals": [
-        "거래량 폭발 7.2배",
-        "5일선 위 양봉",
-        "MACD 상승 중",
-        "20일선 지지 반등",
-        "갭상승 +7.5%",
-        "3연속 양봉",
-        "일봉 정배열"
-      ],
-      "daily_rsi": 83.8,
-      "daily_vol_ratio": 7.2,
-      "return_3m": 10.8,
-      "vol_trend_60d": 3.0,
-      "is_overheated": false,
-      "earnings_type": "-",
-      "is_new_listing": false,
-      "listing_date": null,
-      "weeks_available": null,
-      "total_score": 3.8
-    },
-    {
-      "ticker": "138040",
-      "name": "메리츠금융지주",
-      "themes": [
-        "금융"
-      ],
-      "score_100": 38,
-      "score_10": 3.8,
-      "grade": "C",
-      "signals": [
-        "매집비율 1.9배",
-        "모멘텀 개선",
-        "MACD 모멘텀 상승",
-        "트렌드 5/7",
-        "20주선 안착 (3주)",
-        "20주선 지지 반등"
-      ],
-      "signal_count": 6,
-      "current_price": 123300.0,
-      "current_rsi": 58.0,
-      "current_stoch": 100.0,
-      "current_macd_hist": 1355.66,
-      "price_vs_52w_high": 82.3,
-      "price_vs_52w_low": 25.8,
-      "position": "상승 중반",
-      "surge_phase": "하락 추세",
-      "is_weekly_overheated": false,
-      "has_dead_cross": false,
-      "daily_score": 3.2,
-      "daily_signals": [
-        "5일선 위 양봉",
-        "MACD 상승 중",
-        "3연속 양봉",
-        "일봉 정배열"
-      ],
-      "daily_rsi": 69.6,
-      "daily_vol_ratio": 0.8,
-      "return_3m": 7.4,
-      "vol_trend_60d": 0.8,
-      "is_overheated": false,
-      "divergence_count": 2,
-      "divergences": {
-        "Stochastic %K": {
-          "prev_low": 5.17,
-          "curr_low": 10.53,
-          "change": 5.35
-        },
-        "MACD Histogram": {
-          "prev_low": -1534.69,
-          "curr_low": -1193.66,
-          "change": 341.03
-        }
-      },
-      "div_score": 2.5,
-      "bonus_signals": [
-        "MACD 히스토그램 반전"
-      ],
-      "earnings_type": "-",
-      "is_new_listing": false,
-      "listing_date": null,
-      "weeks_available": null,
-      "total_score": 3.6
-    },
-    {
-      "ticker": "489460",
-      "name": "바이오비쥬",
-      "themes": [
-        "기타"
-      ],
-      "score_100": 44,
-      "score_10": 4.4,
-      "grade": "B",
-      "signals": [
-        "Pocket Pivot 매수",
-        "거래량 선행 매집",
-        "매집비율 2.1배",
-        "RSI 다이버전스",
-        "MACD 모멘텀 상승",
-        "20주선 돌파"
-      ],
-      "signal_count": 6,
-      "current_price": 8930.0,
-      "current_rsi": 51.5,
-      "current_stoch": 93.2,
-      "current_macd_hist": 294.97,
-      "price_vs_52w_high": 0.0,
-      "price_vs_52w_low": 0.0,
-      "position": "-",
-      "surge_phase": "하락 추세",
-      "is_weekly_overheated": false,
-      "has_dead_cross": false,
-      "daily_score": 1.7,
-      "daily_signals": [
-        "5일선 위 양봉",
-        "MACD 상승 중",
-        "3연속 양봉"
-      ],
-      "daily_rsi": 76.9,
-      "daily_vol_ratio": 0.9,
-      "return_3m": 5.9,
-      "vol_trend_60d": 4.37,
-      "is_overheated": false,
-      "divergence_count": 3,
-      "divergences": {
-        "Stochastic %K": {
-          "prev_low": 2.43,
-          "curr_low": 16.12,
-          "change": 13.69
-        },
-        "RSI": {
-          "prev_low": 26.64,
-          "curr_low": 29.24,
-          "change": 2.6
-        },
-        "MACD Histogram": {
-          "prev_low": -150.56,
-          "curr_low": -33.64,
-          "change": 116.92
-        }
-      },
-      "div_score": 4.0,
-      "bonus_signals": [
-        "MACD 히스토그램 반전",
-        "거래량 증가"
-      ],
-      "earnings_type": "-",
-      "is_new_listing": true,
-      "listing_date": "2025-05-20",
-      "weeks_available": 61,
-      "total_score": 3.6
-    },
-    {
-      "ticker": "025560",
-      "name": "미래산업",
-      "themes": [
-        "로봇",
-        "AI"
-      ],
-      "score_100": 26,
-      "score_10": 2.6,
-      "grade": "C",
-      "signals": [
-        "거래량 고갈 (대기)",
-        "매집비율 5.2배",
-        "트렌드 구조 양호",
-        "이평선 정배열"
-      ],
-      "signal_count": 4,
-      "current_price": 8350.0,
-      "current_rsi": 68.3,
-      "current_stoch": 52.4,
-      "current_macd_hist": 275.31,
-      "price_vs_52w_high": 62.3,
-      "price_vs_52w_low": 321.7,
-      "position": "상승 초입",
-      "surge_phase": "상승 추세",
-      "is_weekly_overheated": false,
-      "has_dead_cross": false,
-      "daily_score": 5.5,
-      "daily_signals": [
-        "거래량 폭발 5.1배",
-        "5일선 돌파 양봉",
-        "20일선 지지 반등",
-        "RSI 과매도 반등(0)"
-      ],
-      "daily_rsi": 0.0,
-      "daily_vol_ratio": 5.1,
-      "return_3m": 236.1,
-      "vol_trend_60d": 0.57,
-      "is_overheated": true,
-      "earnings_type": "-",
-      "is_new_listing": false,
-      "listing_date": null,
-      "weeks_available": null,
-      "total_score": 3.5
-    },
-    {
-      "ticker": "415640",
-      "name": "KB발해인프라",
-      "themes": [
-        "신탁"
-      ],
-      "score_100": 40,
-      "score_10": 4.0,
-      "grade": "B",
-      "signals": [
-        "거래량 선행 매집",
-        "매집비율 3.8배",
-        "트렌드 구조 양호",
-        "이평선 정배열",
-        "20주선 안착 (6주)"
-      ],
-      "signal_count": 5,
-      "current_price": 10490.0,
-      "current_rsi": 60.4,
-      "current_stoch": 57.8,
-      "current_macd_hist": 63.33,
-      "price_vs_52w_high": 92.2,
-      "price_vs_52w_low": 29.2,
-      "position": "상승 중반",
-      "surge_phase": "상승 추세",
-      "is_weekly_overheated": false,
-      "has_dead_cross": false,
-      "daily_score": 2.5,
-      "daily_signals": [
-        "20일선 지지 반등",
-        "일봉 정배열"
-      ],
-      "daily_rsi": 52.0,
-      "daily_vol_ratio": 0.5,
-      "return_3m": 8.3,
-      "vol_trend_60d": 0.53,
-      "is_overheated": false,
-      "earnings_type": "-",
-      "is_new_listing": true,
-      "listing_date": "2024-11-29",
-      "weeks_available": 86,
-      "total_score": 3.5
-    },
-    {
-      "ticker": "011200",
-      "name": "HMM",
-      "themes": [
-        "해운",
-        "물류"
-      ],
-      "score_100": 46,
-      "score_10": 4.6,
-      "grade": "B",
-      "signals": [
-        "OBV 매집 다이버전스",
-        "매집비율 2.5배",
-        "상대강도 가속",
-        "MACD 골든크로스",
-        "트렌드 5/7",
-        "20주선 돌파",
-        "20주선 지지 반등",
-        "데드크로스 경고"
-      ],
-      "signal_count": 8,
-      "current_price": 21650.0,
-      "current_rsi": 57.2,
-      "current_stoch": 70.7,
-      "current_macd_hist": 89.44,
-      "price_vs_52w_high": 86.8,
-      "price_vs_52w_low": 20.9,
-      "position": "상승 중반",
-      "surge_phase": "하락 추세",
-      "is_weekly_overheated": false,
-      "has_dead_cross": true,
-      "daily_score": 0.5,
-      "daily_signals": [
-        "MACD 상승 중"
-      ],
-      "daily_rsi": 62.0,
-      "daily_vol_ratio": 0.8,
-      "return_3m": -0.5,
-      "vol_trend_60d": 0.93,
-      "is_overheated": false,
-      "divergence_count": 2,
-      "divergences": {
-        "Stochastic %K": {
-          "prev_low": 5.82,
-          "curr_low": 7.56,
-          "change": 1.74
-        },
-        "OBV": {
-          "prev_low": -6283267.0,
-          "curr_low": 1337480.0,
-          "change": 7620747.0
-        }
-      },
-      "div_score": 2.5,
-      "bonus_signals": [
-        "MACD 히스토그램 반전"
-      ],
       "earnings_type": "-",
       "is_new_listing": false,
       "listing_date": null,
@@ -886,10 +518,10 @@
       "daily_signals": [
         "일봉 정배열"
       ],
-      "daily_rsi": 50.0,
-      "daily_vol_ratio": 0.2,
-      "return_3m": 3.7,
-      "vol_trend_60d": 0.96,
+      "daily_rsi": 46.4,
+      "daily_vol_ratio": 0.3,
+      "return_3m": -2.6,
+      "vol_trend_60d": 0.9,
       "is_overheated": false,
       "earnings_type": "-",
       "is_new_listing": false,
@@ -929,10 +561,10 @@
       "daily_signals": [
         "일봉 정배열"
       ],
-      "daily_rsi": 62.5,
-      "daily_vol_ratio": 0.9,
-      "return_3m": 12.9,
-      "vol_trend_60d": 0.94,
+      "daily_rsi": 51.4,
+      "daily_vol_ratio": 0.7,
+      "return_3m": 8.5,
+      "vol_trend_60d": 0.92,
       "is_overheated": false,
       "earnings_type": "-",
       "is_new_listing": false,
@@ -971,10 +603,10 @@
       "daily_signals": [
         "일봉 정배열"
       ],
-      "daily_rsi": 72.2,
-      "daily_vol_ratio": 0.2,
-      "return_3m": -0.8,
-      "vol_trend_60d": 0.44,
+      "daily_rsi": 54.6,
+      "daily_vol_ratio": 0.3,
+      "return_3m": -3.0,
+      "vol_trend_60d": 0.46,
       "is_overheated": false,
       "earnings_type": "-",
       "is_new_listing": false,
@@ -983,47 +615,65 @@
       "total_score": 3.3
     },
     {
-      "ticker": "362320",
-      "name": "미래에셋AI인프라리츠",
+      "ticker": "011200",
+      "name": "HMM",
       "themes": [
-        "리츠"
+        "해운",
+        "물류"
       ],
-      "score_100": 39,
-      "score_10": 3.9,
-      "grade": "C",
+      "score_100": 46,
+      "score_10": 4.6,
+      "grade": "B",
       "signals": [
-        "Pocket Pivot 매수",
-        "거래량 선행 매집",
-        "매집비율 1.7배",
-        "MACD 모멘텀 상승",
-        "20주선 돌파"
+        "OBV 매집 다이버전스",
+        "매집비율 2.5배",
+        "상대강도 가속",
+        "MACD 골든크로스",
+        "트렌드 5/7",
+        "20주선 돌파",
+        "20주선 지지 반등",
+        "데드크로스 경고"
       ],
-      "signal_count": 5,
-      "current_price": 4745.0,
-      "current_rsi": 46.4,
-      "current_stoch": 56.8,
-      "current_macd_hist": 85.8,
-      "price_vs_52w_high": 42.1,
-      "price_vs_52w_low": 44.2,
-      "position": "상승 초입",
+      "signal_count": 8,
+      "current_price": 21650.0,
+      "current_rsi": 57.2,
+      "current_stoch": 70.7,
+      "current_macd_hist": 89.44,
+      "price_vs_52w_high": 86.8,
+      "price_vs_52w_low": 20.9,
+      "position": "상승 중반",
       "surge_phase": "하락 추세",
       "is_weekly_overheated": false,
-      "has_dead_cross": false,
-      "daily_score": 2.0,
-      "daily_signals": [
-        "MACD 상승 중",
-        "일봉 정배열"
-      ],
-      "daily_rsi": 54.1,
-      "daily_vol_ratio": 0.2,
-      "return_3m": -11.5,
-      "vol_trend_60d": 2.99,
+      "has_dead_cross": true,
+      "daily_score": 0.0,
+      "daily_signals": [],
+      "daily_rsi": 53.5,
+      "daily_vol_ratio": 0.8,
+      "return_3m": -5.2,
+      "vol_trend_60d": 0.96,
       "is_overheated": false,
+      "divergence_count": 2,
+      "divergences": {
+        "Stochastic %K": {
+          "prev_low": 5.82,
+          "curr_low": 7.56,
+          "change": 1.74
+        },
+        "OBV": {
+          "prev_low": -6283267.0,
+          "curr_low": 1337480.0,
+          "change": 7620747.0
+        }
+      },
+      "div_score": 2.5,
+      "bonus_signals": [
+        "MACD 히스토그램 반전"
+      ],
       "earnings_type": "-",
       "is_new_listing": false,
       "listing_date": null,
       "weeks_available": null,
-      "total_score": 3.3
+      "total_score": 3.2
     },
     {
       "ticker": "057050",
@@ -1101,9 +751,51 @@
       "daily_signals": [
         "일봉 정배열"
       ],
-      "daily_rsi": 52.5,
-      "daily_vol_ratio": 1.7,
-      "return_3m": 4.0,
+      "daily_rsi": 44.7,
+      "daily_vol_ratio": 1.4,
+      "return_3m": -2.7,
+      "vol_trend_60d": 1.27,
+      "is_overheated": false,
+      "earnings_type": "-",
+      "is_new_listing": false,
+      "listing_date": null,
+      "weeks_available": null,
+      "total_score": 3.2
+    },
+    {
+      "ticker": "362320",
+      "name": "미래에셋AI인프라리츠",
+      "themes": [
+        "리츠"
+      ],
+      "score_100": 39,
+      "score_10": 3.9,
+      "grade": "C",
+      "signals": [
+        "Pocket Pivot 매수",
+        "거래량 선행 매집",
+        "매집비율 1.7배",
+        "MACD 모멘텀 상승",
+        "20주선 돌파"
+      ],
+      "signal_count": 5,
+      "current_price": 4745.0,
+      "current_rsi": 46.4,
+      "current_stoch": 56.8,
+      "current_macd_hist": 85.8,
+      "price_vs_52w_high": 42.1,
+      "price_vs_52w_low": 44.2,
+      "position": "상승 초입",
+      "surge_phase": "하락 추세",
+      "is_weekly_overheated": false,
+      "has_dead_cross": false,
+      "daily_score": 1.5,
+      "daily_signals": [
+        "일봉 정배열"
+      ],
+      "daily_rsi": 53.8,
+      "daily_vol_ratio": 0.4,
+      "return_3m": -16.1,
       "vol_trend_60d": 1.16,
       "is_overheated": false,
       "earnings_type": "-",
@@ -1113,91 +805,252 @@
       "total_score": 3.2
     },
     {
-      "ticker": "483650",
-      "name": "달바글로벌",
+      "ticker": "423160",
+      "name": "에이에스텍",
       "themes": [
-        "기타"
+        "반도체장비"
       ],
-      "score_100": 31,
-      "score_10": 3.1,
-      "grade": "C",
+      "score_100": 40,
+      "score_10": 4.0,
+      "grade": "B",
       "signals": [
-        "MACD 골든크로스",
+        "볼린저 스퀴즈",
+        "종가 밀집 (고점 근처)",
+        "거래량 고갈 (대기)",
+        "MACD 모멘텀 상승",
         "트렌드 구조 양호",
         "이평선 정배열",
-        "20주선 지지 반등"
+        "20주선 지지 반등",
+        "주봉 RSI 과열"
       ],
-      "signal_count": 4,
-      "current_price": 240500.0,
-      "current_rsi": 60.7,
-      "current_stoch": 65.7,
-      "current_macd_hist": 612.35,
-      "price_vs_52w_high": 0.0,
-      "price_vs_52w_low": 0.0,
-      "position": "-",
+      "signal_count": 8,
+      "current_price": 110850.0,
+      "current_rsi": 100.0,
+      "current_stoch": 99.4,
+      "current_macd_hist": 1.54,
+      "price_vs_52w_high": 100.0,
+      "price_vs_52w_low": 2.6,
+      "position": "신고가 돌파",
       "surge_phase": "상승 추세",
-      "is_weekly_overheated": false,
+      "is_weekly_overheated": true,
       "has_dead_cross": false,
-      "daily_score": 3.2,
+      "daily_score": 1.5,
       "daily_signals": [
-        "5일선 위 양봉",
-        "MACD 상승 중",
-        "3연속 양봉",
         "일봉 정배열"
       ],
-      "daily_rsi": 65.2,
-      "daily_vol_ratio": 1.3,
-      "return_3m": 13.1,
-      "vol_trend_60d": 0.89,
-      "is_overheated": false,
-      "earnings_type": "-",
-      "is_new_listing": true,
-      "listing_date": "2025-05-22",
-      "weeks_available": 61,
-      "total_score": 3.1
-    },
-    {
-      "ticker": "055550",
-      "name": "신한지주",
-      "themes": [
-        "금융"
-      ],
-      "score_100": 33,
-      "score_10": 3.3,
-      "grade": "C",
-      "signals": [
-        "OBV 매집 다이버전스",
-        "트렌드 구조 양호",
-        "이평선 정배열",
-        "20주선 안착 (4주)"
-      ],
-      "signal_count": 4,
-      "current_price": 104400.0,
-      "current_rsi": 57.0,
-      "current_stoch": 62.8,
-      "current_macd_hist": -22.95,
-      "price_vs_52w_high": 92.1,
-      "price_vs_52w_low": 64.2,
-      "position": "상승 중반",
-      "surge_phase": "상승 추세",
-      "is_weekly_overheated": false,
-      "has_dead_cross": false,
-      "daily_score": 2.0,
-      "daily_signals": [
-        "5일선 위 양봉",
-        "20일선 지지 반등",
-        "RSI 반등(44)"
-      ],
-      "daily_rsi": 44.4,
-      "daily_vol_ratio": 0.5,
-      "return_3m": 5.1,
-      "vol_trend_60d": 0.67,
+      "daily_rsi": 0.0,
+      "daily_vol_ratio": 1.4,
+      "return_3m": 0.7,
+      "vol_trend_60d": 0.47,
       "is_overheated": false,
       "earnings_type": "-",
       "is_new_listing": false,
       "listing_date": null,
       "weeks_available": null,
-      "total_score": 2.9
+      "total_score": 3.2
+    },
+    {
+      "ticker": "415640",
+      "name": "KB발해인프라",
+      "themes": [
+        "신탁"
+      ],
+      "score_100": 40,
+      "score_10": 4.0,
+      "grade": "B",
+      "signals": [
+        "거래량 선행 매집",
+        "매집비율 3.8배",
+        "트렌드 구조 양호",
+        "이평선 정배열",
+        "20주선 안착 (6주)"
+      ],
+      "signal_count": 5,
+      "current_price": 10490.0,
+      "current_rsi": 60.4,
+      "current_stoch": 57.8,
+      "current_macd_hist": 63.33,
+      "price_vs_52w_high": 92.2,
+      "price_vs_52w_low": 29.2,
+      "position": "상승 중반",
+      "surge_phase": "상승 추세",
+      "is_weekly_overheated": false,
+      "has_dead_cross": false,
+      "daily_score": 1.5,
+      "daily_signals": [
+        "일봉 정배열"
+      ],
+      "daily_rsi": 42.1,
+      "daily_vol_ratio": 1.0,
+      "return_3m": 7.5,
+      "vol_trend_60d": 0.61,
+      "is_overheated": false,
+      "earnings_type": "-",
+      "is_new_listing": true,
+      "listing_date": "2024-11-29",
+      "weeks_available": 87,
+      "total_score": 3.2
+    },
+    {
+      "ticker": "044820",
+      "name": "코스맥스비티아이",
+      "themes": [
+        "화장품",
+        "ODM"
+      ],
+      "score_100": 38,
+      "score_10": 3.8,
+      "grade": "C",
+      "signals": [
+        "종가 밀집",
+        "거래량 고갈 (대기)",
+        "MACD 모멘텀 상승",
+        "트렌드 구조 양호",
+        "이평선 정배열",
+        "20주선 안착 (4주)"
+      ],
+      "signal_count": 6,
+      "current_price": 19550.0,
+      "current_rsi": 59.0,
+      "current_stoch": 45.3,
+      "current_macd_hist": 44.91,
+      "price_vs_52w_high": 81.8,
+      "price_vs_52w_low": 65.5,
+      "position": "상승 중반",
+      "surge_phase": "추세 전환",
+      "is_weekly_overheated": false,
+      "has_dead_cross": false,
+      "daily_score": 1.5,
+      "daily_signals": [
+        "일봉 정배열"
+      ],
+      "daily_rsi": 49.3,
+      "daily_vol_ratio": 2.0,
+      "return_3m": 10.4,
+      "vol_trend_60d": 0.44,
+      "is_overheated": false,
+      "earnings_type": "-",
+      "is_new_listing": false,
+      "listing_date": null,
+      "weeks_available": null,
+      "total_score": 3.1
+    },
+    {
+      "ticker": "002960",
+      "name": "한국쉘석유",
+      "themes": [
+        "정유"
+      ],
+      "score_100": 38,
+      "score_10": 3.8,
+      "grade": "C",
+      "signals": [
+        "OBV 매집 다이버전스",
+        "거래량 고갈 (대기)",
+        "모멘텀 개선",
+        "MACD 모멘텀 상승",
+        "트렌드 구조 양호",
+        "20주선 돌파",
+        "20주선 지지 반등",
+        "데드크로스 경고"
+      ],
+      "signal_count": 8,
+      "current_price": 521000.0,
+      "current_rsi": 56.3,
+      "current_stoch": 37.5,
+      "current_macd_hist": -2336.8,
+      "price_vs_52w_high": 84.0,
+      "price_vs_52w_low": 29.9,
+      "position": "상승 중반",
+      "surge_phase": "상승 추세",
+      "is_weekly_overheated": false,
+      "has_dead_cross": true,
+      "daily_score": 1.5,
+      "daily_signals": [
+        "일봉 정배열"
+      ],
+      "daily_rsi": 52.7,
+      "daily_vol_ratio": 1.3,
+      "return_3m": 1.9,
+      "vol_trend_60d": 0.55,
+      "is_overheated": false,
+      "divergence_count": 1,
+      "divergences": {
+        "OBV": {
+          "prev_low": 327458.0,
+          "curr_low": 334227.0,
+          "change": 6769.0
+        }
+      },
+      "div_score": 1.5,
+      "bonus_signals": [
+        "MACD 히스토그램 반전"
+      ],
+      "earnings_type": "-",
+      "is_new_listing": false,
+      "listing_date": null,
+      "weeks_available": null,
+      "total_score": 3.1
+    },
+    {
+      "ticker": "138040",
+      "name": "메리츠금융지주",
+      "themes": [
+        "금융"
+      ],
+      "score_100": 38,
+      "score_10": 3.8,
+      "grade": "C",
+      "signals": [
+        "매집비율 1.9배",
+        "모멘텀 개선",
+        "MACD 모멘텀 상승",
+        "트렌드 5/7",
+        "20주선 안착 (3주)",
+        "20주선 지지 반등"
+      ],
+      "signal_count": 6,
+      "current_price": 123300.0,
+      "current_rsi": 58.0,
+      "current_stoch": 100.0,
+      "current_macd_hist": 1355.66,
+      "price_vs_52w_high": 82.3,
+      "price_vs_52w_low": 25.8,
+      "position": "상승 중반",
+      "surge_phase": "하락 추세",
+      "is_weekly_overheated": false,
+      "has_dead_cross": false,
+      "daily_score": 1.5,
+      "daily_signals": [
+        "일봉 정배열"
+      ],
+      "daily_rsi": 54.7,
+      "daily_vol_ratio": 0.9,
+      "return_3m": 3.1,
+      "vol_trend_60d": 0.8,
+      "is_overheated": false,
+      "divergence_count": 2,
+      "divergences": {
+        "Stochastic %K": {
+          "prev_low": 5.17,
+          "curr_low": 10.53,
+          "change": 5.35
+        },
+        "MACD Histogram": {
+          "prev_low": -1534.69,
+          "curr_low": -1193.66,
+          "change": 341.03
+        }
+      },
+      "div_score": 2.5,
+      "bonus_signals": [
+        "MACD 히스토그램 반전"
+      ],
+      "earnings_type": "-",
+      "is_new_listing": false,
+      "listing_date": null,
+      "weeks_available": null,
+      "total_score": 3.1
     },
     {
       "ticker": "033780",
@@ -1230,166 +1083,10 @@
       "daily_signals": [
         "MACD 상승 중"
       ],
-      "daily_rsi": 61.2,
-      "daily_vol_ratio": 0.6,
-      "return_3m": 6.8,
-      "vol_trend_60d": 0.66,
-      "is_overheated": false,
-      "earnings_type": "-",
-      "is_new_listing": false,
-      "listing_date": null,
-      "weeks_available": null,
-      "total_score": 2.9
-    },
-    {
-      "ticker": "207940",
-      "name": "삼성바이오로직스",
-      "themes": [
-        "바이오",
-        "CMO"
-      ],
-      "score_100": 21,
-      "score_10": 2.1,
-      "grade": "D",
-      "signals": [
-        "모멘텀 개선",
-        "MACD 골든크로스",
-        "20주선 돌파"
-      ],
-      "signal_count": 3,
-      "current_price": 1518000.0,
-      "current_rsi": 51.8,
-      "current_stoch": 75.1,
-      "current_macd_hist": 8410.16,
-      "price_vs_52w_high": 76.4,
-      "price_vs_52w_low": 23.6,
-      "position": "상승 중반",
-      "surge_phase": "정리 중",
-      "is_weekly_overheated": false,
-      "has_dead_cross": false,
-      "daily_score": 4.8,
-      "daily_signals": [
-        "거래량 증가",
-        "5일선 위 양봉",
-        "MACD 상승 중",
-        "20일선 지지 반등",
-        "3연속 양봉",
-        "일봉 정배열"
-      ],
-      "daily_rsi": 62.8,
-      "daily_vol_ratio": 1.6,
-      "return_3m": 2.0,
-      "vol_trend_60d": 1.32,
-      "is_overheated": false,
-      "earnings_type": "-",
-      "is_new_listing": false,
-      "listing_date": null,
-      "weeks_available": null,
-      "total_score": 2.9
-    },
-    {
-      "ticker": "138930",
-      "name": "BNK금융지주",
-      "themes": [
-        "금융"
-      ],
-      "score_100": 27,
-      "score_10": 2.7,
-      "grade": "C",
-      "signals": [
-        "OBV 매집 다이버전스",
-        "매집비율 1.5배",
-        "MACD 모멘텀 상승",
-        "트렌드 구조 양호"
-      ],
-      "signal_count": 4,
-      "current_price": 18040.0,
-      "current_rsi": 52.3,
-      "current_stoch": 62.7,
-      "current_macd_hist": -97.66,
-      "price_vs_52w_high": 78.3,
-      "price_vs_52w_low": 32.2,
-      "position": "상승 중반",
-      "surge_phase": "상승 추세",
-      "is_weekly_overheated": false,
-      "has_dead_cross": false,
-      "daily_score": 3.5,
-      "daily_signals": [
-        "5일선 위 양봉",
-        "20일선 지지 반등",
-        "RSI 반등(45)",
-        "일봉 정배열"
-      ],
-      "daily_rsi": 44.5,
-      "daily_vol_ratio": 0.4,
-      "return_3m": -4.1,
-      "vol_trend_60d": 0.53,
-      "is_overheated": false,
-      "divergence_count": 3,
-      "divergences": {
-        "Stochastic %K": {
-          "prev_low": 4.48,
-          "curr_low": 11.0,
-          "change": 6.52
-        },
-        "MACD Histogram": {
-          "prev_low": -386.52,
-          "curr_low": -375.42,
-          "change": 11.1
-        },
-        "OBV": {
-          "prev_low": 49595420.0,
-          "curr_low": 61756452.0,
-          "change": 12161032.0
-        }
-      },
-      "div_score": 3.5,
-      "bonus_signals": [
-        "MACD 히스토그램 반전"
-      ],
-      "earnings_type": "-",
-      "is_new_listing": false,
-      "listing_date": null,
-      "weeks_available": null,
-      "total_score": 2.9
-    },
-    {
-      "ticker": "092730",
-      "name": "네오팜",
-      "themes": [
-        "화장품",
-        "더마"
-      ],
-      "score_100": 24,
-      "score_10": 2.4,
-      "grade": "D",
-      "signals": [
-        "RSI 다이버전스",
-        "MACD 모멘텀 상승",
-        "트렌드 4/7",
-        "20주선 안착 (4주)"
-      ],
-      "signal_count": 4,
-      "current_price": 18620.0,
-      "current_rsi": 51.7,
-      "current_stoch": 44.8,
-      "current_macd_hist": 46.34,
-      "price_vs_52w_high": 82.2,
-      "price_vs_52w_low": 19.4,
-      "position": "상승 중반",
-      "surge_phase": "정리 중",
-      "is_weekly_overheated": false,
-      "has_dead_cross": false,
-      "daily_score": 4.0,
-      "daily_signals": [
-        "5일선 돌파 양봉",
-        "20일선 지지 반등",
-        "일봉 정배열"
-      ],
-      "daily_rsi": 56.3,
-      "daily_vol_ratio": 0.3,
-      "return_3m": -2.8,
-      "vol_trend_60d": 0.66,
+      "daily_rsi": 47.6,
+      "daily_vol_ratio": 1.0,
+      "return_3m": 3.1,
+      "vol_trend_60d": 0.73,
       "is_overheated": false,
       "earnings_type": "-",
       "is_new_listing": false,
@@ -1429,10 +1126,10 @@
       "daily_signals": [
         "일봉 정배열"
       ],
-      "daily_rsi": 57.2,
+      "daily_rsi": 55.7,
       "daily_vol_ratio": 0.5,
-      "return_3m": 3.3,
-      "vol_trend_60d": 0.6,
+      "return_3m": 3.6,
+      "vol_trend_60d": 0.59,
       "is_overheated": false,
       "divergence_count": 1,
       "divergences": {
@@ -1453,56 +1150,44 @@
       "total_score": 2.9
     },
     {
-      "ticker": "002960",
-      "name": "한국쉘석유",
+      "ticker": "207940",
+      "name": "삼성바이오로직스",
       "themes": [
-        "정유"
+        "바이오",
+        "CMO"
       ],
-      "score_100": 38,
-      "score_10": 3.8,
-      "grade": "C",
+      "score_100": 21,
+      "score_10": 2.1,
+      "grade": "D",
       "signals": [
-        "OBV 매집 다이버전스",
-        "거래량 고갈 (대기)",
         "모멘텀 개선",
-        "MACD 모멘텀 상승",
-        "트렌드 구조 양호",
-        "20주선 돌파",
-        "20주선 지지 반등",
-        "데드크로스 경고"
+        "MACD 골든크로스",
+        "20주선 돌파"
       ],
-      "signal_count": 8,
-      "current_price": 521000.0,
-      "current_rsi": 56.3,
-      "current_stoch": 37.5,
-      "current_macd_hist": -2336.8,
-      "price_vs_52w_high": 84.0,
-      "price_vs_52w_low": 29.9,
+      "signal_count": 3,
+      "current_price": 1518000.0,
+      "current_rsi": 51.8,
+      "current_stoch": 75.1,
+      "current_macd_hist": 8410.16,
+      "price_vs_52w_high": 76.4,
+      "price_vs_52w_low": 23.6,
       "position": "상승 중반",
-      "surge_phase": "상승 추세",
+      "surge_phase": "정리 중",
       "is_weekly_overheated": false,
-      "has_dead_cross": true,
-      "daily_score": 0.5,
+      "has_dead_cross": false,
+      "daily_score": 4.4,
       "daily_signals": [
-        "MACD 상승 중"
+        "거래량 급증 2.4배",
+        "5일선 위 양봉",
+        "MACD 상승 중",
+        "3연속 양봉",
+        "일봉 정배열"
       ],
-      "daily_rsi": 56.4,
-      "daily_vol_ratio": 0.9,
-      "return_3m": 2.6,
-      "vol_trend_60d": 0.48,
+      "daily_rsi": 61.9,
+      "daily_vol_ratio": 2.4,
+      "return_3m": 1.4,
+      "vol_trend_60d": 1.59,
       "is_overheated": false,
-      "divergence_count": 1,
-      "divergences": {
-        "OBV": {
-          "prev_low": 327458.0,
-          "curr_low": 334227.0,
-          "change": 6769.0
-        }
-      },
-      "div_score": 1.5,
-      "bonus_signals": [
-        "MACD 히스토그램 반전"
-      ],
       "earnings_type": "-",
       "is_new_listing": false,
       "listing_date": null,
@@ -1510,71 +1195,46 @@
       "total_score": 2.8
     },
     {
-      "ticker": "026960",
-      "name": "동서",
+      "ticker": "483650",
+      "name": "달바글로벌",
       "themes": [
-        "식품",
-        "커피"
+        "기타"
       ],
-      "score_100": 25,
-      "score_10": 2.5,
+      "score_100": 31,
+      "score_10": 3.1,
       "grade": "C",
       "signals": [
-        "RSI 다이버전스",
-        "MACD 모멘텀 상승",
-        "20주선 돌파",
+        "MACD 골든크로스",
+        "트렌드 구조 양호",
+        "이평선 정배열",
         "20주선 지지 반등"
       ],
       "signal_count": 4,
-      "current_price": 26100.0,
-      "current_rsi": 50.6,
-      "current_stoch": 64.1,
-      "current_macd_hist": 82.8,
-      "price_vs_52w_high": 84.3,
-      "price_vs_52w_low": 16.8,
-      "position": "상승 중반",
-      "surge_phase": "하락 추세",
+      "current_price": 240500.0,
+      "current_rsi": 60.7,
+      "current_stoch": 65.7,
+      "current_macd_hist": 612.35,
+      "price_vs_52w_high": 0.0,
+      "price_vs_52w_low": 0.0,
+      "position": "-",
+      "surge_phase": "상승 추세",
       "is_weekly_overheated": false,
       "has_dead_cross": false,
-      "daily_score": 3.2,
+      "daily_score": 2.0,
       "daily_signals": [
-        "5일선 위 양봉",
         "MACD 상승 중",
-        "3연속 양봉",
         "일봉 정배열"
       ],
-      "daily_rsi": 59.5,
+      "daily_rsi": 60.1,
       "daily_vol_ratio": 1.0,
-      "return_3m": -0.6,
+      "return_3m": 6.2,
       "vol_trend_60d": 0.8,
       "is_overheated": false,
-      "divergence_count": 3,
-      "divergences": {
-        "Stochastic %K": {
-          "prev_low": 6.42,
-          "curr_low": 9.38,
-          "change": 2.95
-        },
-        "RSI": {
-          "prev_low": 37.38,
-          "curr_low": 37.86,
-          "change": 0.48
-        },
-        "MACD Histogram": {
-          "prev_low": -296.99,
-          "curr_low": -293.95,
-          "change": 3.04
-        }
-      },
-      "div_score": 3.5,
-      "bonus_signals": [
-        "MACD 히스토그램 반전"
-      ],
       "earnings_type": "-",
-      "is_new_listing": false,
-      "listing_date": null,
-      "weeks_available": null,
-      "total_score": 2.7
+      "is_new_listing": true,
+      "listing_date": "2025-05-22",
+      "weeks_available": 62,
+      "total_score": 2.8
     },
     {
       "ticker": "389260",
@@ -1608,10 +1268,10 @@
       "has_dead_cross": true,
       "daily_score": 0.0,
       "daily_signals": [],
-      "daily_rsi": 50.7,
-      "daily_vol_ratio": 0.9,
-      "return_3m": -40.8,
-      "vol_trend_60d": 3.29,
+      "daily_rsi": 46.3,
+      "daily_vol_ratio": 0.5,
+      "return_3m": -47.1,
+      "vol_trend_60d": 3.34,
       "is_overheated": false,
       "divergence_count": 4,
       "divergences": {
@@ -1648,91 +1308,6 @@
       "total_score": 2.7
     },
     {
-      "ticker": "481070",
-      "name": "에이유브랜즈",
-      "themes": [
-        "섬유,"
-      ],
-      "score_100": 25,
-      "score_10": 2.5,
-      "grade": "C",
-      "signals": [
-        "OBV 매집 다이버전스",
-        "RSI 다이버전스",
-        "MACD 모멘텀 상승",
-        "20주선 돌파"
-      ],
-      "signal_count": 4,
-      "current_price": 17040.0,
-      "current_rsi": 50.5,
-      "current_stoch": 71.2,
-      "current_macd_hist": 221.4,
-      "price_vs_52w_high": 0.0,
-      "price_vs_52w_low": 0.0,
-      "position": "-",
-      "surge_phase": "하락 추세",
-      "is_weekly_overheated": false,
-      "has_dead_cross": false,
-      "daily_score": 3.2,
-      "daily_signals": [
-        "5일선 위 양봉",
-        "MACD 상승 중",
-        "3연속 양봉",
-        "일봉 정배열"
-      ],
-      "daily_rsi": 68.6,
-      "daily_vol_ratio": 0.8,
-      "return_3m": -2.2,
-      "vol_trend_60d": 0.48,
-      "is_overheated": false,
-      "earnings_type": "-",
-      "is_new_listing": true,
-      "listing_date": "2025-04-03",
-      "weeks_available": 68,
-      "total_score": 2.7
-    },
-    {
-      "ticker": "105560",
-      "name": "KB금융",
-      "themes": [
-        "금융"
-      ],
-      "score_100": 26,
-      "score_10": 2.6,
-      "grade": "C",
-      "signals": [
-        "트렌드 구조 양호",
-        "이평선 정배열",
-        "20주선 안착 (4주)"
-      ],
-      "signal_count": 3,
-      "current_price": 171500.0,
-      "current_rsi": 57.1,
-      "current_stoch": 53.5,
-      "current_macd_hist": 620.95,
-      "price_vs_52w_high": 88.2,
-      "price_vs_52w_low": 62.1,
-      "position": "상승 중반",
-      "surge_phase": "상승 추세",
-      "is_weekly_overheated": false,
-      "has_dead_cross": false,
-      "daily_score": 2.5,
-      "daily_signals": [
-        "20일선 지지 반등",
-        "일봉 정배열"
-      ],
-      "daily_rsi": 51.6,
-      "daily_vol_ratio": 0.5,
-      "return_3m": 9.2,
-      "vol_trend_60d": 0.63,
-      "is_overheated": false,
-      "earnings_type": "-",
-      "is_new_listing": false,
-      "listing_date": null,
-      "weeks_available": null,
-      "total_score": 2.6
-    },
-    {
       "ticker": "017670",
       "name": "SK텔레콤",
       "themes": [
@@ -1760,275 +1335,12 @@
       "surge_phase": "상승 추세",
       "is_weekly_overheated": false,
       "has_dead_cross": false,
-      "daily_score": 0.5,
-      "daily_signals": [
-        "MACD 상승 중"
-      ],
-      "daily_rsi": 64.7,
-      "daily_vol_ratio": 2.8,
-      "return_3m": -0.9,
-      "vol_trend_60d": 1.63,
-      "is_overheated": false,
-      "earnings_type": "-",
-      "is_new_listing": false,
-      "listing_date": null,
-      "weeks_available": null,
-      "total_score": 2.6
-    },
-    {
-      "ticker": "108670",
-      "name": "LG하우시스",
-      "themes": [
-        "건자재"
-      ],
-      "score_100": 26,
-      "score_10": 2.6,
-      "grade": "C",
-      "signals": [
-        "거래량 고갈 (대기)",
-        "트렌드 구조 양호",
-        "20주선 돌파",
-        "20주선 지지 반등"
-      ],
-      "signal_count": 4,
-      "current_price": 33000.0,
-      "current_rsi": 52.0,
-      "current_stoch": 30.1,
-      "current_macd_hist": -323.79,
-      "price_vs_52w_high": 76.7,
-      "price_vs_52w_low": 22.2,
-      "position": "상승 중반",
-      "surge_phase": "상승 추세",
-      "is_weekly_overheated": false,
-      "has_dead_cross": false,
-      "daily_score": 2.7,
-      "daily_signals": [
-        "5일선 위 양봉",
-        "MACD 상승 중",
-        "20일선 지지 반등",
-        "3연속 양봉"
-      ],
-      "daily_rsi": 50.7,
-      "daily_vol_ratio": 0.7,
-      "return_3m": 3.8,
-      "vol_trend_60d": 0.47,
-      "is_overheated": false,
-      "earnings_type": "-",
-      "is_new_listing": false,
-      "listing_date": null,
-      "weeks_available": null,
-      "total_score": 2.6
-    },
-    {
-      "ticker": "241710",
-      "name": "코스메닝",
-      "themes": [
-        "화장품"
-      ],
-      "score_100": 23,
-      "score_10": 2.3,
-      "grade": "D",
-      "signals": [
-        "MACD 모멘텀 상승",
-        "트렌드 구조 양호",
-        "20주선 안착 (4주)"
-      ],
-      "signal_count": 3,
-      "current_price": 80700.0,
-      "current_rsi": 52.9,
-      "current_stoch": 55.6,
-      "current_macd_hist": 370.62,
-      "price_vs_52w_high": 75.8,
-      "price_vs_52w_low": 42.1,
-      "position": "상승 중반",
-      "surge_phase": "상승 추세",
-      "is_weekly_overheated": false,
-      "has_dead_cross": false,
-      "daily_score": 3.2,
-      "daily_signals": [
-        "5일선 위 양봉",
-        "20일선 지지 반등",
-        "일봉 정배열"
-      ],
-      "daily_rsi": 53.3,
-      "daily_vol_ratio": 0.9,
-      "return_3m": 1.9,
-      "vol_trend_60d": 0.97,
-      "is_overheated": false,
-      "earnings_type": "-",
-      "is_new_listing": false,
-      "listing_date": null,
-      "weeks_available": null,
-      "total_score": 2.6
-    },
-    {
-      "ticker": "270870",
-      "name": "뉴트리",
-      "themes": [
-        "건강기능식품"
-      ],
-      "score_100": 24,
-      "score_10": 2.4,
-      "grade": "D",
-      "signals": [
-        "모멘텀 개선",
-        "MACD 모멘텀 상승",
-        "트렌드 4/7",
-        "20주선 안착 (4주)"
-      ],
-      "signal_count": 4,
-      "current_price": 4655.0,
-      "current_rsi": 54.1,
-      "current_stoch": 93.6,
-      "current_macd_hist": 110.81,
-      "price_vs_52w_high": 72.1,
-      "price_vs_52w_low": 53.1,
-      "position": "상승 초입",
-      "surge_phase": "하락 추세",
-      "is_weekly_overheated": false,
-      "has_dead_cross": false,
-      "daily_score": 3.2,
-      "daily_signals": [
-        "5일선 위 양봉",
-        "20일선 지지 반등",
-        "일봉 정배열"
-      ],
-      "daily_rsi": 54.1,
-      "daily_vol_ratio": 0.6,
-      "return_3m": 6.6,
-      "vol_trend_60d": 0.67,
-      "is_overheated": false,
-      "earnings_type": "-",
-      "is_new_listing": false,
-      "listing_date": null,
-      "weeks_available": null,
-      "total_score": 2.6
-    },
-    {
-      "ticker": "028050",
-      "name": "삼성엔지니어링",
-      "themes": [
-        "건설",
-        "플랜트"
-      ],
-      "score_100": 28,
-      "score_10": 2.8,
-      "grade": "C",
-      "signals": [
-        "Pocket Pivot 매수",
-        "트렌드 구조 양호",
-        "20주선 돌파"
-      ],
-      "signal_count": 3,
-      "current_price": 47600.0,
-      "current_rsi": 54.9,
-      "current_stoch": 32.1,
-      "current_macd_hist": -1399.77,
-      "price_vs_52w_high": 70.7,
-      "price_vs_52w_low": 105.6,
-      "position": "상승 초입",
-      "surge_phase": "상승 추세",
-      "is_weekly_overheated": false,
-      "has_dead_cross": false,
-      "daily_score": 1.7,
-      "daily_signals": [
-        "5일선 위 양봉",
-        "MACD 상승 중",
-        "3연속 양봉"
-      ],
-      "daily_rsi": 48.8,
-      "daily_vol_ratio": 0.7,
-      "return_3m": -5.3,
-      "vol_trend_60d": 1.25,
-      "is_overheated": false,
-      "earnings_type": "-",
-      "is_new_listing": false,
-      "listing_date": null,
-      "weeks_available": null,
-      "total_score": 2.5
-    },
-    {
-      "ticker": "340570",
-      "name": "티앤엘",
-      "themes": [
-        "의료기기",
-        "상처치료"
-      ],
-      "score_100": 23,
-      "score_10": 2.3,
-      "grade": "D",
-      "signals": [
-        "Pocket Pivot 매수",
-        "트렌드 구조 양호",
-        "20주선 돌파",
-        "데드크로스 경고"
-      ],
-      "signal_count": 4,
-      "current_price": 56300.0,
-      "current_rsi": 52.2,
-      "current_stoch": 43.8,
-      "current_macd_hist": -572.74,
-      "price_vs_52w_high": 82.8,
-      "price_vs_52w_low": 30.6,
-      "position": "상승 중반",
-      "surge_phase": "추세 전환",
-      "is_weekly_overheated": false,
-      "has_dead_cross": true,
-      "daily_score": 2.9,
-      "daily_signals": [
-        "거래량 급증 2.7배",
-        "5일선 위 양봉",
-        "MACD 상승 중",
-        "3연속 양봉"
-      ],
-      "daily_rsi": 63.6,
-      "daily_vol_ratio": 2.7,
-      "return_3m": -2.0,
-      "vol_trend_60d": 1.28,
-      "is_overheated": false,
-      "earnings_type": "-",
-      "is_new_listing": false,
-      "listing_date": null,
-      "weeks_available": null,
-      "total_score": 2.5
-    },
-    {
-      "ticker": "003490",
-      "name": "대한항공",
-      "themes": [
-        "항공",
-        "여행"
-      ],
-      "score_100": 26,
-      "score_10": 2.6,
-      "grade": "C",
-      "signals": [
-        "거래량 선행 매집",
-        "매집비율 1.5배",
-        "트렌드 5/7",
-        "이평선 정배열"
-      ],
-      "signal_count": 4,
-      "current_price": 25450.0,
-      "current_rsi": 49.0,
-      "current_stoch": 23.8,
-      "current_macd_hist": -97.2,
-      "price_vs_52w_high": 81.6,
-      "price_vs_52w_low": 21.2,
-      "position": "상승 중반",
-      "surge_phase": "눌림목",
-      "is_weekly_overheated": false,
-      "has_dead_cross": false,
-      "daily_score": 2.0,
-      "daily_signals": [
-        "5일선 위 양봉",
-        "20일선 지지 반등",
-        "RSI 반등(36)"
-      ],
-      "daily_rsi": 36.5,
-      "daily_vol_ratio": 1.0,
-      "return_3m": 6.7,
-      "vol_trend_60d": 0.86,
+      "daily_score": 0.0,
+      "daily_signals": [],
+      "daily_rsi": 47.3,
+      "daily_vol_ratio": 1.8,
+      "return_3m": -17.8,
+      "vol_trend_60d": 1.81,
       "is_overheated": false,
       "earnings_type": "-",
       "is_new_listing": false,
@@ -2037,41 +1349,102 @@
       "total_score": 2.4
     },
     {
-      "ticker": "000810",
-      "name": "삼성화재",
+      "ticker": "026960",
+      "name": "동서",
       "themes": [
-        "보험",
+        "식품",
+        "커피"
+      ],
+      "score_100": 25,
+      "score_10": 2.5,
+      "grade": "C",
+      "signals": [
+        "RSI 다이버전스",
+        "MACD 모멘텀 상승",
+        "20주선 돌파",
+        "20주선 지지 반등"
+      ],
+      "signal_count": 4,
+      "current_price": 26100.0,
+      "current_rsi": 50.6,
+      "current_stoch": 64.1,
+      "current_macd_hist": 82.8,
+      "price_vs_52w_high": 84.3,
+      "price_vs_52w_low": 16.8,
+      "position": "상승 중반",
+      "surge_phase": "하락 추세",
+      "is_weekly_overheated": false,
+      "has_dead_cross": false,
+      "daily_score": 2.0,
+      "daily_signals": [
+        "MACD 상승 중",
+        "일봉 정배열"
+      ],
+      "daily_rsi": 51.6,
+      "daily_vol_ratio": 2.4,
+      "return_3m": -1.9,
+      "vol_trend_60d": 1.1,
+      "is_overheated": false,
+      "divergence_count": 3,
+      "divergences": {
+        "Stochastic %K": {
+          "prev_low": 6.42,
+          "curr_low": 9.38,
+          "change": 2.95
+        },
+        "RSI": {
+          "prev_low": 37.38,
+          "curr_low": 37.86,
+          "change": 0.48
+        },
+        "MACD Histogram": {
+          "prev_low": -296.99,
+          "curr_low": -293.95,
+          "change": 3.04
+        }
+      },
+      "div_score": 3.5,
+      "bonus_signals": [
+        "MACD 히스토그램 반전"
+      ],
+      "earnings_type": "-",
+      "is_new_listing": false,
+      "listing_date": null,
+      "weeks_available": null,
+      "total_score": 2.4
+    },
+    {
+      "ticker": "055550",
+      "name": "신한지주",
+      "themes": [
         "금융"
       ],
-      "score_100": 23,
-      "score_10": 2.3,
-      "grade": "D",
+      "score_100": 33,
+      "score_10": 3.3,
+      "grade": "C",
       "signals": [
-        "매집비율 2.0배",
+        "OBV 매집 다이버전스",
         "트렌드 구조 양호",
-        "이평선 정배열"
+        "이평선 정배열",
+        "20주선 안착 (4주)"
       ],
-      "signal_count": 3,
-      "current_price": 644000.0,
-      "current_rsi": 58.4,
-      "current_stoch": 63.1,
-      "current_macd_hist": 9395.41,
-      "price_vs_52w_high": 85.1,
-      "price_vs_52w_low": 56.3,
+      "signal_count": 4,
+      "current_price": 104400.0,
+      "current_rsi": 57.0,
+      "current_stoch": 62.8,
+      "current_macd_hist": -22.95,
+      "price_vs_52w_high": 92.1,
+      "price_vs_52w_low": 64.2,
       "position": "상승 중반",
       "surge_phase": "상승 추세",
       "is_weekly_overheated": false,
       "has_dead_cross": false,
-      "daily_score": 2.2,
-      "daily_signals": [
-        "5일선 위 양봉",
-        "20일선 지지 반등",
-        "3연속 양봉"
-      ],
-      "daily_rsi": 45.6,
-      "daily_vol_ratio": 0.6,
-      "return_3m": 39.3,
-      "vol_trend_60d": 0.44,
+      "daily_score": 0.0,
+      "daily_signals": [],
+      "daily_rsi": 35.8,
+      "daily_vol_ratio": 0.9,
+      "return_3m": 0.9,
+      "vol_trend_60d": 0.69,
       "is_overheated": false,
       "earnings_type": "-",
       "is_new_listing": false,
@@ -2080,42 +1453,41 @@
       "total_score": 2.3
     },
     {
-      "ticker": "085620",
-      "name": "미래에셋벤처투자",
+      "ticker": "052460",
+      "name": "아이크래프트",
       "themes": [
-        "벤처",
-        "투자"
+        "항공",
+        "MRO"
       ],
-      "score_100": 21,
-      "score_10": 2.1,
+      "score_100": 24,
+      "score_10": 2.4,
       "grade": "D",
       "signals": [
-        "거래량 선행 매집",
-        "거래량 고갈 (대기)",
-        "매집비율 4.2배",
-        "트렌드 5/7"
+        "MACD 모멘텀 상승",
+        "트렌드 5/7",
+        "20주선 돌파",
+        "20주선 지지 반등"
       ],
       "signal_count": 4,
-      "current_price": 15900.0,
-      "current_rsi": 48.6,
-      "current_stoch": 11.2,
-      "current_macd_hist": -604.51,
-      "price_vs_52w_high": 42.6,
-      "price_vs_52w_low": 139.1,
+      "current_price": 3400.0,
+      "current_rsi": 53.6,
+      "current_stoch": 45.8,
+      "current_macd_hist": -29.74,
+      "price_vs_52w_high": 71.4,
+      "price_vs_52w_low": 51.1,
       "position": "상승 초입",
-      "surge_phase": "눌림목",
+      "surge_phase": "상승 추세",
       "is_weekly_overheated": false,
       "has_dead_cross": false,
-      "daily_score": 2.8,
+      "daily_score": 2.0,
       "daily_signals": [
-        "5일선 돌파 양봉",
-        "20일선 지지 반등",
-        "RSI 반등(36)"
+        "MACD 상승 중",
+        "일봉 정배열"
       ],
-      "daily_rsi": 36.5,
-      "daily_vol_ratio": 0.3,
-      "return_3m": -7.7,
-      "vol_trend_60d": 0.09,
+      "daily_rsi": 59.3,
+      "daily_vol_ratio": 4.4,
+      "return_3m": -9.5,
+      "vol_trend_60d": 3.67,
       "is_overheated": false,
       "earnings_type": "-",
       "is_new_listing": false,
@@ -2153,10 +1525,10 @@
       "daily_signals": [
         "일봉 정배열"
       ],
-      "daily_rsi": 48.9,
-      "daily_vol_ratio": 1.1,
-      "return_3m": 8.7,
-      "vol_trend_60d": 0.79,
+      "daily_rsi": 38.6,
+      "daily_vol_ratio": 0.6,
+      "return_3m": 6.4,
+      "vol_trend_60d": 0.76,
       "is_overheated": false,
       "earnings_type": "-",
       "is_new_listing": false,
@@ -2194,10 +1566,10 @@
       "daily_signals": [
         "일봉 정배열"
       ],
-      "daily_rsi": 69.8,
-      "daily_vol_ratio": 0.4,
-      "return_3m": -5.8,
-      "vol_trend_60d": 0.73,
+      "daily_rsi": 60.0,
+      "daily_vol_ratio": 1.0,
+      "return_3m": -9.1,
+      "vol_trend_60d": 0.75,
       "is_overheated": false,
       "divergence_count": 1,
       "divergences": {
@@ -2211,47 +1583,6 @@
       "bonus_signals": [
         "MACD 히스토그램 반전"
       ],
-      "earnings_type": "-",
-      "is_new_listing": false,
-      "listing_date": null,
-      "weeks_available": null,
-      "total_score": 2.2
-    },
-    {
-      "ticker": "001450",
-      "name": "현대해상",
-      "themes": [
-        "보험"
-      ],
-      "score_100": 23,
-      "score_10": 2.3,
-      "grade": "D",
-      "signals": [
-        "매집비율 3.1배",
-        "트렌드 구조 양호",
-        "이평선 정배열"
-      ],
-      "signal_count": 3,
-      "current_price": 40350.0,
-      "current_rsi": 63.1,
-      "current_stoch": 78.8,
-      "current_macd_hist": 430.3,
-      "price_vs_52w_high": 91.2,
-      "price_vs_52w_low": 58.2,
-      "position": "상승 중반",
-      "surge_phase": "상승 추세",
-      "is_weekly_overheated": false,
-      "has_dead_cross": false,
-      "daily_score": 2.0,
-      "daily_signals": [
-        "MACD 상승 중",
-        "일봉 정배열"
-      ],
-      "daily_rsi": 60.5,
-      "daily_vol_ratio": 0.7,
-      "return_3m": 29.5,
-      "vol_trend_60d": 0.58,
-      "is_overheated": false,
       "earnings_type": "-",
       "is_new_listing": false,
       "listing_date": null,
@@ -2302,63 +1633,80 @@
       "total_score": 2.2
     },
     {
-      "ticker": "060720",
-      "name": "KH바텍",
+      "ticker": "481070",
+      "name": "에이유브랜즈",
       "themes": [
-        "전자부품"
+        "섬유,"
       ],
-      "score_100": 21,
-      "score_10": 2.1,
-      "grade": "D",
+      "score_100": 25,
+      "score_10": 2.5,
+      "grade": "C",
       "signals": [
         "OBV 매집 다이버전스",
-        "거래량 선행 매집",
-        "매집비율 2.9배",
+        "RSI 다이버전스",
         "MACD 모멘텀 상승",
-        "데드크로스 경고"
+        "20주선 돌파"
       ],
-      "signal_count": 5,
-      "current_price": 9790.0,
-      "current_rsi": 37.2,
-      "current_stoch": 15.3,
-      "current_macd_hist": -416.34,
-      "price_vs_52w_high": 49.0,
-      "price_vs_52w_low": 10.4,
-      "position": "바닥 출발",
-      "surge_phase": "정리 중",
+      "signal_count": 4,
+      "current_price": 17040.0,
+      "current_rsi": 50.5,
+      "current_stoch": 71.2,
+      "current_macd_hist": 221.4,
+      "price_vs_52w_high": 0.0,
+      "price_vs_52w_low": 0.0,
+      "position": "-",
+      "surge_phase": "하락 추세",
       "is_weekly_overheated": false,
-      "has_dead_cross": true,
-      "daily_score": 2.2,
+      "has_dead_cross": false,
+      "daily_score": 1.5,
       "daily_signals": [
-        "5일선 위 양봉",
-        "MACD 상승 중",
-        "20일선 지지 반등"
+        "일봉 정배열"
       ],
-      "daily_rsi": 50.5,
-      "daily_vol_ratio": 0.9,
-      "return_3m": -27.0,
-      "vol_trend_60d": 4.12,
+      "daily_rsi": 62.4,
+      "daily_vol_ratio": 0.5,
+      "return_3m": -11.1,
+      "vol_trend_60d": 0.47,
       "is_overheated": false,
-      "divergence_count": 2,
-      "divergences": {
-        "Stochastic %K": {
-          "prev_low": 3.44,
-          "curr_low": 6.18,
-          "change": 2.74
-        },
-        "OBV": {
-          "prev_low": 55630199.0,
-          "curr_low": 56706163.0,
-          "change": 1075964.0
-        }
-      },
-      "div_score": 4.0,
-      "bonus_signals": [
-        "RSI 과매도 근처",
-        "Stochastic 과매도",
-        "MACD 히스토그램 반전",
-        "거래량 증가"
+      "earnings_type": "-",
+      "is_new_listing": true,
+      "listing_date": "2025-04-03",
+      "weeks_available": 69,
+      "total_score": 2.2
+    },
+    {
+      "ticker": "001450",
+      "name": "현대해상",
+      "themes": [
+        "보험"
       ],
+      "score_100": 23,
+      "score_10": 2.3,
+      "grade": "D",
+      "signals": [
+        "매집비율 3.1배",
+        "트렌드 구조 양호",
+        "이평선 정배열"
+      ],
+      "signal_count": 3,
+      "current_price": 40350.0,
+      "current_rsi": 63.1,
+      "current_stoch": 78.8,
+      "current_macd_hist": 430.3,
+      "price_vs_52w_high": 91.2,
+      "price_vs_52w_low": 58.2,
+      "position": "상승 중반",
+      "surge_phase": "상승 추세",
+      "is_weekly_overheated": false,
+      "has_dead_cross": false,
+      "daily_score": 1.5,
+      "daily_signals": [
+        "일봉 정배열"
+      ],
+      "daily_rsi": 53.0,
+      "daily_vol_ratio": 1.0,
+      "return_3m": 25.9,
+      "vol_trend_60d": 0.67,
+      "is_overheated": false,
       "earnings_type": "-",
       "is_new_listing": false,
       "listing_date": null,
@@ -2366,11 +1714,51 @@
       "total_score": 2.1
     },
     {
-      "ticker": "007070",
-      "name": "GS리테일",
+      "ticker": "028050",
+      "name": "삼성엔지니어링",
       "themes": [
-        "유통",
-        "편의점"
+        "건설",
+        "플랜트"
+      ],
+      "score_100": 28,
+      "score_10": 2.8,
+      "grade": "C",
+      "signals": [
+        "Pocket Pivot 매수",
+        "트렌드 구조 양호",
+        "20주선 돌파"
+      ],
+      "signal_count": 3,
+      "current_price": 47600.0,
+      "current_rsi": 54.9,
+      "current_stoch": 32.1,
+      "current_macd_hist": -1399.77,
+      "price_vs_52w_high": 70.7,
+      "price_vs_52w_low": 105.6,
+      "position": "상승 초입",
+      "surge_phase": "상승 추세",
+      "is_weekly_overheated": false,
+      "has_dead_cross": false,
+      "daily_score": 0.5,
+      "daily_signals": [
+        "MACD 상승 중"
+      ],
+      "daily_rsi": 44.2,
+      "daily_vol_ratio": 0.8,
+      "return_3m": -15.9,
+      "vol_trend_60d": 1.32,
+      "is_overheated": false,
+      "earnings_type": "-",
+      "is_new_listing": false,
+      "listing_date": null,
+      "weeks_available": null,
+      "total_score": 2.1
+    },
+    {
+      "ticker": "241710",
+      "name": "코스메닝",
+      "themes": [
+        "화장품"
       ],
       "score_100": 23,
       "score_10": 2.3,
@@ -2381,12 +1769,12 @@
         "20주선 안착 (4주)"
       ],
       "signal_count": 3,
-      "current_price": 25750.0,
-      "current_rsi": 57.0,
-      "current_stoch": 52.8,
-      "current_macd_hist": -21.52,
-      "price_vs_52w_high": 86.0,
-      "price_vs_52w_low": 65.0,
+      "current_price": 80700.0,
+      "current_rsi": 52.9,
+      "current_stoch": 55.6,
+      "current_macd_hist": 370.62,
+      "price_vs_52w_high": 75.8,
+      "price_vs_52w_low": 42.1,
       "position": "상승 중반",
       "surge_phase": "상승 추세",
       "is_weekly_overheated": false,
@@ -2395,10 +1783,51 @@
       "daily_signals": [
         "일봉 정배열"
       ],
-      "daily_rsi": 53.1,
-      "daily_vol_ratio": 0.6,
-      "return_3m": 8.1,
-      "vol_trend_60d": 0.67,
+      "daily_rsi": 49.0,
+      "daily_vol_ratio": 0.7,
+      "return_3m": -3.3,
+      "vol_trend_60d": 0.91,
+      "is_overheated": false,
+      "earnings_type": "-",
+      "is_new_listing": false,
+      "listing_date": null,
+      "weeks_available": null,
+      "total_score": 2.1
+    },
+    {
+      "ticker": "270870",
+      "name": "뉴트리",
+      "themes": [
+        "건강기능식품"
+      ],
+      "score_100": 24,
+      "score_10": 2.4,
+      "grade": "D",
+      "signals": [
+        "모멘텀 개선",
+        "MACD 모멘텀 상승",
+        "트렌드 4/7",
+        "20주선 안착 (4주)"
+      ],
+      "signal_count": 4,
+      "current_price": 4655.0,
+      "current_rsi": 54.1,
+      "current_stoch": 93.6,
+      "current_macd_hist": 110.81,
+      "price_vs_52w_high": 72.1,
+      "price_vs_52w_low": 53.1,
+      "position": "상승 초입",
+      "surge_phase": "하락 추세",
+      "is_weekly_overheated": false,
+      "has_dead_cross": false,
+      "daily_score": 1.5,
+      "daily_signals": [
+        "일봉 정배열"
+      ],
+      "daily_rsi": 49.3,
+      "daily_vol_ratio": 2.9,
+      "return_3m": 2.6,
+      "vol_trend_60d": 1.12,
       "is_overheated": false,
       "earnings_type": "-",
       "is_new_listing": false,
@@ -2448,40 +1877,302 @@
       "total_score": 2.0
     },
     {
-      "ticker": "038680",
-      "name": "에스넷",
+      "ticker": "138930",
+      "name": "BNK금융지주",
       "themes": [
-        "IT서비스"
+        "금융"
       ],
-      "score_100": 20,
-      "score_10": 2.0,
+      "score_100": 27,
+      "score_10": 2.7,
+      "grade": "C",
+      "signals": [
+        "OBV 매집 다이버전스",
+        "매집비율 1.5배",
+        "MACD 모멘텀 상승",
+        "트렌드 구조 양호"
+      ],
+      "signal_count": 4,
+      "current_price": 18040.0,
+      "current_rsi": 52.3,
+      "current_stoch": 62.7,
+      "current_macd_hist": -97.66,
+      "price_vs_52w_high": 78.3,
+      "price_vs_52w_low": 32.2,
+      "position": "상승 중반",
+      "surge_phase": "상승 추세",
+      "is_weekly_overheated": false,
+      "has_dead_cross": false,
+      "daily_score": 0.0,
+      "daily_signals": [],
+      "daily_rsi": 38.5,
+      "daily_vol_ratio": 1.2,
+      "return_3m": -9.1,
+      "vol_trend_60d": 0.57,
+      "is_overheated": false,
+      "divergence_count": 3,
+      "divergences": {
+        "Stochastic %K": {
+          "prev_low": 4.48,
+          "curr_low": 11.0,
+          "change": 6.52
+        },
+        "MACD Histogram": {
+          "prev_low": -386.52,
+          "curr_low": -375.42,
+          "change": 11.1
+        },
+        "OBV": {
+          "prev_low": 49595420.0,
+          "curr_low": 61756452.0,
+          "change": 12161032.0
+        }
+      },
+      "div_score": 3.5,
+      "bonus_signals": [
+        "MACD 히스토그램 반전"
+      ],
+      "earnings_type": "-",
+      "is_new_listing": false,
+      "listing_date": null,
+      "weeks_available": null,
+      "total_score": 1.9
+    },
+    {
+      "ticker": "079550",
+      "name": "LIG넥스원",
+      "themes": [
+        "방산",
+        "미사일"
+      ],
+      "score_100": 21,
+      "score_10": 2.1,
+      "grade": "D",
+      "signals": [
+        "볼린저 스퀴즈",
+        "거래량 고갈 (대기)",
+        "매집비율 1.7배",
+        "트렌드 5/7",
+        "데드크로스 경고"
+      ],
+      "signal_count": 5,
+      "current_price": 762000.0,
+      "current_rsi": 51.9,
+      "current_stoch": 23.4,
+      "current_macd_hist": -23046.33,
+      "price_vs_52w_high": 68.2,
+      "price_vs_52w_low": 111.7,
+      "position": "상승 초입",
+      "surge_phase": "눌림목",
+      "is_weekly_overheated": false,
+      "has_dead_cross": true,
+      "daily_score": 1.3,
+      "daily_signals": [
+        "20일선 지지 반등",
+        "RSI 반등(41)"
+      ],
+      "daily_rsi": 41.3,
+      "daily_vol_ratio": 0.9,
+      "return_3m": -29.5,
+      "vol_trend_60d": 0.65,
+      "is_overheated": false,
+      "earnings_type": "-",
+      "is_new_listing": false,
+      "listing_date": null,
+      "weeks_available": null,
+      "total_score": 1.9
+    },
+    {
+      "ticker": "105560",
+      "name": "KB금융",
+      "themes": [
+        "금융"
+      ],
+      "score_100": 26,
+      "score_10": 2.6,
+      "grade": "C",
+      "signals": [
+        "트렌드 구조 양호",
+        "이평선 정배열",
+        "20주선 안착 (4주)"
+      ],
+      "signal_count": 3,
+      "current_price": 171500.0,
+      "current_rsi": 57.1,
+      "current_stoch": 53.5,
+      "current_macd_hist": 620.95,
+      "price_vs_52w_high": 88.2,
+      "price_vs_52w_low": 62.1,
+      "position": "상승 중반",
+      "surge_phase": "상승 추세",
+      "is_weekly_overheated": false,
+      "has_dead_cross": false,
+      "daily_score": 0.0,
+      "daily_signals": [],
+      "daily_rsi": 43.2,
+      "daily_vol_ratio": 0.8,
+      "return_3m": 5.0,
+      "vol_trend_60d": 0.67,
+      "is_overheated": false,
+      "earnings_type": "-",
+      "is_new_listing": false,
+      "listing_date": null,
+      "weeks_available": null,
+      "total_score": 1.8
+    },
+    {
+      "ticker": "003490",
+      "name": "대한항공",
+      "themes": [
+        "항공",
+        "여행"
+      ],
+      "score_100": 26,
+      "score_10": 2.6,
+      "grade": "C",
+      "signals": [
+        "거래량 선행 매집",
+        "매집비율 1.5배",
+        "트렌드 5/7",
+        "이평선 정배열"
+      ],
+      "signal_count": 4,
+      "current_price": 25450.0,
+      "current_rsi": 49.0,
+      "current_stoch": 23.8,
+      "current_macd_hist": -97.2,
+      "price_vs_52w_high": 81.6,
+      "price_vs_52w_low": 21.2,
+      "position": "상승 중반",
+      "surge_phase": "눌림목",
+      "is_weekly_overheated": false,
+      "has_dead_cross": false,
+      "daily_score": 0.0,
+      "daily_signals": [],
+      "daily_rsi": 29.0,
+      "daily_vol_ratio": 0.7,
+      "return_3m": 1.6,
+      "vol_trend_60d": 0.9,
+      "is_overheated": false,
+      "earnings_type": "-",
+      "is_new_listing": false,
+      "listing_date": null,
+      "weeks_available": null,
+      "total_score": 1.8
+    },
+    {
+      "ticker": "025560",
+      "name": "미래산업",
+      "themes": [
+        "로봇",
+        "AI"
+      ],
+      "score_100": 26,
+      "score_10": 2.6,
+      "grade": "C",
+      "signals": [
+        "거래량 고갈 (대기)",
+        "매집비율 5.2배",
+        "트렌드 구조 양호",
+        "이평선 정배열"
+      ],
+      "signal_count": 4,
+      "current_price": 8350.0,
+      "current_rsi": 68.3,
+      "current_stoch": 52.4,
+      "current_macd_hist": 275.31,
+      "price_vs_52w_high": 62.3,
+      "price_vs_52w_low": 321.7,
+      "position": "상승 초입",
+      "surge_phase": "상승 추세",
+      "is_weekly_overheated": false,
+      "has_dead_cross": false,
+      "daily_score": 0.0,
+      "daily_signals": [],
+      "daily_rsi": 37.8,
+      "daily_vol_ratio": 3.2,
+      "return_3m": 114.5,
+      "vol_trend_60d": 0.94,
+      "is_overheated": true,
+      "earnings_type": "-",
+      "is_new_listing": false,
+      "listing_date": null,
+      "weeks_available": null,
+      "total_score": 1.8
+    },
+    {
+      "ticker": "108670",
+      "name": "LG하우시스",
+      "themes": [
+        "건자재"
+      ],
+      "score_100": 26,
+      "score_10": 2.6,
+      "grade": "C",
+      "signals": [
+        "거래량 고갈 (대기)",
+        "트렌드 구조 양호",
+        "20주선 돌파",
+        "20주선 지지 반등"
+      ],
+      "signal_count": 4,
+      "current_price": 33000.0,
+      "current_rsi": 52.0,
+      "current_stoch": 30.1,
+      "current_macd_hist": -323.79,
+      "price_vs_52w_high": 76.7,
+      "price_vs_52w_low": 22.2,
+      "position": "상승 중반",
+      "surge_phase": "상승 추세",
+      "is_weekly_overheated": false,
+      "has_dead_cross": false,
+      "daily_score": 0.0,
+      "daily_signals": [],
+      "daily_rsi": 43.2,
+      "daily_vol_ratio": 1.0,
+      "return_3m": -0.2,
+      "vol_trend_60d": 0.49,
+      "is_overheated": false,
+      "earnings_type": "-",
+      "is_new_listing": false,
+      "listing_date": null,
+      "weeks_available": null,
+      "total_score": 1.8
+    },
+    {
+      "ticker": "340570",
+      "name": "티앤엘",
+      "themes": [
+        "의료기기",
+        "상처치료"
+      ],
+      "score_100": 23,
+      "score_10": 2.3,
       "grade": "D",
       "signals": [
         "Pocket Pivot 매수",
-        "거래량 고갈→폭발",
-        "MACD 모멘텀 상승",
+        "트렌드 구조 양호",
+        "20주선 돌파",
         "데드크로스 경고"
       ],
       "signal_count": 4,
-      "current_price": 3490.0,
-      "current_rsi": 47.7,
-      "current_stoch": 19.0,
-      "current_macd_hist": -69.18,
-      "price_vs_52w_high": 55.6,
-      "price_vs_52w_low": 23.1,
-      "position": "바닥 출발",
-      "surge_phase": "정리 중",
+      "current_price": 56300.0,
+      "current_rsi": 52.2,
+      "current_stoch": 43.8,
+      "current_macd_hist": -572.74,
+      "price_vs_52w_high": 82.8,
+      "price_vs_52w_low": 30.6,
+      "position": "상승 중반",
+      "surge_phase": "추세 전환",
       "is_weekly_overheated": false,
       "has_dead_cross": true,
-      "daily_score": 1.2,
+      "daily_score": 0.5,
       "daily_signals": [
-        "5일선 위 양봉",
         "MACD 상승 중"
       ],
-      "daily_rsi": 70.0,
-      "daily_vol_ratio": 0.5,
-      "return_3m": -23.3,
-      "vol_trend_60d": 1.78,
+      "daily_rsi": 53.3,
+      "daily_vol_ratio": 1.1,
+      "return_3m": -9.8,
+      "vol_trend_60d": 1.33,
       "is_overheated": false,
       "earnings_type": "-",
       "is_new_listing": false,
@@ -2518,10 +2209,10 @@
       "has_dead_cross": true,
       "daily_score": 0.0,
       "daily_signals": [],
-      "daily_rsi": 57.6,
-      "daily_vol_ratio": 0.4,
-      "return_3m": -33.4,
-      "vol_trend_60d": 7.8,
+      "daily_rsi": 53.2,
+      "daily_vol_ratio": 0.6,
+      "return_3m": -39.3,
+      "vol_trend_60d": 4.67,
       "is_overheated": false,
       "earnings_type": "-",
       "is_new_listing": false,
@@ -2556,10 +2247,10 @@
       "has_dead_cross": false,
       "daily_score": 0.0,
       "daily_signals": [],
-      "daily_rsi": 36.9,
-      "daily_vol_ratio": 0.7,
-      "return_3m": 23.4,
-      "vol_trend_60d": 0.42,
+      "daily_rsi": 36.7,
+      "daily_vol_ratio": 1.1,
+      "return_3m": 9.2,
+      "vol_trend_60d": 0.54,
       "is_overheated": false,
       "earnings_type": "-",
       "is_new_listing": false,
@@ -2568,53 +2259,39 @@
       "total_score": 1.8
     },
     {
-      "ticker": "005090",
-      "name": "SGC에너지",
+      "ticker": "092730",
+      "name": "네오팜",
       "themes": [
-        "에너지",
-        "발전"
+        "화장품",
+        "더마"
       ],
-      "score_100": 22,
-      "score_10": 2.2,
+      "score_100": 24,
+      "score_10": 2.4,
       "grade": "D",
       "signals": [
-        "Pocket Pivot 매수",
-        "OBV 매집 다이버전스",
-        "트렌드 구조 양호",
-        "데드크로스 경고"
+        "RSI 다이버전스",
+        "MACD 모멘텀 상승",
+        "트렌드 4/7",
+        "20주선 안착 (4주)"
       ],
       "signal_count": 4,
-      "current_price": 49300.0,
-      "current_rsi": 52.9,
-      "current_stoch": 40.7,
-      "current_macd_hist": -2270.16,
-      "price_vs_52w_high": 69.7,
-      "price_vs_52w_low": 144.7,
-      "position": "상승 초입",
-      "surge_phase": "눌림목",
+      "current_price": 18620.0,
+      "current_rsi": 51.7,
+      "current_stoch": 44.8,
+      "current_macd_hist": 46.34,
+      "price_vs_52w_high": 82.2,
+      "price_vs_52w_low": 19.4,
+      "position": "상승 중반",
+      "surge_phase": "정리 중",
       "is_weekly_overheated": false,
-      "has_dead_cross": true,
-      "daily_score": 0.5,
-      "daily_signals": [
-        "MACD 상승 중"
-      ],
-      "daily_rsi": 51.6,
-      "daily_vol_ratio": 2.2,
-      "return_3m": -36.5,
-      "vol_trend_60d": 2.15,
+      "has_dead_cross": false,
+      "daily_score": 0.0,
+      "daily_signals": [],
+      "daily_rsi": 44.0,
+      "daily_vol_ratio": 1.2,
+      "return_3m": -6.8,
+      "vol_trend_60d": 0.83,
       "is_overheated": false,
-      "divergence_count": 1,
-      "divergences": {
-        "OBV": {
-          "prev_low": 5549287.0,
-          "curr_low": 5622448.0,
-          "change": 73161.0
-        }
-      },
-      "div_score": 1.5,
-      "bonus_signals": [
-        "MACD 히스토그램 반전"
-      ],
       "earnings_type": "-",
       "is_new_listing": false,
       "listing_date": null,
@@ -2651,10 +2328,49 @@
       "has_dead_cross": true,
       "daily_score": 0.0,
       "daily_signals": [],
-      "daily_rsi": 62.4,
-      "daily_vol_ratio": 1.1,
-      "return_3m": -12.4,
-      "vol_trend_60d": 1.46,
+      "daily_rsi": 55.7,
+      "daily_vol_ratio": 0.9,
+      "return_3m": -15.2,
+      "vol_trend_60d": 1.52,
+      "is_overheated": false,
+      "earnings_type": "-",
+      "is_new_listing": false,
+      "listing_date": null,
+      "weeks_available": null,
+      "total_score": 1.6
+    },
+    {
+      "ticker": "000810",
+      "name": "삼성화재",
+      "themes": [
+        "보험",
+        "금융"
+      ],
+      "score_100": 23,
+      "score_10": 2.3,
+      "grade": "D",
+      "signals": [
+        "매집비율 2.0배",
+        "트렌드 구조 양호",
+        "이평선 정배열"
+      ],
+      "signal_count": 3,
+      "current_price": 644000.0,
+      "current_rsi": 58.4,
+      "current_stoch": 63.1,
+      "current_macd_hist": 9395.41,
+      "price_vs_52w_high": 85.1,
+      "price_vs_52w_low": 56.3,
+      "position": "상승 중반",
+      "surge_phase": "상승 추세",
+      "is_weekly_overheated": false,
+      "has_dead_cross": false,
+      "daily_score": 0.0,
+      "daily_signals": [],
+      "daily_rsi": 39.8,
+      "daily_vol_ratio": 0.8,
+      "return_3m": 33.6,
+      "vol_trend_60d": 0.44,
       "is_overheated": false,
       "earnings_type": "-",
       "is_new_listing": false,
@@ -2689,10 +2405,10 @@
       "has_dead_cross": false,
       "daily_score": 0.0,
       "daily_signals": [],
-      "daily_rsi": 59.2,
-      "daily_vol_ratio": 1.7,
-      "return_3m": -25.8,
-      "vol_trend_60d": 0.89,
+      "daily_rsi": 54.0,
+      "daily_vol_ratio": 0.9,
+      "return_3m": -33.8,
+      "vol_trend_60d": 0.9,
       "is_overheated": false,
       "divergence_count": 1,
       "divergences": {
@@ -2713,45 +2429,43 @@
       "total_score": 1.6
     },
     {
-      "ticker": "079550",
-      "name": "LIG넥스원",
+      "ticker": "007070",
+      "name": "GS리테일",
       "themes": [
-        "방산",
-        "미사일"
+        "유통",
+        "편의점"
       ],
-      "score_100": 21,
-      "score_10": 2.1,
+      "score_100": 23,
+      "score_10": 2.3,
       "grade": "D",
       "signals": [
-        "볼린저 스퀴즈",
-        "거래량 고갈 (대기)",
-        "매집비율 1.7배",
-        "트렌드 5/7",
-        "데드크로스 경고"
+        "MACD 모멘텀 상승",
+        "트렌드 구조 양호",
+        "20주선 안착 (4주)"
       ],
-      "signal_count": 5,
-      "current_price": 762000.0,
-      "current_rsi": 51.9,
-      "current_stoch": 23.4,
-      "current_macd_hist": -23046.33,
-      "price_vs_52w_high": 68.2,
-      "price_vs_52w_low": 111.7,
-      "position": "상승 초입",
-      "surge_phase": "눌림목",
+      "signal_count": 3,
+      "current_price": 25750.0,
+      "current_rsi": 57.0,
+      "current_stoch": 52.8,
+      "current_macd_hist": -21.52,
+      "price_vs_52w_high": 86.0,
+      "price_vs_52w_low": 65.0,
+      "position": "상승 중반",
+      "surge_phase": "상승 추세",
       "is_weekly_overheated": false,
-      "has_dead_cross": true,
+      "has_dead_cross": false,
       "daily_score": 0.0,
       "daily_signals": [],
-      "daily_rsi": 40.1,
+      "daily_rsi": 42.7,
       "daily_vol_ratio": 0.9,
-      "return_3m": -28.0,
-      "vol_trend_60d": 0.63,
+      "return_3m": 5.2,
+      "vol_trend_60d": 0.66,
       "is_overheated": false,
       "earnings_type": "-",
       "is_new_listing": false,
       "listing_date": null,
       "weeks_available": null,
-      "total_score": 1.5
+      "total_score": 1.6
     },
     {
       "ticker": "006360",
@@ -2781,11 +2495,204 @@
       "has_dead_cross": true,
       "daily_score": 0.0,
       "daily_signals": [],
-      "daily_rsi": 47.3,
-      "daily_vol_ratio": 0.8,
-      "return_3m": -30.0,
-      "vol_trend_60d": 1.79,
+      "daily_rsi": 41.4,
+      "daily_vol_ratio": 0.9,
+      "return_3m": -37.4,
+      "vol_trend_60d": 2.0,
       "is_overheated": false,
+      "earnings_type": "-",
+      "is_new_listing": false,
+      "listing_date": null,
+      "weeks_available": null,
+      "total_score": 1.5
+    },
+    {
+      "ticker": "060720",
+      "name": "KH바텍",
+      "themes": [
+        "전자부품"
+      ],
+      "score_100": 21,
+      "score_10": 2.1,
+      "grade": "D",
+      "signals": [
+        "OBV 매집 다이버전스",
+        "거래량 선행 매집",
+        "매집비율 2.9배",
+        "MACD 모멘텀 상승",
+        "데드크로스 경고"
+      ],
+      "signal_count": 5,
+      "current_price": 9790.0,
+      "current_rsi": 37.2,
+      "current_stoch": 15.3,
+      "current_macd_hist": -416.34,
+      "price_vs_52w_high": 49.0,
+      "price_vs_52w_low": 10.4,
+      "position": "바닥 출발",
+      "surge_phase": "정리 중",
+      "is_weekly_overheated": false,
+      "has_dead_cross": true,
+      "daily_score": 0.0,
+      "daily_signals": [],
+      "daily_rsi": 45.9,
+      "daily_vol_ratio": 0.8,
+      "return_3m": -34.8,
+      "vol_trend_60d": 2.36,
+      "is_overheated": false,
+      "divergence_count": 2,
+      "divergences": {
+        "Stochastic %K": {
+          "prev_low": 3.44,
+          "curr_low": 6.18,
+          "change": 2.74
+        },
+        "OBV": {
+          "prev_low": 55630199.0,
+          "curr_low": 56706163.0,
+          "change": 1075964.0
+        }
+      },
+      "div_score": 4.0,
+      "bonus_signals": [
+        "RSI 과매도 근처",
+        "Stochastic 과매도",
+        "MACD 히스토그램 반전",
+        "거래량 증가"
+      ],
+      "earnings_type": "-",
+      "is_new_listing": false,
+      "listing_date": null,
+      "weeks_available": null,
+      "total_score": 1.5
+    },
+    {
+      "ticker": "085620",
+      "name": "미래에셋벤처투자",
+      "themes": [
+        "벤처",
+        "투자"
+      ],
+      "score_100": 21,
+      "score_10": 2.1,
+      "grade": "D",
+      "signals": [
+        "거래량 선행 매집",
+        "거래량 고갈 (대기)",
+        "매집비율 4.2배",
+        "트렌드 5/7"
+      ],
+      "signal_count": 4,
+      "current_price": 15900.0,
+      "current_rsi": 48.6,
+      "current_stoch": 11.2,
+      "current_macd_hist": -604.51,
+      "price_vs_52w_high": 42.6,
+      "price_vs_52w_low": 139.1,
+      "position": "상승 초입",
+      "surge_phase": "눌림목",
+      "is_weekly_overheated": false,
+      "has_dead_cross": false,
+      "daily_score": 0.0,
+      "daily_signals": [],
+      "daily_rsi": 34.2,
+      "daily_vol_ratio": 0.6,
+      "return_3m": -13.3,
+      "vol_trend_60d": 0.1,
+      "is_overheated": false,
+      "earnings_type": "-",
+      "is_new_listing": false,
+      "listing_date": null,
+      "weeks_available": null,
+      "total_score": 1.5
+    },
+    {
+      "ticker": "038680",
+      "name": "에스넷",
+      "themes": [
+        "IT서비스"
+      ],
+      "score_100": 20,
+      "score_10": 2.0,
+      "grade": "D",
+      "signals": [
+        "Pocket Pivot 매수",
+        "거래량 고갈→폭발",
+        "MACD 모멘텀 상승",
+        "데드크로스 경고"
+      ],
+      "signal_count": 4,
+      "current_price": 3490.0,
+      "current_rsi": 47.7,
+      "current_stoch": 19.0,
+      "current_macd_hist": -69.18,
+      "price_vs_52w_high": 55.6,
+      "price_vs_52w_low": 23.1,
+      "position": "바닥 출발",
+      "surge_phase": "정리 중",
+      "is_weekly_overheated": false,
+      "has_dead_cross": true,
+      "daily_score": 0.5,
+      "daily_signals": [
+        "MACD 상승 중"
+      ],
+      "daily_rsi": 65.6,
+      "daily_vol_ratio": 0.5,
+      "return_3m": -23.8,
+      "vol_trend_60d": 0.48,
+      "is_overheated": false,
+      "earnings_type": "-",
+      "is_new_listing": false,
+      "listing_date": null,
+      "weeks_available": null,
+      "total_score": 1.5
+    },
+    {
+      "ticker": "005090",
+      "name": "SGC에너지",
+      "themes": [
+        "에너지",
+        "발전"
+      ],
+      "score_100": 22,
+      "score_10": 2.2,
+      "grade": "D",
+      "signals": [
+        "Pocket Pivot 매수",
+        "OBV 매집 다이버전스",
+        "트렌드 구조 양호",
+        "데드크로스 경고"
+      ],
+      "signal_count": 4,
+      "current_price": 49300.0,
+      "current_rsi": 52.9,
+      "current_stoch": 40.7,
+      "current_macd_hist": -2270.16,
+      "price_vs_52w_high": 69.7,
+      "price_vs_52w_low": 144.7,
+      "position": "상승 초입",
+      "surge_phase": "눌림목",
+      "is_weekly_overheated": false,
+      "has_dead_cross": true,
+      "daily_score": 0.0,
+      "daily_signals": [],
+      "daily_rsi": 47.3,
+      "daily_vol_ratio": 2.2,
+      "return_3m": -37.1,
+      "vol_trend_60d": 2.54,
+      "is_overheated": false,
+      "divergence_count": 1,
+      "divergences": {
+        "OBV": {
+          "prev_low": 5549287.0,
+          "curr_low": 5622448.0,
+          "change": 73161.0
+        }
+      },
+      "div_score": 1.5,
+      "bonus_signals": [
+        "MACD 히스토그램 반전"
+      ],
       "earnings_type": "-",
       "is_new_listing": false,
       "listing_date": null,
