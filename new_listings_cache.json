@@ -1,6 +1,26 @@
 {
-  "updated_at": "2026-07-28T23:03:10.576273",
+  "updated_at": "2026-08-04T23:07:41.289161",
   "listings": [
+    {
+      "ticker": "439260",
+      "name": "대한조선",
+      "themes": [
+        "선박"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-08-01",
+      "weeks_available": 53
+    },
+    {
+      "ticker": "439260",
+      "name": "대한조선",
+      "themes": [
+        "선박"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-08-01",
+      "weeks_available": 53
+    },
     {
       "ticker": "468530",
       "name": "프로티나",
@@ -9,7 +29,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-07-29",
-      "weeks_available": 52
+      "weeks_available": 53
     },
     {
       "ticker": "475230",
@@ -19,7 +39,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-07-28",
-      "weeks_available": 52
+      "weeks_available": 53
     },
     {
       "ticker": "380550",
@@ -29,7 +49,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-07-25",
-      "weeks_available": 53
+      "weeks_available": 54
     },
     {
       "ticker": "484120",
@@ -39,7 +59,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-07-23",
-      "weeks_available": 53
+      "weeks_available": 54
     },
     {
       "ticker": "331740",
@@ -49,7 +69,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-07-15",
-      "weeks_available": 54
+      "weeks_available": 55
     },
     {
       "ticker": "462310",
@@ -59,7 +79,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-07-09",
-      "weeks_available": 55
+      "weeks_available": 56
     },
     {
       "ticker": "234030",
@@ -69,7 +89,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-07-07",
-      "weeks_available": 55
+      "weeks_available": 56
     },
     {
       "ticker": "463020",
@@ -79,7 +99,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-07-04",
-      "weeks_available": 56
+      "weeks_available": 57
     },
     {
       "ticker": "455180",
@@ -89,7 +109,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-06-17",
-      "weeks_available": 58
+      "weeks_available": 59
     },
     {
       "ticker": "340450",
@@ -99,7 +119,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-06-11",
-      "weeks_available": 59
+      "weeks_available": 60
     },
     {
       "ticker": "474650",
@@ -109,7 +129,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-06-10",
-      "weeks_available": 59
+      "weeks_available": 60
     },
     {
       "ticker": "475430",
@@ -119,7 +139,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-06-02",
-      "weeks_available": 60
+      "weeks_available": 61
     },
     {
       "ticker": "287840",
@@ -129,7 +149,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-05-23",
-      "weeks_available": 62
+      "weeks_available": 63
     },
     {
       "ticker": "483650",
@@ -139,7 +159,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-05-22",
-      "weeks_available": 62
+      "weeks_available": 63
     },
     {
       "ticker": "489460",
@@ -149,7 +169,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-05-20",
-      "weeks_available": 62
+      "weeks_available": 63
     },
     {
       "ticker": "424870",
@@ -159,7 +179,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-05-19",
-      "weeks_available": 62
+      "weeks_available": 63
     },
     {
       "ticker": "188040",
@@ -169,7 +189,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-05-16",
-      "weeks_available": 63
+      "weeks_available": 64
     },
     {
       "ticker": "125020",
@@ -179,7 +199,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-05-15",
-      "weeks_available": 63
+      "weeks_available": 64
     },
     {
       "ticker": "376900",
@@ -189,7 +209,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-05-12",
-      "weeks_available": 63
+      "weeks_available": 64
     },
     {
       "ticker": "476040",
@@ -199,7 +219,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-05-09",
-      "weeks_available": 64
+      "weeks_available": 65
     },
     {
       "ticker": "136150",
@@ -209,7 +229,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-05-09",
-      "weeks_available": 64
+      "weeks_available": 65
     },
     {
       "ticker": "459510",
@@ -219,7 +239,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-05-08",
-      "weeks_available": 64
+      "weeks_available": 65
     },
     {
       "ticker": "364950",
@@ -229,7 +249,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-04-29",
-      "weeks_available": 65
+      "weeks_available": 66
     },
     {
       "ticker": "081180",
@@ -239,7 +259,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-04-28",
-      "weeks_available": 65
+      "weeks_available": 66
     },
     {
       "ticker": "481070",
@@ -249,7 +269,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-04-03",
-      "weeks_available": 69
+      "weeks_available": 70
     },
     {
       "ticker": "101970",
@@ -259,7 +279,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-03-28",
-      "weeks_available": 70
+      "weeks_available": 71
     },
     {
       "ticker": "462860",
@@ -269,7 +289,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-03-24",
-      "weeks_available": 70
+      "weeks_available": 71
     },
     {
       "ticker": "444530",
@@ -279,17 +299,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-03-21",
-      "weeks_available": 71
-    },
-    {
-      "ticker": "098070",
-      "name": "한텍",
-      "themes": [
-        "구조용"
-      ],
-      "is_new_listing": true,
-      "listing_date": "2025-03-20",
-      "weeks_available": 71
+      "weeks_available": 72
     },
     {
       "ticker": "484810",
@@ -299,7 +309,17 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-03-20",
-      "weeks_available": 71
+      "weeks_available": 72
+    },
+    {
+      "ticker": "098070",
+      "name": "한텍",
+      "themes": [
+        "구조용"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-03-20",
+      "weeks_available": 72
     },
     {
       "ticker": "480370",
@@ -309,7 +329,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-03-17",
-      "weeks_available": 71
+      "weeks_available": 72
     },
     {
       "ticker": "031210",
@@ -319,7 +339,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-03-14",
-      "weeks_available": 72
+      "weeks_available": 73
     },
     {
       "ticker": "460870",
@@ -329,7 +349,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-03-07",
-      "weeks_available": 73
+      "weeks_available": 74
     },
     {
       "ticker": "226590",
@@ -339,7 +359,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-03-07",
-      "weeks_available": 73
+      "weeks_available": 74
     },
     {
       "ticker": "393970",
@@ -359,7 +379,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-02-28",
-      "weeks_available": 74
+      "weeks_available": 75
     },
     {
       "ticker": "489500",
@@ -369,7 +389,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-02-25",
-      "weeks_available": 74
+      "weeks_available": 75
     },
     {
       "ticker": "479960",
@@ -379,7 +399,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-02-24",
-      "weeks_available": 74
+      "weeks_available": 75
     },
     {
       "ticker": "463480",
@@ -389,7 +409,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-02-20",
-      "weeks_available": 75
+      "weeks_available": 76
     },
     {
       "ticker": "303810",
@@ -399,7 +419,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-02-17",
-      "weeks_available": 75
+      "weeks_available": 76
     },
     {
       "ticker": "475830",
@@ -409,7 +429,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-02-14",
-      "weeks_available": 76
+      "weeks_available": 77
     },
     {
       "ticker": "240550",
@@ -419,7 +439,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-02-13",
-      "weeks_available": 76
+      "weeks_available": 77
     },
     {
       "ticker": "212710",
@@ -429,7 +449,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-02-12",
-      "weeks_available": 76
+      "weeks_available": 77
     },
     {
       "ticker": "064400",
@@ -439,17 +459,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-02-05",
-      "weeks_available": 77
-    },
-    {
-      "ticker": "452450",
-      "name": "피아이이",
-      "themes": [
-        "특수"
-      ],
-      "is_new_listing": true,
-      "listing_date": "2025-02-04",
-      "weeks_available": 77
+      "weeks_available": 78
     },
     {
       "ticker": "462980",
@@ -459,7 +469,17 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-02-04",
-      "weeks_available": 77
+      "weeks_available": 78
+    },
+    {
+      "ticker": "452450",
+      "name": "피아이이",
+      "themes": [
+        "특수"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2025-02-04",
+      "weeks_available": 78
     },
     {
       "ticker": "482630",
@@ -469,7 +489,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-02-03",
-      "weeks_available": 77
+      "weeks_available": 78
     },
     {
       "ticker": "373160",
@@ -479,7 +499,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-01-24",
-      "weeks_available": 79
+      "weeks_available": 80
     },
     {
       "ticker": "450950",
@@ -489,7 +509,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-01-24",
-      "weeks_available": 79
+      "weeks_available": 80
     },
     {
       "ticker": "096250",
@@ -499,7 +519,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-01-24",
-      "weeks_available": 79
+      "weeks_available": 80
     },
     {
       "ticker": "475460",
@@ -509,7 +529,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-01-23",
-      "weeks_available": 79
+      "weeks_available": 80
     },
     {
       "ticker": "478560",
@@ -519,7 +539,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-01-21",
-      "weeks_available": 79
+      "weeks_available": 80
     },
     {
       "ticker": "332190",
@@ -529,7 +549,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2025-01-14",
-      "weeks_available": 80
+      "weeks_available": 81
     },
     {
       "ticker": "432980",
@@ -539,7 +559,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2024-12-26",
-      "weeks_available": 83
+      "weeks_available": 84
     },
     {
       "ticker": "387570",
@@ -549,7 +569,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2024-12-26",
-      "weeks_available": 83
+      "weeks_available": 84
     },
     {
       "ticker": "177900",
@@ -559,7 +579,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2024-12-24",
-      "weeks_available": 83
+      "weeks_available": 84
     },
     {
       "ticker": "499790",
@@ -569,7 +589,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2024-12-23",
-      "weeks_available": 83
+      "weeks_available": 84
     },
     {
       "ticker": "495810",
@@ -579,16 +599,6 @@
       ],
       "is_new_listing": true,
       "listing_date": "2024-12-23",
-      "weeks_available": 83
-    },
-    {
-      "ticker": "398120",
-      "name": "에스지헬스케어",
-      "themes": [
-        "료용"
-      ],
-      "is_new_listing": true,
-      "listing_date": "2024-12-19",
       "weeks_available": 84
     },
     {
@@ -599,7 +609,17 @@
       ],
       "is_new_listing": true,
       "listing_date": "2024-12-19",
-      "weeks_available": 84
+      "weeks_available": 85
+    },
+    {
+      "ticker": "398120",
+      "name": "에스지헬스케어",
+      "themes": [
+        "료용"
+      ],
+      "is_new_listing": true,
+      "listing_date": "2024-12-19",
+      "weeks_available": 85
     },
     {
       "ticker": "382150",
@@ -609,7 +629,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2024-12-18",
-      "weeks_available": 84
+      "weeks_available": 85
     },
     {
       "ticker": "457600",
@@ -619,7 +639,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2024-12-16",
-      "weeks_available": 84
+      "weeks_available": 85
     },
     {
       "ticker": "484870",
@@ -629,7 +649,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2024-12-16",
-      "weeks_available": 84
+      "weeks_available": 85
     },
     {
       "ticker": "471820",
@@ -639,7 +659,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2024-12-13",
-      "weeks_available": 85
+      "weeks_available": 86
     },
     {
       "ticker": "415640",
@@ -649,7 +669,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2024-11-29",
-      "weeks_available": 87
+      "weeks_available": 88
     },
     {
       "ticker": "459100",
@@ -659,7 +679,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2024-11-20",
-      "weeks_available": 88
+      "weeks_available": 89
     },
     {
       "ticker": "389680",
@@ -669,7 +689,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2024-11-20",
-      "weeks_available": 88
+      "weeks_available": 89
     },
     {
       "ticker": "474610",
@@ -679,7 +699,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2024-11-19",
-      "weeks_available": 88
+      "weeks_available": 89
     },
     {
       "ticker": "466410",
@@ -689,7 +709,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2024-11-19",
-      "weeks_available": 88
+      "weeks_available": 89
     },
     {
       "ticker": "475660",
@@ -699,7 +719,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2024-11-18",
-      "weeks_available": 88
+      "weeks_available": 89
     },
     {
       "ticker": "413390",
@@ -709,7 +729,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2024-11-18",
-      "weeks_available": 88
+      "weeks_available": 89
     },
     {
       "ticker": "394800",
@@ -719,7 +739,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2024-11-14",
-      "weeks_available": 89
+      "weeks_available": 90
     },
     {
       "ticker": "464580",
@@ -729,7 +749,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2024-11-13",
-      "weeks_available": 89
+      "weeks_available": 90
     },
     {
       "ticker": "473980",
@@ -739,7 +759,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2024-11-12",
-      "weeks_available": 89
+      "weeks_available": 90
     },
     {
       "ticker": "163280",
@@ -749,27 +769,7 @@
       ],
       "is_new_listing": true,
       "listing_date": "2024-11-08",
-      "weeks_available": 90
-    },
-    {
-      "ticker": "475960",
-      "name": "토모큐브",
-      "themes": [
-        "사진장비"
-      ],
-      "is_new_listing": true,
-      "listing_date": "2024-11-07",
-      "weeks_available": 90
-    },
-    {
-      "ticker": "475560",
-      "name": "더본코리아",
-      "themes": [
-        "상품"
-      ],
-      "is_new_listing": true,
-      "listing_date": "2024-11-06",
-      "weeks_available": 90
+      "weeks_available": 91
     }
   ]
 }
